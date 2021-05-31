@@ -1,7 +1,6 @@
 #pragma once
 
-#include <SFML\Graphics.hpp>
-#include <SFML\Window.hpp>
+#include "SceneManager.h"
 
 class Game
 {
@@ -11,6 +10,7 @@ private:
 	sf::Event event;
 	sf::Clock clock;
 	float deltaTime;
+	SceneManager* sceneManager;
 
 	// Methods
 	void initWindow();

@@ -3,16 +3,21 @@
 Game::Game()
 {
 	this->initWindow();
+    this->sceneManager = new SceneManager(this->window);
 }
 
 Game::~Game()
 {
-	delete this->window;
+	delete this->window;  
+
+    delete this->sceneManager;
 }
 
 void Game::initWindow()
 {
     this->window = new sf::RenderWindow(sf::VideoMode(800, 600), "The Dark Threat");
+    this->window->setFramerateLimit(60);
+    this->window->setVerticalSyncEnabled(false);
 }
 
 void Game::updateEvents()
@@ -34,14 +39,14 @@ void Game::update()
     this->updateEvents();
     this->updateDeltaTime();
 
-    // All ellements are being updated below
+    this->sceneManager->update(this->deltaTime);
 }
 
 void Game::render()
 {
     this->window->clear(sf::Color::Black);
 
-    // All elements are being drawn below
+    this->sceneManager->render(this->deltaTime);
 
     this->window->display();
 }
