@@ -14,7 +14,7 @@ private:
 public:
 	Scene(sf::RenderWindow* window, std::stack<Scene*>* scenes);
 	~Scene();
-	virtual void update(float deltaTime) = 0;
-	virtual void render(float deltaTime) = 0;
+	virtual void update(const float& deltaTime) = 0;
+	virtual void render(const float& deltaTime) = 0;
 };
 

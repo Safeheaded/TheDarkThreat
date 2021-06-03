@@ -1,7 +1,9 @@
 #include "SceneManager.h"
+#include "MenuScene.h"
 
 void SceneManager::initScenes()
 {
+    this->scenes.push(new MenuScene(this->window, &this->scenes));
 }
 
 SceneManager::SceneManager(sf::RenderWindow* window): window(window)
