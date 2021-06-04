@@ -26,6 +26,9 @@ void Game::updateEvents()
     {
         if (this->event.type == sf::Event::Closed)
             this->window->close();
+
+        // Passing event object to scenes
+        this->sceneManager->handleEvents(this->event);
     }
 }
 

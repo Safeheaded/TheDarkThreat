@@ -32,3 +32,10 @@ void SceneManager::update(const float& deltaTime)
         this->scenes.top()->update(deltaTime);
     }
 }
+
+void SceneManager::handleEvents(const sf::Event& event)
+{
+    if (!this->scenes.empty()) {
+        this->scenes.top()->handleEvents(event);
+    }
+}

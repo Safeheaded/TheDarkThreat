@@ -19,5 +19,6 @@ public:
 	// Methods
 	void render(const float& deltaTime);
 	void update(const float& deltaTime);
+	void handleEvents(const sf::Event& event);
 };
 
