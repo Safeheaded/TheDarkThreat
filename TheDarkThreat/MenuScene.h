@@ -4,18 +4,22 @@
 #include "UIClose.h"
 #include "Utils.h"
 #include "TextButton.h"
+#include "UINextScene.h"
+#include "PlotScene.h"
+
 class MenuScene :
     public Scene
 {
 private:
     std::vector<Button> buttons;
-    UIClose* uiClose;
+    std::map<std::string, UICommand*> commands;
     sf::Font font;
 
     // Methods
     void setupButtons();
     void setButtonsPosition();
     float getButtonsHeight();
+    void setupCommands();
 public:
     MenuScene(sf::RenderWindow* window, std::stack<Scene*>* scenes);
     ~MenuScene();

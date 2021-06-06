@@ -4,9 +4,9 @@
 
 void SceneManager::initScenes()
 {
-    std::string text = Utils::loadFullText("plot1.txt");
-    this->scenes.push(new PlotScene(this->window, &this->scenes, text));
-    //this->scenes.push(new MenuScene(this->window, &this->scenes));
+    /*std::string text = Utils::loadFullText("plot1.txt");
+    this->scenes.push(new PlotScene(this->window, &this->scenes, text));*/
+    this->scenes.push(new MenuScene(this->window, &this->scenes));
 }
 
 SceneManager::SceneManager(sf::RenderWindow* window): window(window)

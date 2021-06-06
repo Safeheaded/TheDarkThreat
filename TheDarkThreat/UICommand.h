@@ -5,7 +5,7 @@ class UICommand
 {
 public:
 	UICommand();
-	~UICommand();
+	virtual ~UICommand();
 
 	virtual void execute(sf::RenderWindow* window) = 0;
 };

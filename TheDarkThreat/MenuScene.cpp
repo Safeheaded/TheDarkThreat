@@ -3,8 +3,8 @@
 void MenuScene::setupButtons()
 {
 	sf::Color color(122, 58, 18);
-	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->uiClose, "Nowa gra", this->font, color);
-	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->uiClose, "WyjdŸ z gry", this->font, color);
+	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["NEXT"], "Nowa gra", this->font, color);
+	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["CLOSE"], "WyjdŸ z gry", this->font, color);
 }
 
 void MenuScene::setButtonsPosition()
@@ -35,18 +35,31 @@ float MenuScene::getButtonsHeight()
 	return height;
 }
 
+void MenuScene::setupCommands()
+{
+	this->commands["CLOSE"] = new UIClose();
+
+	std::string text = Utils::loadFullText("plot1.txt");
+	this->commands["NEXT"] = new UINextScene(
+		this->scenes, this, new PlotScene(this->window, this->scenes, text)
+	);
+}
+
 MenuScene::MenuScene(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 	Scene(window, scenes)
 {
-	this->uiClose = new UIClose();
 	Utils::loadFont("akaFrivolity.ttf", &this->font);
+	this->setupCommands();
 	this->setupButtons();
 	this->setButtonsPosition();
 }
 
 MenuScene::~MenuScene()
 {
-	delete this->uiClose;
+	// Deleting UICommands
+	for (auto command : this->commands) {
+		delete command.second;
+	}
 }
 
 void MenuScene::update(const float& deltaTime)
