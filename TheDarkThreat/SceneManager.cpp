@@ -1,9 +1,12 @@
 #include "SceneManager.h"
 #include "MenuScene.h"
+#include "PlotScene.h"
 
 void SceneManager::initScenes()
 {
-    this->scenes.push(new MenuScene(this->window, &this->scenes));
+    std::string text = Utils::loadFullText("plot1.txt");
+    this->scenes.push(new PlotScene(this->window, &this->scenes, text));
+    //this->scenes.push(new MenuScene(this->window, &this->scenes));
 }
 
 SceneManager::SceneManager(sf::RenderWindow* window): window(window)
