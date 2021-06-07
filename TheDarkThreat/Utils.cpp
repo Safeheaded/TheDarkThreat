@@ -7,6 +7,13 @@ void Utils::loadFont(std::string path, sf::Font* font)
 	}
 }
 
+void Utils::loadTexture(std::string path, sf::Texture* texture)
+{
+	if (!texture->loadFromFile(path)) {
+		throw "Could\'nt load texture";
+	}
+}
+
 std::string Utils::loadFullText(std::string path)
 {
 	std::ifstream t(path);

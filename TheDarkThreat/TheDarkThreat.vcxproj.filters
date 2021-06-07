@@ -25,6 +25,12 @@
     <Filter Include="Pliki źródłowe\GUI">
       <UniqueIdentifier>{50d8f854-9dde-4880-abd6-3f6f02626835}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\Entities">
+      <UniqueIdentifier>{97297561-48e9-481e-8329-3a842ee76225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Entities">
+      <UniqueIdentifier>{7b260984-a6aa-46f4-995f-c5f2b5283348}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,6 +69,15 @@
     <ClCompile Include="UINextScene.cpp">
       <Filter>Pliki źródłowe\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="Level1.cpp">
+      <Filter>Pliki źródłowe\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Pliki źródłowe\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -97,6 +112,15 @@
     </ClInclude>
     <ClInclude Include="UINextScene.h">
       <Filter>Pliki nagłówkowe\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1.h">
+      <Filter>Pliki nagłówkowe\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Pliki nagłówkowe\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
