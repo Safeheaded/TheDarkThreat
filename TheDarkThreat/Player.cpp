@@ -16,8 +16,58 @@ void Player::update(const float& deltaTime)
 	this->isRunning = false;
 	auto playerBounds = this->getGlobalBounds();
 
-	// Movement
+	// Handles movement
 	sf::Vector2f velocity;
+	handleMovement(velocity, deltaTime, playerBounds);
+
+	// changes state based on movement (or it's absence) & resets counter
+	EvaluateState();
+
+	// fires animation
+	this->animate(deltaTime);
+
+	// moves sprite
+	this->move(velocity);
+
+	// Window collision
+	handleWindowCollision(playerBounds);
+
+}
+
+void Player::EvaluateState()
+{
+	if (this->isRunning) {
+		this->state = EntityState::Move;
+	}
+	else {
+		this->state = EntityState::Idle;
+	}
+
+	// resets animation counter if animation has changed
+	if (this->state != this->prevState) {
+		this->counter = 0;
+		this->prevState = this->state;
+	}
+}
+
+void Player::handleWindowCollision(sf::FloatRect& playerBounds)
+{
+	if (getPosition().x < 0) {
+		setPosition(0, getPosition().y);
+	}
+	if (getPosition().y < 0) {
+		setPosition(getPosition().x, 0);
+	}
+	if (getPosition().x + playerBounds.width > window->getSize().x) {
+		setPosition(window->getSize().x - playerBounds.width, getPosition().y);
+	}
+	if (getPosition().y + playerBounds.height > window->getSize().y) {
+		setPosition(getPosition().x, window->getSize().y - playerBounds.height);
+	}
+}
+
+void Player::handleMovement(sf::Vector2f& velocity, const float& deltaTime, sf::FloatRect& playerBounds)
+{
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 		velocity.y = -this->speed * deltaTime;
 	}
@@ -45,39 +95,4 @@ void Player::update(const float& deltaTime)
 		sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 		this->isRunning = true;
 	}
-
-	// changes state based on movement (or it's absence)
-	if (this->isRunning) {
-		this->state = EntityState::Move;
-	}
-	else {
-		this->state = EntityState::Idle;
-	}
-
-	// resets animation counter if animation has changed
-	if (this->state != this->prevState) {
-		this->counter = 0;
-		this->prevState = this->state;
-	}
-
-	// fires animation
-	this->animate(deltaTime);
-
-	// moves sprite
-	this->move(velocity);
-
-	// Window collision
-	if (getPosition().x < 0) {
-		setPosition(0, getPosition().y);
-	}
-	if (getPosition().y < 0) {
-		setPosition(getPosition().x, 0);
-	}
-	if (getPosition().x + playerBounds.width > window->getSize().x) {
-		setPosition(window->getSize().x - playerBounds.width, getPosition().y);
-	}
-	if (getPosition().y + playerBounds.height > window->getSize().y) {
-		setPosition(getPosition().x, window->getSize().y - playerBounds.height);
-	}
-
 }
