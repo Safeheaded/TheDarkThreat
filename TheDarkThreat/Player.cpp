@@ -25,11 +25,16 @@ void Player::update(const float& deltaTime)
 		velocity.y = this->speed * deltaTime;
 	}
 
+	// TODO (low priority): change scale / origin only after direction change
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		velocity.x = -this->speed * deltaTime;
+		this->setScale(-1, 1);
+		this->setOrigin({ playerBounds.width, 0 });
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 		velocity.x = this->speed * deltaTime;
+		this->setScale(1, 1);
+		this->setOrigin({ 0, 0 });
 	}
 
 	// Checks if player is moving
