@@ -39,3 +39,10 @@ void Entity::animate(const float& deltaTime)
         }
 	}
 }
+
+void Entity::setFirstFrame()
+{
+    if (this->animations.count(this->state)) {
+        this->setTextureRect(this->animations[this->state][0]);
+    }
+}

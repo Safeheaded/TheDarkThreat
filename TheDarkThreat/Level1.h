@@ -1,12 +1,15 @@
 #pragma once
 #include "Scene.h"
 #include "Player.h"
+#include "Missile.h"
+
 class Level1 :
     public Scene
 {
 private:
     std::map<std::string, sf::Texture*> textures;
     Player* player;
+    std::vector<Missile*> missiles;
 public:
     Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes);
     ~Level1();

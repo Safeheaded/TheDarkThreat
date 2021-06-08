@@ -1,20 +1,28 @@
 #include "Player.h"
 #include <cmath>
 
-Player::Player(sf::RenderWindow* window, sf::Texture* texture, const float& fps):
+Player::Player(
+	sf::RenderWindow* window, sf::Texture* texture, 
+	const float& fps, std::vector<Missile*>* missiles
+):
 	Entity(texture, fps), speed(500), 
 	window(window), isRunning(false), 
-	prevState(EntityState::Idle), maxHealth(100), health(100)
+	prevState(EntityState::Idle), maxHealth(100), health(100), missiles(missiles)
 {
 	this->setupAnimations();
+	this->setFirstFrame();
 	this->canChangeState = true;
+
+	this->spellTexture = new sf::Texture();
+	Utils::loadTexture("primaryAttack.png", this->spellTexture);
 }
 
 Player::~Player()
 {
+	delete this->spellTexture;
 }
 
-void Player::update(const float& deltaTime)
+void Player::update(const float& deltaTime, std::vector<Missile*>* missiles)
 {
 	this->isRunning = false;
 	auto playerBounds = this->getGlobalBounds();
@@ -27,7 +35,7 @@ void Player::update(const float& deltaTime)
 
 	// changes state & resets counter if needed
 	if (this->canChangeState) {
-		EvaluateState();
+		EvaluateState(missiles);
 	}
 
 	// fires animation
@@ -43,7 +51,7 @@ void Player::update(const float& deltaTime)
 
 }
 
-void Player::EvaluateState()
+void Player::EvaluateState(std::vector<Missile*>* missiles)
 {
 	// Handles running / idle state
 	if (this->isRunning) {
@@ -66,9 +74,9 @@ void Player::EvaluateState()
 
 	// TESTING!!!
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 		this->health = 0;
-	}
+	}*/
 
 	// resets animation counter if animation has changed
 	if (this->state != this->prevState) {
@@ -138,8 +146,17 @@ void Player::animationEnd()
 {
 	if (this->state == EntityState::PrimaryAttack) {
 		this->state = EntityState::Idle;
+		this->attack();
 		this->canChangeState = true;
 	}
+}
+
+void Player::attack()
+{
+	sf::Vector2f target = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
+	this->missiles->emplace_back(
+		new Missile(this->window, this->spellTexture, 8.0f, target, this->getPosition())
+	);
 }
 
 void Player::handleMovement(sf::Vector2f& velocity, const float& deltaTime, sf::FloatRect& playerBounds)
