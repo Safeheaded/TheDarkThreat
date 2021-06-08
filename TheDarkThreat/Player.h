@@ -9,6 +9,8 @@ private:
     sf::RenderWindow* window;
     bool isRunning;
     EntityState prevState;
+    float health;
+    float maxHealth;
 
     // Methods
     void handleMovement(

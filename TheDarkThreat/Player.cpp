@@ -3,7 +3,8 @@
 
 Player::Player(sf::RenderWindow* window, sf::Texture* texture, const float& fps):
 	Entity(texture, fps), speed(500), 
-	window(window), isRunning(false), prevState(EntityState::Idle)
+	window(window), isRunning(false), 
+	prevState(EntityState::Idle), maxHealth(100), health(100)
 {
 }
 
@@ -41,6 +42,10 @@ void Player::EvaluateState()
 	}
 	else {
 		this->state = EntityState::Idle;
+	}
+
+	if (this->health <= 0) {
+		this->state = EntityState::Death;
 	}
 
 	// resets animation counter if animation has changed
@@ -86,6 +91,12 @@ void Player::handleMovement(sf::Vector2f& velocity, const float& deltaTime, sf::
 		this->setScale(1, 1);
 		this->setOrigin({ 0, 0 });
 	}
+
+	// TESTING!!!
+
+	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+		this->health = 0;
+	}*/
 
 	// Checks if player is moving
 	if (

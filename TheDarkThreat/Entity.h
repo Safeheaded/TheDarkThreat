@@ -7,7 +7,8 @@ enum class EntityState {
 	Idle,
 	PrimaryAttack,
 	SecondaryAttack,
-	Move
+	Move,
+	Death
 };
 
 class Entity : public sf::Sprite
