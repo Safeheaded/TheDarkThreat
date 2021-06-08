@@ -30,6 +30,7 @@ void Entity::animate(const float& deltaTime)
             timeCounter -= timePerFrame;
             if (counter == this->animations[this->state].size() - 1) {
                 counter = 0;
+                this->animationEnd();
             }
             else {
                 counter++;

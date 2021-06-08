@@ -21,6 +21,8 @@ protected:
 	float timePerFrame;
 	float timeCounter;
 	float counter;
+
+	virtual void animationEnd() = 0;
 public:
 	Entity(sf::Texture* texture, const float& fps, bool isBlocking = false, EntityState state = EntityState::Idle);
 	virtual ~Entity() = default;
