@@ -15,6 +15,7 @@ private:
     float attackDistance;
     float attackCooldown;
     float timer;
+    float health;
 public:
     Wraith(
         Player* player,
@@ -24,5 +25,6 @@ public:
     ~Wraith();
 
     void update(const float& deltaTime);
+    void dealDamage(const float& damage);
 };
 

@@ -5,7 +5,8 @@ class ParticleSpell :
     public Spell
 {
 public:
-    ParticleSpell(std::vector<Missile*>* missiles, sf::Texture* texture);
+    ParticleSpell(std::vector<Missile*>* missiles, 
+		std::vector<Entity*>* enemies, sf::Texture* texture);
     ~ParticleSpell();
 
 	void fire(

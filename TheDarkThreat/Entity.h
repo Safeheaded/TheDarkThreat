@@ -21,6 +21,7 @@ protected:
 	float timePerFrame;
 	float timeCounter;
 	float counter;
+	bool canDie;
 
 	virtual void animationEnd() = 0;
 public:
@@ -34,5 +35,8 @@ public:
 	void addAnimation(EntityState state, const std::vector<sf::IntRect>& frames);
 	void animate(const float& deltaTime);
 	void setFirstFrame();
+
+	virtual void dealDamage(const float& damage);
+	const bool getCanDie() const;
 };
 

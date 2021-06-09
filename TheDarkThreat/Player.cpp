@@ -3,12 +3,13 @@
 
 Player::Player(
 	sf::RenderWindow* window, sf::Texture* texture, 
-	const float& fps, std::vector<Missile*>* missiles
+	const float& fps, std::vector<Missile*>* missiles, 
+	std::vector<Entity*>* enemies
 ):
 	Entity(texture, fps), speed(500), 
 	window(window), isRunning(false), 
 	prevState(EntityState::Idle), maxHealth(100), health(100), missiles(missiles),
-	maxMana(100), mana(100)
+	maxMana(100), mana(100), enemies(enemies)
 {
 	this->selectedSpell = 0;
 	this->setupAnimations();
@@ -20,8 +21,8 @@ Player::Player(
 	Utils::loadTexture("primaryAttack.png", this->spellTexture);
 	Utils::loadTexture("particleSpell.png", this->particleSpellTexture);
 
-	this->spells.emplace_back(new FireballSpell(this->missiles, this->spellTexture));
-	this->spells.emplace_back(new ParticleSpell(this->missiles, this->particleSpellTexture));
+	this->spells.emplace_back(new FireballSpell(this->missiles, this->enemies, this->spellTexture));
+	this->spells.emplace_back(new ParticleSpell(this->missiles, this->enemies, this->particleSpellTexture));
 }
 
 Player::~Player()

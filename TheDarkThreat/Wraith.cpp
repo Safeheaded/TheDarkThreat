@@ -9,7 +9,8 @@ Wraith::Wraith(
 	sf::RenderWindow* window, sf::Texture* texture, 
 	const float& fps, std::vector<Missile*>* missiles
 ): Entity(texture, fps), player(player), 
-sightDistance(500), attackDistance(200), speed(150), attackCooldown(4), timer(attackCooldown)
+sightDistance(500), attackDistance(200), 
+speed(150), attackCooldown(4), timer(attackCooldown), health(100)
 {
 	this->addAnimation(EntityState::Idle, {
 		{34, 21, 45, 62},
@@ -62,4 +63,12 @@ void Wraith::update(const float& deltaTime)
 	}
 
 	this->move(velocity * this->speed * deltaTime);
+}
+
+void Wraith::dealDamage(const float& damage)
+{
+	this->health -= damage;
+	if (this->health <= 0) {
+		this->canDie = true;
+	}
 }

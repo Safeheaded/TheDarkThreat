@@ -15,8 +15,9 @@ void ParticleMissile::customBehaviour(const float& deltaTime)
 
 ParticleMissile::ParticleMissile(
 	sf::RenderWindow* window, sf::Texture* texture, 
-	const float& fps, const sf::Vector2f& target, const sf::Vector2f& pos
-):Missile(window, texture, fps, target, pos)
+	const float& fps, const sf::Vector2f& target, 
+	const sf::Vector2f& pos, std::vector<Entity*>* enemies
+):Missile(window, texture, fps, target, pos, enemies)
 {
 	this->addAnimation(EntityState::Idle, {
 		{16, 19, 68, 68},

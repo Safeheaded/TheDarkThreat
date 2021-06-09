@@ -10,10 +10,11 @@ class Level1 :
 private:
     std::map<std::string, sf::Texture*> textures;
     Player* player;
-    Wraith* wraith;
     std::vector<Missile*> missiles;
+    std::vector<Entity*> enemies;
 public:
     Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes);
+    void setupTextures();
     ~Level1();
 
     void update(const float& deltaTime);

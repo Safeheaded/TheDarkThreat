@@ -24,6 +24,7 @@ private:
     sf::Texture* particleSpellTexture;
     std::vector<Missile*>* missiles;
     std::vector<Spell*> spells;
+    std::vector<Entity*>* enemies;
     int selectedSpell;
 
     // Methods
@@ -36,7 +37,8 @@ private:
     void attack();
 public:
     Player(sf::RenderWindow* window, sf::Texture* texture, 
-        const float& fps, std::vector<Missile*>* missiles);
+        const float& fps, std::vector<Missile*>* missiles
+        , std::vector<Entity*>* entities);
     ~Player();
 
     // Methods

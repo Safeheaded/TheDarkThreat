@@ -6,9 +6,10 @@ class Spell
 protected:
 	float manaCost;
 	std::vector<Missile*>* missiles;
+	std::vector<Entity*>* enemies;
 	sf::Texture* texture;
 public:
-	Spell(std::vector<Missile*>* missiles, const float& manaCost, sf::Texture* texture);
+	Spell(std::vector<Missile*>* missiles, std::vector<Entity*>* enemies, const float& manaCost, sf::Texture* texture);
 	virtual ~Spell();
 
 	virtual void fire(

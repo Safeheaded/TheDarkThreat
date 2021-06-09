@@ -9,9 +9,10 @@ void Missile::animationEnd()
 Missile::Missile(
 	sf::RenderWindow* window, sf::Texture* texture,
 	const float& fps, const sf::Vector2f& target,
-	const sf::Vector2f& pos
+	const sf::Vector2f& pos, std::vector<Entity*>* enemies
 ):
-	Entity(texture, fps), window(window), speed(800), target(target), canDestroy(false)
+	Entity(texture, fps), window(window), speed(800), 
+	target(target), canDestroy(false), enemies(enemies)
 {
 	this->setPosition(pos);
 
@@ -51,6 +52,13 @@ void Missile::update(const float& deltaTime)
 	)) {
 		//this->canDestroy = true;
 		this->customBehaviour(deltaTime);
+	}
+
+	for (auto& enemy : *this->enemies) {
+		if (missileBounds.intersects(enemy->getGlobalBounds())) {
+			this->customBehaviour(deltaTime);
+			enemy->dealDamage(50);
+		}
 	}
 
 	this->animate(deltaTime);
