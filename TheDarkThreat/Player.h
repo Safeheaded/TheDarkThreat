@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Utils.h"
 #include "Missile.h"
+#include "FireballSpell.h"
 
 class Player :
     public Entity
@@ -14,9 +15,13 @@ private:
     EntityState prevState;
     float health;
     float maxHealth;
+    float mana;
+    float maxMana;
     bool canChangeState;
     sf::Texture* spellTexture;
     std::vector<Missile*>* missiles;
+    std::vector<Spell*> spells;
+    int selectedSpell;
 
     // Methods
     void handleMovement(

@@ -7,11 +7,15 @@ Player::Player(
 ):
 	Entity(texture, fps), speed(500), 
 	window(window), isRunning(false), 
-	prevState(EntityState::Idle), maxHealth(100), health(100), missiles(missiles)
+	prevState(EntityState::Idle), maxHealth(100), health(100), missiles(missiles),
+	maxMana(100), mana(100)
 {
+	this->selectedSpell = 0;
 	this->setupAnimations();
 	this->setFirstFrame();
 	this->canChangeState = true;
+
+	this->spells.emplace_back(new FireballSpell(this->missiles));
 
 	this->spellTexture = new sf::Texture();
 	Utils::loadTexture("primaryAttack.png", this->spellTexture);
@@ -20,6 +24,10 @@ Player::Player(
 Player::~Player()
 {
 	delete this->spellTexture;
+
+	for (const auto& spell : this->spells) {
+		delete spell;
+	}
 }
 
 void Player::update(const float& deltaTime)
@@ -70,6 +78,13 @@ void Player::EvaluateState(std::vector<Missile*>* missiles)
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 		this->state = EntityState::PrimaryAttack;
 		this->canChangeState = false;
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
+		this->selectedSpell = 0;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
+		this->selectedSpell = 1;
 	}
 
 	// TESTING!!!
@@ -153,10 +168,16 @@ void Player::animationEnd()
 
 void Player::attack()
 {
-	sf::Vector2f target = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
-	this->missiles->emplace_back(
-		new Missile(this->window, this->spellTexture, 8.0f, target, this->getPosition())
-	);
+	// Fires only when enough mana
+	if (this->mana >= this->spells[this->selectedSpell]->getManaCost()) {
+		sf::Vector2f target = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
+		this->spells[this->selectedSpell]->fire(
+			this->window, this->spellTexture, 8.0f, target, this->getPosition()
+		);
+
+		// Decreases mana
+		this->mana -= this->spells[this->selectedSpell]->getManaCost();
+	}
 }
 
 void Player::handleMovement(sf::Vector2f& velocity, const float& deltaTime, sf::FloatRect& playerBounds)
