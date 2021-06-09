@@ -27,3 +27,9 @@ float Utils::getVectorLength(const sf::Vector2f& v)
 {
 	return sqrt(pow(v.x, 2)+pow(v.y, 2));
 }
+
+sf::Vector2f Utils::normalizeVector(sf::Vector2f v)
+{
+	auto length = static_cast<float>(sqrt(pow(v.x, 2) + pow(v.y, 2)));
+	return v / length;
+}

@@ -31,7 +31,6 @@ ParticleMissile::ParticleMissile(
 	this->setFirstFrame();
 	this->lifeTime = 3;
 	this->timePassed = 0;
-	this->setScale(2, 2);
 }
 
 ParticleMissile::~ParticleMissile()

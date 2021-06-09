@@ -102,6 +102,9 @@
     <ClCompile Include="ParticleSpell.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Wraith.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -162,6 +165,9 @@
       <Filter>Pliki nagłówkowe\Missiles</Filter>
     </ClInclude>
     <ClInclude Include="ParticleSpell.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Wraith.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

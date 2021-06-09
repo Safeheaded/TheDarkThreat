@@ -2,6 +2,7 @@
 #include "Scene.h"
 #include "Player.h"
 #include "Missile.h"
+#include "Wraith.h"
 
 class Level1 :
     public Scene
@@ -9,6 +10,7 @@ class Level1 :
 private:
     std::map<std::string, sf::Texture*> textures;
     Player* player;
+    Wraith* wraith;
     std::vector<Missile*> missiles;
 public:
     Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes);

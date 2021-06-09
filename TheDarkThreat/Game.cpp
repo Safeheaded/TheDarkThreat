@@ -47,7 +47,7 @@ void Game::update()
 
 void Game::render()
 {
-    this->window->clear(sf::Color::Black);
+    this->window->clear(sf::Color::White);
 
     this->sceneManager->render(this->deltaTime);
 
