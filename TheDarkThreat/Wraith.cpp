@@ -10,7 +10,8 @@ Wraith::Wraith(
 	const float& fps, std::vector<Missile*>* missiles
 ): Entity(texture, fps), player(player), 
 sightDistance(500), attackDistance(200), 
-speed(150), attackCooldown(4), timer(attackCooldown), health(100)
+speed(150), attackCooldown(4), timer(attackCooldown), health(100), missiles(missiles), 
+window(window)
 {
 	this->addAnimation(EntityState::Idle, {
 		{34, 21, 45, 62},
@@ -23,10 +24,16 @@ speed(150), attackCooldown(4), timer(attackCooldown), health(100)
 		{34, 121, 45, 62},
 		});
 	this->setFirstFrame();
+
+	this->attackTexture = new sf::Texture();
+	Utils::loadTexture("primaryAttack.png", this->attackTexture);
+
+
+	this->enemy.emplace_back(this->player);
 }
 
-Wraith::~Wraith()
-{
+Wraith::~Wraith(){
+	delete this->attackTexture;
 }
 
 void Wraith::update(const float& deltaTime)
@@ -54,8 +61,16 @@ void Wraith::update(const float& deltaTime)
 	else if (distance <= this->attackDistance) {
 		if (this->timer >= this->attackCooldown) {
 			this->timer -= this->attackCooldown;
-			
-			std::cout << "ATTACK" << std::endl;
+			this->missiles->emplace_back(
+				new FireballMissile(
+					this->window, 
+					this->attackTexture, 
+					20.0f,
+					playerPosition, 
+					wraithPosition, 
+					&this->enemy
+				)
+			);
 		}
 		else {
 			this->timer += deltaTime;

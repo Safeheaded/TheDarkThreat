@@ -44,5 +44,6 @@ public:
     // Methods
     void update(const float& deltaTime);
     void EvaluateState(std::vector<Missile*>* missiles);
+    void dealDamage(const float& damage);
 };
 

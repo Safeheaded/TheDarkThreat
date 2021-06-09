@@ -105,6 +105,14 @@ void Player::EvaluateState(std::vector<Missile*>* missiles)
 	}
 }
 
+void Player::dealDamage(const float& damage)
+{
+	this->health -= damage;
+	if (this->health <= 0) {
+		this->state = EntityState::Death;
+	}
+}
+
 void Player::handleWindowCollision(sf::FloatRect& playerBounds)
 {
 	if (getPosition().x < 0) {
@@ -168,6 +176,10 @@ void Player::animationEnd()
 		this->state = EntityState::Idle;
 		this->attack();
 		this->canChangeState = true;
+	}
+	else if (this->state == EntityState::Death) {
+		std::cout << "Game over man, game over!!!" << std::endl;
+		this->canDie = true;
 	}
 }
 
