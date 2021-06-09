@@ -1,5 +1,6 @@
 #include "Missile.h"
 #include <cmath>
+#include "Utils.h"
 
 void Missile::animationEnd()
 {
@@ -31,7 +32,7 @@ Missile::Missile(
 		{623, 127, 55, 47},
 		{723, 127, 57, 47},
 
-		/*{23, 228, 53, 47},
+		{23, 228, 53, 47},
 		{122, 228, 55, 47},
 		{221, 228, 56, 47},
 		{320, 228, 58, 47},
@@ -56,7 +57,7 @@ Missile::Missile(
 		{419, 430, 53, 47},
 		{518, 430, 54, 47},
 		{617, 430, 55, 47},
-		{716, 430, 57, 47},*/
+		{716, 430, 57, 47},
 		});
 	this->setFirstFrame();
 
@@ -64,13 +65,10 @@ Missile::Missile(
 
 	auto missileBounds = this->getGlobalBounds();
 
-	this->direction.x = this->target.x - missileBounds.left > 1 ? 1 : -1;
-	this->direction.y = this->target.y - missileBounds.top > 1 ? 1 : -1;
+	this->initialPosition = this->getPosition();
 
-	float yDistance = abs(target.y - missileBounds.top);
-	float xDistance = abs(target.x - missileBounds.left);
-
-	this->angle = atan(xDistance / yDistance);
+	sf::Vector2f distance = direction = this->target - this->getPosition();
+	this->direction = distance / Utils::getVectorLength(direction);
 }
 
 Missile::~Missile()
@@ -82,23 +80,23 @@ void Missile::update(const float& deltaTime)
 	auto missileBounds = this->getGlobalBounds();
 	this->setOrigin(missileBounds.width/2, missileBounds.height/2);
 
-	float yDistance = abs(target.y - missileBounds.top);
-	float xDistance = abs(target.x - missileBounds.left);
-
-
-	float distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2));
-
-	this->prevDirection.x = this->target.x - missileBounds.left > 1 ? 1 : -1;
-	this->prevDirection.y = this->target.y - missileBounds.top > 1 ? 1 : -1;
-
-	if (this->prevDirection != this->direction) {
-		this->canDestroy = true;
-	}
+	
 
 	this->move(
-		this->direction.x * speed * deltaTime * sin(this->angle), 
-		this->direction.y * speed * deltaTime * cos(this->angle)
+		this->direction * speed * deltaTime
 	);
+
+	/*if (Utils::getVectorLength(this->getPosition() - this->initialPosition) > 400) {
+		this->canDestroy = true;
+	}*/
+
+	float missileRadius = static_cast<float>(sqrt(pow(missileBounds.width / 2, 2) + pow(missileBounds.height / 2, 2)));
+
+	if (missileBounds.contains(
+		this->target + this->direction * missileRadius
+	)) {
+		this->canDestroy = true;
+	}
 
 	this->animate(deltaTime);
 }

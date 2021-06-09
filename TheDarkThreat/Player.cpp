@@ -22,7 +22,7 @@ Player::~Player()
 	delete this->spellTexture;
 }
 
-void Player::update(const float& deltaTime, std::vector<Missile*>* missiles)
+void Player::update(const float& deltaTime)
 {
 	this->isRunning = false;
 	auto playerBounds = this->getGlobalBounds();

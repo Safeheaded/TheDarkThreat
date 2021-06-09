@@ -8,9 +8,8 @@ private:
     float speed;
     sf::Vector2f target;
     bool canDestroy;
-    sf::Vector2i direction;
-    sf::Vector2i prevDirection;
-    float angle;
+    sf::Vector2f direction;
+    sf::Vector2f initialPosition;
 
     void animationEnd();
 public:

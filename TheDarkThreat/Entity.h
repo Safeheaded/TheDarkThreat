@@ -30,7 +30,7 @@ public:
 	const bool getIsBlocking() const;
 	const EntityState getState() const;
 
-	//virtual void update(const float& deltaTime, std::vector<Missile*>* missiles) = 0;
+	virtual void update(const float& deltaTime) = 0;
 	void addAnimation(EntityState state, const std::vector<sf::IntRect>& frames);
 	void animate(const float& deltaTime);
 	void setFirstFrame();

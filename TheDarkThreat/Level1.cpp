@@ -27,7 +27,7 @@ Level1::~Level1()
 
 void Level1::update(const float& deltaTime)
 {
-	this->player->update(deltaTime, &this->missiles);
+	this->player->update(deltaTime);
 
 	for (size_t i = 0; i < this->missiles.size(); i++) {
 		this->missiles[i]->update(deltaTime);

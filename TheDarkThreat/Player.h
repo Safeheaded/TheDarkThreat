@@ -32,7 +32,7 @@ public:
     ~Player();
 
     // Methods
-    void update(const float& deltaTime, std::vector<Missile*>* missiles);
+    void update(const float& deltaTime);
     void EvaluateState(std::vector<Missile*>* missiles);
 };
 
