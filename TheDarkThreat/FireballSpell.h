@@ -1,5 +1,6 @@
 #pragma once
 #include "Spell.h"
+#include "FireballMissile.h"
 class FireballSpell :
     public Spell
 {

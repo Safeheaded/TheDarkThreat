@@ -3,7 +3,7 @@
 class Missile :
     public Entity
 {
-private:
+protected:
     sf::Window* window;
     float speed;
     sf::Vector2f target;
@@ -12,6 +12,7 @@ private:
     sf::Vector2f initialPosition;
 
     void animationEnd();
+    virtual void customBehaviour() = 0;
 public:
     Missile(
         sf::RenderWindow* window, sf::Texture* texture, 

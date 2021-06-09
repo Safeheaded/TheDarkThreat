@@ -90,12 +90,15 @@ void Missile::update(const float& deltaTime)
 		this->canDestroy = true;
 	}*/
 
-	float missileRadius = static_cast<float>(sqrt(pow(missileBounds.width / 2, 2) + pow(missileBounds.height / 2, 2)));
+	float missileRadius = 
+		static_cast<float>(sqrt(pow(missileBounds.width / 2, 2) + 
+			pow(missileBounds.height / 2, 2)));
 
 	if (missileBounds.contains(
 		this->target + this->direction * missileRadius
 	)) {
-		this->canDestroy = true;
+		//this->canDestroy = true;
+		this->customBehaviour();
 	}
 
 	this->animate(deltaTime);

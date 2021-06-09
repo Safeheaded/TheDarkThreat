@@ -31,6 +31,12 @@
     <Filter Include="Pliki źródłowe\Entities">
       <UniqueIdentifier>{7b260984-a6aa-46f4-995f-c5f2b5283348}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\Missiles">
+      <UniqueIdentifier>{bdd36345-7275-41bd-9893-1b720bdf4520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Missiles">
+      <UniqueIdentifier>{85a85cb7-7509-42c9-aa45-cca7a518477b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -75,9 +81,6 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Pliki źródłowe\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Missile.cpp">
-      <Filter>Pliki źródłowe\Entities</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>Pliki źródłowe\Entities</Filter>
     </ClCompile>
@@ -86,6 +89,12 @@
     </ClCompile>
     <ClCompile Include="FireballSpell.cpp">
       <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Missile.cpp">
+      <Filter>Pliki źródłowe\Missiles</Filter>
+    </ClCompile>
+    <ClCompile Include="FireballMissile.cpp">
+      <Filter>Pliki źródłowe\Missiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -128,9 +137,6 @@
     <ClInclude Include="Entity.h">
       <Filter>Pliki nagłówkowe\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Missile.h">
-      <Filter>Pliki nagłówkowe\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Pliki nagłówkowe\Entities</Filter>
     </ClInclude>
@@ -139,6 +145,12 @@
     </ClInclude>
     <ClInclude Include="FireballSpell.h">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Missile.h">
+      <Filter>Pliki nagłówkowe\Missiles</Filter>
+    </ClInclude>
+    <ClInclude Include="FireballMissile.h">
+      <Filter>Pliki nagłówkowe\Missiles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
