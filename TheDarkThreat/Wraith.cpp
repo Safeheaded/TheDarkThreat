@@ -46,6 +46,9 @@ void Wraith::update(const float& deltaTime)
 	if (distance <= this->sightDistance && distance > this->attackDistance) {
 		auto normalisedDirection = Utils::normalizeVector(direction);
 		velocity = normalisedDirection;
+		if (this->timer <= this->attackCooldown) {
+			this->timer += deltaTime;
+		}
 	}
 	else if (distance <= this->attackDistance) {
 		if (this->timer >= this->attackCooldown) {
