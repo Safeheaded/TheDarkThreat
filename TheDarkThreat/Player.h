@@ -4,6 +4,8 @@
 #include "Utils.h"
 #include "Missile.h"
 #include "FireballSpell.h"
+#include "ParticleMissile.h"
+#include "ParticleSpell.h"
 
 class Player :
     public Entity
@@ -19,6 +21,7 @@ private:
     float maxMana;
     bool canChangeState;
     sf::Texture* spellTexture;
+    sf::Texture* particleSpellTexture;
     std::vector<Missile*>* missiles;
     std::vector<Spell*> spells;
     int selectedSpell;

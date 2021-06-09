@@ -154,6 +154,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="Missile.cpp" />
+    <ClCompile Include="ParticleMissile.cpp" />
+    <ClCompile Include="ParticleSpell.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlotScene.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -174,6 +176,8 @@
     <ClInclude Include="Level1.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Missile.h" />
+    <ClInclude Include="ParticleMissile.h" />
+    <ClInclude Include="ParticleSpell.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlotScene.h" />
     <ClInclude Include="Scene.h" />

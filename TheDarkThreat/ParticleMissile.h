@@ -1,16 +1,18 @@
 #pragma once
 #include "Missile.h"
-class FireballMissile :
+class ParticleMissile :
     public Missile
 {
+private:
+    void customBehaviour(const float& deltaTime);
+    float lifeTime;
+    float timePassed;
 public:
-    FireballMissile(
+    ParticleMissile(
         sf::RenderWindow* window, sf::Texture* texture,
         const float& fps, const sf::Vector2f& target,
         const sf::Vector2f& pos
     );
-    ~FireballMissile();
-private:
-    void customBehaviour(const float& deltaTime);
+    ~ParticleMissile();
 };
 

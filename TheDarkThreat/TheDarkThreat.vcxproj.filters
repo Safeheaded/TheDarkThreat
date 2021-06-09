@@ -96,6 +96,12 @@
     <ClCompile Include="FireballMissile.cpp">
       <Filter>Pliki źródłowe\Missiles</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleMissile.cpp">
+      <Filter>Pliki źródłowe\Missiles</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSpell.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -151,6 +157,12 @@
     </ClInclude>
     <ClInclude Include="FireballMissile.h">
       <Filter>Pliki nagłówkowe\Missiles</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleMissile.h">
+      <Filter>Pliki nagłówkowe\Missiles</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSpell.h">
+      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

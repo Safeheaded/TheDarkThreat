@@ -1,12 +1,13 @@
 #pragma once
 #include "Spell.h"
-#include "FireballMissile.h"
-class FireballSpell :
+#include "ParticleMissile.h"
+class ParticleSpell :
     public Spell
 {
 public:
-	FireballSpell(std::vector<Missile*>* missiles, sf::Texture* texture);
-	~FireballSpell();
+    ParticleSpell(std::vector<Missile*>* missiles, sf::Texture* texture);
+    ~ParticleSpell();
+
 	void fire(
 		sf::RenderWindow* window,
 		const float& fps, const sf::Vector2f& target,

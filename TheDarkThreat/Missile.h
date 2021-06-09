@@ -12,7 +12,7 @@ protected:
     sf::Vector2f initialPosition;
 
     void animationEnd();
-    virtual void customBehaviour() = 0;
+    virtual void customBehaviour(const float& deltaTime) = 0;
 public:
     Missile(
         sf::RenderWindow* window, sf::Texture* texture, 

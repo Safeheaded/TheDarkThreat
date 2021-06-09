@@ -15,15 +15,19 @@ Player::Player(
 	this->setFirstFrame();
 	this->canChangeState = true;
 
-	this->spells.emplace_back(new FireballSpell(this->missiles));
-
 	this->spellTexture = new sf::Texture();
+	this->particleSpellTexture = new sf::Texture();
 	Utils::loadTexture("primaryAttack.png", this->spellTexture);
+	Utils::loadTexture("particleSpell.png", this->particleSpellTexture);
+
+	this->spells.emplace_back(new FireballSpell(this->missiles, this->spellTexture));
+	this->spells.emplace_back(new ParticleSpell(this->missiles, this->particleSpellTexture));
 }
 
 Player::~Player()
 {
 	delete this->spellTexture;
+	delete this->particleSpellTexture;
 
 	for (const auto& spell : this->spells) {
 		delete spell;
@@ -172,7 +176,7 @@ void Player::attack()
 	if (this->mana >= this->spells[this->selectedSpell]->getManaCost()) {
 		sf::Vector2f target = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
 		this->spells[this->selectedSpell]->fire(
-			this->window, this->spellTexture, 8.0f, target, this->getPosition()
+			this->window, 8.0f, target, this->getPosition()
 		);
 
 		// Decreases mana
