@@ -49,7 +49,7 @@ void Level1::update(const float& deltaTime)
 
 	for (size_t i = 0; i < this->missiles.size(); i++) {
 		this->missiles[i]->update(deltaTime);
-		if (this->missiles[i]->getCanDestroy()) {
+		if (this->missiles[i]->getCanDie()) {
 			delete this->missiles[i];
 			this->missiles.erase(this->missiles.begin() + i);
 		}

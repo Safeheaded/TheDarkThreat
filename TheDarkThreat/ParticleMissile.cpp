@@ -7,7 +7,7 @@ void ParticleMissile::customBehaviour(const float& deltaTime)
 	this->timePassed += deltaTime;
 
 	if (this->timePassed >= this->lifeTime) {
-		this->canDestroy = true;
+		this->canDie = true;
 	}
 
 	this->speed = 0;
@@ -19,6 +19,7 @@ ParticleMissile::ParticleMissile(
 	const sf::Vector2f& pos, std::vector<Entity*>* enemies
 ):Missile(window, texture, fps, target, pos, enemies)
 {
+	this->damage = 100;
 	this->addAnimation(EntityState::Idle, {
 		{16, 19, 68, 68},
 		{116, 19, 68, 68},

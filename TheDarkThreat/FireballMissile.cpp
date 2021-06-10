@@ -5,6 +5,7 @@ FireballMissile::FireballMissile(
 	const sf::Vector2f& target, const sf::Vector2f& pos, std::vector<Entity*>* enemies
 ): Missile(window, texture, fps, target, pos, enemies)
 {
+	this->damage = 100;
 	this->addAnimation(EntityState::Idle, {
 		{23, 26, 53, 47},
 		{122, 26, 55, 47},
@@ -60,5 +61,5 @@ FireballMissile::~FireballMissile()
 
 void FireballMissile::customBehaviour(const float& deltaTime)
 {
-	this->canDestroy = true;
+	this->canDie = true;
 }

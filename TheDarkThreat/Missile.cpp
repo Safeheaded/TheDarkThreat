@@ -12,7 +12,7 @@ Missile::Missile(
 	const sf::Vector2f& pos, std::vector<Entity*>* enemies
 ):
 	Entity(texture, fps), window(window), speed(800), 
-	target(target), canDestroy(false), enemies(enemies)
+	target(target), enemies(enemies), damage(50)
 {
 	this->setPosition(pos);
 
@@ -33,15 +33,9 @@ void Missile::update(const float& deltaTime)
 	auto missileBounds = this->getGlobalBounds();
 	this->setOrigin(missileBounds.width/2, missileBounds.height/2);
 
-	
-
 	this->move(
 		this->direction * speed * deltaTime
 	);
-
-	/*if (Utils::getVectorLength(this->getPosition() - this->initialPosition) > 400) {
-		this->canDestroy = true;
-	}*/
 
 	float missileRadius = 
 		static_cast<float>(sqrt(pow(missileBounds.width / 2, 2) + 
@@ -54,17 +48,13 @@ void Missile::update(const float& deltaTime)
 		this->customBehaviour(deltaTime);
 	}
 
+	// There is only one item in vector
 	for (auto& enemy : *this->enemies) {
 		if (missileBounds.intersects(enemy->getGlobalBounds())) {
 			this->customBehaviour(deltaTime);
-			enemy->dealDamage(50);
+			enemy->dealDamage(this->damage);
 		}
 	}
 
 	this->animate(deltaTime);
-}
-
-const bool Missile::getCanDestroy() const
-{
-	return this->canDestroy;
 }

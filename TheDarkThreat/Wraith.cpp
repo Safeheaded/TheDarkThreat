@@ -1,4 +1,5 @@
 #include "Wraith.h"
+#include "EnemyMissile.h"
 
 void Wraith::animationEnd()
 {
@@ -26,7 +27,7 @@ window(window)
 	this->setFirstFrame();
 
 	this->attackTexture = new sf::Texture();
-	Utils::loadTexture("primaryAttack.png", this->attackTexture);
+	Utils::loadTexture("wraithAttack.png", this->attackTexture);
 
 
 	this->enemy.emplace_back(this->player);
@@ -54,20 +55,18 @@ void Wraith::update(const float& deltaTime)
 	if (distance <= this->sightDistance && distance > this->attackDistance) {
 		auto normalisedDirection = Utils::normalizeVector(direction);
 		velocity = normalisedDirection;
-		if (this->timer <= this->attackCooldown) {
-			this->timer += deltaTime;
-		}
+		
 	}
-	else if (distance <= this->attackDistance) {
+	if (distance <= this->sightDistance) {
 		if (this->timer >= this->attackCooldown) {
 			this->timer -= this->attackCooldown;
 			this->missiles->emplace_back(
-				new FireballMissile(
-					this->window, 
-					this->attackTexture, 
+				new EnemyMissile(
+					this->window,
+					this->attackTexture,
 					20.0f,
-					playerPosition, 
-					wraithPosition, 
+					playerPosition,
+					wraithPosition,
 					&this->enemy
 				)
 			);

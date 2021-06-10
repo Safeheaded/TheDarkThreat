@@ -105,6 +105,9 @@
     <ClCompile Include="Wraith.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyMissile.cpp">
+      <Filter>Pliki źródłowe\Missiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -169,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="Wraith.h">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyMissile.h">
+      <Filter>Pliki nagłówkowe\Missiles</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
