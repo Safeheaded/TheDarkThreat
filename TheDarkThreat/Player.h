@@ -20,8 +20,6 @@ private:
     float mana;
     float maxMana;
     bool canChangeState;
-    sf::Texture* spellTexture;
-    sf::Texture* particleSpellTexture;
     std::vector<Spell*> spells;
     std::vector<Entity*>* entities;
     int selectedSpell;

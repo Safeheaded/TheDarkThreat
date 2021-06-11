@@ -24,8 +24,6 @@ Player::Player(
 
 Player::~Player()
 {
-	delete this->spellTexture;
-	delete this->particleSpellTexture;
 
 	for (const auto& spell : this->spells) {
 		delete spell;
@@ -88,12 +86,6 @@ void Player::EvaluateState(std::vector<Entity*>* entities)
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)) {
 		this->selectedSpell = 1;
 	}
-
-	// TESTING!!!
-
-	/*if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-		this->health = 0;
-	}*/
 
 	// resets animation counter if animation has changed
 	if (this->state != this->prevState) {

@@ -12,7 +12,7 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 	this->entities.emplace_back(player);
 
 	this->entities.emplace_back(
-		new Wraith(this->player, this->window, &this->textures, 7.0f)
+		new Wraith(this->player, this->window, &this->textures, 10.0f)
 	);
 }
 
@@ -48,7 +48,6 @@ Level1::~Level1()
 
 void Level1::update(const float& deltaTime)
 {
-	//this->player->update(deltaTime);
 
 	for (size_t i = 0; i < this->entities.size(); i++) {
 		this->entities[i]->update(deltaTime, &this->entities);
@@ -61,7 +60,6 @@ void Level1::update(const float& deltaTime)
 
 void Level1::render(const float& deltaTime)
 {
-	//this->window->draw(*this->player);
 
 	for (const auto& entity : this->entities) {
 		this->window->draw(*entity);
