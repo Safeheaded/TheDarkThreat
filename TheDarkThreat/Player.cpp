@@ -102,6 +102,26 @@ void Player::dealDamage(const float& damage)
 	}
 }
 
+const float Player::getHealth() const
+{
+	return this->health;
+}
+
+const float Player::getMaxHealth() const
+{
+	return this->maxHealth;
+}
+
+const float Player::getMana() const
+{
+	return this->mana;
+}
+
+const float Player::getMaxMana() const
+{
+	return this->maxMana;
+}
+
 void Player::handleWindowCollision(sf::FloatRect& playerBounds)
 {
 	if (getPosition().x < 0) {

@@ -108,6 +108,9 @@
     <ClCompile Include="EnemyMissile.cpp">
       <Filter>Pliki źródłowe\Missiles</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerGUI.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -175,6 +178,9 @@
     </ClInclude>
     <ClInclude Include="EnemyMissile.h">
       <Filter>Pliki nagłówkowe\Missiles</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerGUI.h">
+      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

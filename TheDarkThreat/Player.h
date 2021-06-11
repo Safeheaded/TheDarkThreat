@@ -41,5 +41,11 @@ public:
     void update(const float& deltaTime, std::vector<Entity*>* entities);
     void EvaluateState(std::vector<Entity*>* entities);
     void dealDamage(const float& damage);
+
+    const float getHealth() const;
+    const float getMaxHealth() const;
+
+    const float getMana() const;
+    const float getMaxMana() const;
 };
 
