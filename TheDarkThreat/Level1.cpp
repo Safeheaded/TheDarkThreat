@@ -6,14 +6,14 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 	setupTextures();
 
 	// Setups player
-	this->player = new Player(this->window, this->textures["PLAYER"], 10.0f, 
+	this->player = new Player(this->window, &this->textures, 10.0f, 
 		&this->missiles);
 	this->player->setPosition(100, 100);
 
 	this->entities.emplace_back(player);
 
 	this->entities.emplace_back(
-		new Wraith(this->player, this->window, this->textures["WRAITH"], 7.0f, &this->missiles)
+		new Wraith(this->player, this->window, &this->textures, 7.0f, &this->missiles)
 	);
 }
 
@@ -24,6 +24,15 @@ void Level1::setupTextures()
 
 	this->textures["WRAITH"] = new sf::Texture();
 	Utils::loadTexture("wraith.png", this->textures["WRAITH"]);
+
+	this->textures["ENEMY_ATTACK"] = new sf::Texture();
+	Utils::loadTexture("wraithAttack.png", this->textures["ENEMY_ATTACK"]);
+
+	this->textures["FIREBALL"] = new sf::Texture();
+	Utils::loadTexture("primaryAttack.png", this->textures["FIREBALL"]);
+
+	this->textures["PARTICLE"] = new sf::Texture();
+	Utils::loadTexture("particleSpell.png", this->textures["PARTICLE"]);
 }
 
 Level1::~Level1()

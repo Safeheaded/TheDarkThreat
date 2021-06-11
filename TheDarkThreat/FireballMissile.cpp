@@ -1,9 +1,9 @@
 #include "FireballMissile.h"
 
 FireballMissile::FireballMissile(
-	sf::RenderWindow* window, sf::Texture* texture, const float& fps, 
+	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures, const float& fps,
 	const sf::Vector2f& target, const sf::Vector2f& pos
-): Missile(window, texture, fps, target, pos)
+): Missile(window, textures, fps, target, pos)
 {
 	this->damage = 100;
 	this->addAnimation(EntityState::Idle, {
@@ -52,6 +52,7 @@ FireballMissile::FireballMissile(
 		{617, 430, 55, 47},
 		{716, 430, 57, 47},
 		});
+	this->setTexture(*this->textures->operator[]("FIREBALL"));
 	this->setFirstFrame();
 }
 

@@ -14,10 +14,10 @@ void ParticleMissile::customBehaviour(const float& deltaTime)
 }
 
 ParticleMissile::ParticleMissile(
-	sf::RenderWindow* window, sf::Texture* texture, 
+	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps, const sf::Vector2f& target, 
 	const sf::Vector2f& pos
-):Missile(window, texture, fps, target, pos)
+):Missile(window, textures, fps, target, pos)
 {
 	this->damage = 100;
 	this->addAnimation(EntityState::Idle, {
@@ -30,10 +30,10 @@ ParticleMissile::ParticleMissile(
 		{617, 19, 68, 68},
 		{716, 19, 68, 68},
 		});
+	this->setTexture(*this->textures->operator[]("PARTICLE"));
 	this->setFirstFrame();
 	this->lifeTime = 3;
 	this->timePassed = 0;
-	this->type = MissileType::Hostile;
 }
 
 ParticleMissile::~ParticleMissile()

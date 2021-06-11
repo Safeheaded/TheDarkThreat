@@ -9,11 +9,11 @@ void Missile::animationEnd(std::vector<Entity*>* entities)
 }
 
 Missile::Missile(
-	sf::RenderWindow* window, sf::Texture* texture,
+	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps, const sf::Vector2f& target,
 	const sf::Vector2f& pos
 ):
-	Entity(texture, fps), window(window), speed(800), 
+	Entity(textures, fps), window(window), speed(800),
 	target(target), damage(50), type(MissileType::Friendly)
 {
 	this->setPosition(pos);

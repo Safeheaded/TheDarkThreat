@@ -1,11 +1,10 @@
 #include "Entity.h"
 
-Entity::Entity(sf::Texture* texture, const float& fps, bool isBlocking, EntityState state):
+Entity::Entity(std::map<std::string, sf::Texture*>* textures, const float& fps, bool isBlocking, EntityState state):
 	isBlocking(isBlocking), state(state), timeCounter(0), 
-    timePerFrame(0), counter(0), texture(texture), canDie(false)
+    timePerFrame(0), counter(0), textures(textures), canDie(false)
 {
     this->timePerFrame = 1 / fps;
-    this->setTexture(*this->texture);
 }
 
 const bool Entity::getIsBlocking() const

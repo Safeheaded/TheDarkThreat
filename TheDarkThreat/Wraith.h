@@ -23,7 +23,7 @@ private:
 public:
     Wraith(
         Player* player,
-        sf::RenderWindow* window, sf::Texture* texture,
+        sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
         const float& fps, std::vector<Missile*>* missiles
     );
     ~Wraith();

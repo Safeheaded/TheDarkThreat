@@ -10,16 +10,18 @@ void EnemyMissile::customBehaviour(const float& deltaTime)
 }
 
 EnemyMissile::EnemyMissile(
-	sf::RenderWindow* window, sf::Texture* texture, const float& fps, 
+	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures, const float& fps,
 	const sf::Vector2f& target, const sf::Vector2f& pos
-): Missile(window, texture, fps, target, pos)
+): Missile(window, textures, fps, target, pos)
 {
 	this->damage = 30;
 	this->addAnimation(EntityState::Idle, {
 		{45, 53, 35, 40}
 	});
+	this->setTexture(*this->textures->operator[]("ENEMY_ATTACK"));
 	this->setFirstFrame();
 	this->type = MissileType::Hostile;
+
 }
 
 EnemyMissile::~EnemyMissile()

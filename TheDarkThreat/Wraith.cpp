@@ -7,9 +7,9 @@ void Wraith::animationEnd(std::vector<Entity*>* entities)
 
 Wraith::Wraith(
 	Player* player,
-	sf::RenderWindow* window, sf::Texture* texture, 
+	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps, std::vector<Missile*>* missiles
-): Entity(texture, fps), player(player), 
+): Entity(textures, fps), player(player), 
 sightDistance(500), attackDistance(200), 
 speed(150), attackCooldown(4), timer(attackCooldown), health(100), missiles(missiles), 
 window(window)
@@ -24,11 +24,8 @@ window(window)
 		{34, 121, 45, 62},
 		{34, 121, 45, 62},
 		});
+	this->setTexture(*this->textures->operator[]("WRAITH"));
 	this->setFirstFrame();
-
-	this->attackTexture = new sf::Texture();
-	Utils::loadTexture("wraithAttack.png", this->attackTexture);
-
 
 	this->enemy.emplace_back(this->player);
 }
@@ -63,7 +60,7 @@ void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities)
 			this->missiles->emplace_back(
 				new EnemyMissile(
 					this->window,
-					this->attackTexture,
+					this->textures,
 					20.0f,
 					playerPosition,
 					wraithPosition

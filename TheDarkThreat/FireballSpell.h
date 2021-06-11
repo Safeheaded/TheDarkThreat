@@ -5,7 +5,7 @@ class FireballSpell :
     public Spell
 {
 public:
-	FireballSpell(std::vector<Missile*>* missiles, sf::Texture* texture);
+	FireballSpell(std::vector<Missile*>* missiles, std::map<std::string, sf::Texture*>* textures);
 	~FireballSpell();
 	void fire(
 		sf::RenderWindow* window,

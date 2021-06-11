@@ -17,7 +17,7 @@ protected:
 	bool isBlocking;
 	EntityState state;
 	std::map<EntityState, std::vector<sf::IntRect>> animations;
-	sf::Texture* texture;
+	std::map<std::string, sf::Texture*>* textures;
 	float timePerFrame;
 	float timeCounter;
 	float counter;
@@ -28,7 +28,7 @@ protected:
 	void animate(const float& deltaTime, std::vector<Entity*>* entities);
 	void addAnimation(EntityState state, const std::vector<sf::IntRect>& frames);
 public:
-	Entity(sf::Texture* texture, const float& fps, bool isBlocking = false, 
+	Entity(std::map<std::string, sf::Texture*>* textures, const float& fps, bool isBlocking = false,
 		EntityState state = EntityState::Idle);
 	virtual ~Entity() = default;
 

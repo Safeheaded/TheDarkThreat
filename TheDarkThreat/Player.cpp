@@ -2,26 +2,24 @@
 #include <cmath>
 
 Player::Player(
-	sf::RenderWindow* window, sf::Texture* texture, 
+	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps, std::vector<Missile*>* missiles
 ):
-	Entity(texture, fps), speed(500), 
+	Entity(textures, fps), speed(500), 
 	window(window), isRunning(false), 
 	prevState(EntityState::Idle), maxHealth(100), health(100), missiles(missiles),
 	maxMana(100), mana(100)
 {
 	this->selectedSpell = 0;
 	this->setupAnimations();
-	this->setFirstFrame();
 	this->canChangeState = true;
 
-	this->spellTexture = new sf::Texture();
-	this->particleSpellTexture = new sf::Texture();
-	Utils::loadTexture("primaryAttack.png", this->spellTexture);
-	Utils::loadTexture("particleSpell.png", this->particleSpellTexture);
-
-	this->spells.emplace_back(new FireballSpell(this->missiles, this->spellTexture));
-	this->spells.emplace_back(new ParticleSpell(this->missiles, this->particleSpellTexture));
+	this->spells.emplace_back(new FireballSpell(
+		this->missiles, this->textures
+	));
+	this->spells.emplace_back(
+		new ParticleSpell(this->missiles, this->textures
+		));
 }
 
 Player::~Player()
@@ -167,6 +165,8 @@ void Player::setupAnimations()
 		{1476, 625, 134, 79},
 		{1707, 625, 140, 79}
 		});
+	this->setTexture(*this->textures->operator[]("PLAYER"));
+	this->setFirstFrame();
 }
 
 void Player::animationEnd(std::vector<Entity*>* entities)
