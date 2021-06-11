@@ -10,7 +10,7 @@ private:
     Player* player;
     float speed;
 
-    void animationEnd();
+    void animationEnd(std::vector<Entity*>* entities);
     float sightDistance;
     float attackDistance;
     float attackCooldown;
@@ -28,7 +28,7 @@ public:
     );
     ~Wraith();
 
-    void update(const float& deltaTime);
+    void update(const float& deltaTime, std::vector<Entity*>* entities);
     void dealDamage(const float& damage);
 };
 

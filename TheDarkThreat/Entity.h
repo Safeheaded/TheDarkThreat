@@ -23,18 +23,19 @@ protected:
 	float counter;
 	bool canDie;
 
-	virtual void animationEnd() = 0;
+	virtual void animationEnd(std::vector<Entity*>* entities) = 0;
+	void setFirstFrame();
+	void animate(const float& deltaTime, std::vector<Entity*>* entities);
+	void addAnimation(EntityState state, const std::vector<sf::IntRect>& frames);
 public:
-	Entity(sf::Texture* texture, const float& fps, bool isBlocking = false, EntityState state = EntityState::Idle);
+	Entity(sf::Texture* texture, const float& fps, bool isBlocking = false, 
+		EntityState state = EntityState::Idle);
 	virtual ~Entity() = default;
 
 	const bool getIsBlocking() const;
 	const EntityState getState() const;
 
-	virtual void update(const float& deltaTime) = 0;
-	void addAnimation(EntityState state, const std::vector<sf::IntRect>& frames);
-	void animate(const float& deltaTime);
-	void setFirstFrame();
+	virtual void update(const float& deltaTime, std::vector<Entity*>* entities) = 0;
 
 	virtual void dealDamage(const float& damage);
 	const bool getCanDie() const;

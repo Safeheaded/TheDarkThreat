@@ -33,16 +33,15 @@ private:
     );
     void handleWindowCollision(sf::FloatRect& playerBounds);
     void setupAnimations();
-    void animationEnd();
-    void attack();
+    void animationEnd(std::vector<Entity*>* entities);
+    void attack(std::vector<Entity*>* entities);
 public:
     Player(sf::RenderWindow* window, sf::Texture* texture, 
-        const float& fps, std::vector<Missile*>* missiles
-        , std::vector<Entity*>* entities);
+        const float& fps, std::vector<Missile*>* missiles);
     ~Player();
 
     // Methods
-    void update(const float& deltaTime);
+    void update(const float& deltaTime, std::vector<Entity*>* entities);
     void EvaluateState(std::vector<Missile*>* missiles);
     void dealDamage(const float& damage);
 };

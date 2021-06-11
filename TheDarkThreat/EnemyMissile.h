@@ -11,7 +11,7 @@ public:
     EnemyMissile(
         sf::RenderWindow* window, sf::Texture* texture,
         const float& fps, const sf::Vector2f& target,
-        const sf::Vector2f& pos, std::vector<Entity*>* enemies
+        const sf::Vector2f& pos
     );
     ~EnemyMissile();
 };

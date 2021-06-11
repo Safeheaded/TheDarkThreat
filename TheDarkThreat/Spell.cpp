@@ -1,7 +1,7 @@
 #include "Spell.h"
 
-Spell::Spell(std::vector<Missile*>* missiles, std::vector<Entity*>* enemies, const float& manaCost, sf::Texture* texture):
-    manaCost(manaCost), missiles(missiles), texture(texture), enemies(enemies)
+Spell::Spell(std::vector<Missile*>* missiles, const float& manaCost, sf::Texture* texture):
+    manaCost(manaCost), missiles(missiles), texture(texture)
 {
 }
 

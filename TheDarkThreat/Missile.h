@@ -1,5 +1,12 @@
 #pragma once
 #include "Entity.h"
+
+// Missile type relative to player
+enum class MissileType {
+    Friendly,
+    Hostile
+};
+
 class Missile :
     public Entity
 {
@@ -9,18 +16,18 @@ protected:
     sf::Vector2f target;
     sf::Vector2f direction;
     sf::Vector2f initialPosition;
-    std::vector<Entity*>* enemies;
     float damage;
+    MissileType type;
 
-    void animationEnd();
+    void animationEnd(std::vector<Entity*>* entities);
     virtual void customBehaviour(const float& deltaTime) = 0;
 public:
     Missile(
         sf::RenderWindow* window, sf::Texture* texture, 
         const float& fps, const sf::Vector2f& target,
-        const sf::Vector2f& pos, std::vector<Entity*>* enemies
+        const sf::Vector2f& pos
     );
     ~Missile();
-    void update(const float& deltaTime);
+    void update(const float& deltaTime, std::vector<Entity*>* entities);
 };
 

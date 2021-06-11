@@ -1,18 +1,20 @@
 #include "Missile.h"
 #include <cmath>
 #include "Utils.h"
+#include "Player.h"
+#include "Wraith.h"
 
-void Missile::animationEnd()
+void Missile::animationEnd(std::vector<Entity*>* entities)
 {
 }
 
 Missile::Missile(
 	sf::RenderWindow* window, sf::Texture* texture,
 	const float& fps, const sf::Vector2f& target,
-	const sf::Vector2f& pos, std::vector<Entity*>* enemies
+	const sf::Vector2f& pos
 ):
 	Entity(texture, fps), window(window), speed(800), 
-	target(target), enemies(enemies), damage(50)
+	target(target), damage(50), type(MissileType::Friendly)
 {
 	this->setPosition(pos);
 
@@ -28,7 +30,7 @@ Missile::~Missile()
 {
 }
 
-void Missile::update(const float& deltaTime)
+void Missile::update(const float& deltaTime, std::vector<Entity*>* entities)
 {
 	auto missileBounds = this->getGlobalBounds();
 	this->setOrigin(missileBounds.width/2, missileBounds.height/2);
@@ -48,13 +50,15 @@ void Missile::update(const float& deltaTime)
 		this->customBehaviour(deltaTime);
 	}
 
-	// There is only one item in vector
-	for (auto& enemy : *this->enemies) {
-		if (missileBounds.intersects(enemy->getGlobalBounds())) {
-			this->customBehaviour(deltaTime);
-			enemy->dealDamage(this->damage);
+	for (auto& entity : *entities) {
+		if (missileBounds.intersects(entity->getGlobalBounds())) {
+			if (this->type == MissileType::Friendly && typeid(*entity) == typeid(Wraith) ||
+				this->type == MissileType::Hostile && typeid(*entity) == typeid(Player)) {
+				this->customBehaviour(deltaTime);
+				entity->dealDamage(this->damage);
+			}
 		}
 	}
 
-	this->animate(deltaTime);
+	this->animate(deltaTime, entities);
 }

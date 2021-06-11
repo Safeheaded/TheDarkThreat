@@ -3,13 +3,12 @@
 
 Player::Player(
 	sf::RenderWindow* window, sf::Texture* texture, 
-	const float& fps, std::vector<Missile*>* missiles, 
-	std::vector<Entity*>* enemies
+	const float& fps, std::vector<Missile*>* missiles
 ):
 	Entity(texture, fps), speed(500), 
 	window(window), isRunning(false), 
 	prevState(EntityState::Idle), maxHealth(100), health(100), missiles(missiles),
-	maxMana(100), mana(100), enemies(enemies)
+	maxMana(100), mana(100)
 {
 	this->selectedSpell = 0;
 	this->setupAnimations();
@@ -21,8 +20,8 @@ Player::Player(
 	Utils::loadTexture("primaryAttack.png", this->spellTexture);
 	Utils::loadTexture("particleSpell.png", this->particleSpellTexture);
 
-	this->spells.emplace_back(new FireballSpell(this->missiles, this->enemies, this->spellTexture));
-	this->spells.emplace_back(new ParticleSpell(this->missiles, this->enemies, this->particleSpellTexture));
+	this->spells.emplace_back(new FireballSpell(this->missiles, this->spellTexture));
+	this->spells.emplace_back(new ParticleSpell(this->missiles, this->particleSpellTexture));
 }
 
 Player::~Player()
@@ -35,7 +34,7 @@ Player::~Player()
 	}
 }
 
-void Player::update(const float& deltaTime)
+void Player::update(const float& deltaTime, std::vector<Entity*>* entities)
 {
 	this->isRunning = false;
 	auto playerBounds = this->getGlobalBounds();
@@ -52,7 +51,7 @@ void Player::update(const float& deltaTime)
 	}
 
 	// fires animation
-	this->animate(deltaTime);
+	this->animate(deltaTime, entities);
 
 	// moves sprite
 	if (this->state == EntityState::Move) {
@@ -170,11 +169,11 @@ void Player::setupAnimations()
 		});
 }
 
-void Player::animationEnd()
+void Player::animationEnd(std::vector<Entity*>* entities)
 {
 	if (this->state == EntityState::PrimaryAttack) {
 		this->state = EntityState::Idle;
-		this->attack();
+		this->attack(entities);
 		this->canChangeState = true;
 	}
 	else if (this->state == EntityState::Death) {
@@ -183,13 +182,13 @@ void Player::animationEnd()
 	}
 }
 
-void Player::attack()
+void Player::attack(std::vector<Entity*>* entities)
 {
 	// Fires only when enough mana
 	if (this->mana >= this->spells[this->selectedSpell]->getManaCost()) {
 		sf::Vector2f target = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
 		this->spells[this->selectedSpell]->fire(
-			this->window, 8.0f, target, this->getPosition()
+			this->window, 8.0f, target, this->getPosition(), entities
 		);
 
 		// Decreases mana

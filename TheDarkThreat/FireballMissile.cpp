@@ -2,8 +2,8 @@
 
 FireballMissile::FireballMissile(
 	sf::RenderWindow* window, sf::Texture* texture, const float& fps, 
-	const sf::Vector2f& target, const sf::Vector2f& pos, std::vector<Entity*>* enemies
-): Missile(window, texture, fps, target, pos, enemies)
+	const sf::Vector2f& target, const sf::Vector2f& pos
+): Missile(window, texture, fps, target, pos)
 {
 	this->damage = 100;
 	this->addAnimation(EntityState::Idle, {

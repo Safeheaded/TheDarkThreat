@@ -23,7 +23,7 @@ void Entity::addAnimation(EntityState state, const std::vector<sf::IntRect>& fra
 	this->animations.emplace(state, frames);
 }
 
-void Entity::animate(const float& deltaTime)
+void Entity::animate(const float& deltaTime, std::vector<Entity*>* entities)
 {
 	if (this->animations.count(this->state)) {
         timeCounter += deltaTime;
@@ -31,7 +31,7 @@ void Entity::animate(const float& deltaTime)
             timeCounter -= timePerFrame;
             if (counter == this->animations[this->state].size() - 1) {
                 counter = 0;
-                this->animationEnd();
+                this->animationEnd(entities);
             }
             else {
                 counter++;

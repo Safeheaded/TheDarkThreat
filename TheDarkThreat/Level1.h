@@ -11,7 +11,7 @@ private:
     std::map<std::string, sf::Texture*> textures;
     Player* player;
     std::vector<Missile*> missiles;
-    std::vector<Entity*> enemies;
+    std::vector<Entity*> entities;
 public:
     Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes);
     void setupTextures();

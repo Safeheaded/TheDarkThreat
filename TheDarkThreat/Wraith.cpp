@@ -1,7 +1,7 @@
 #include "Wraith.h"
 #include "EnemyMissile.h"
 
-void Wraith::animationEnd()
+void Wraith::animationEnd(std::vector<Entity*>* entities)
 {
 }
 
@@ -37,11 +37,11 @@ Wraith::~Wraith(){
 	delete this->attackTexture;
 }
 
-void Wraith::update(const float& deltaTime)
+void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities)
 {
 	sf::Vector2f velocity;
 
-	this->animate(deltaTime);
+	this->animate(deltaTime, entities);
 
 	auto wraithPosition = this->getPosition();
 
@@ -66,8 +66,7 @@ void Wraith::update(const float& deltaTime)
 					this->attackTexture,
 					20.0f,
 					playerPosition,
-					wraithPosition,
-					&this->enemy
+					wraithPosition
 				)
 			);
 		}
