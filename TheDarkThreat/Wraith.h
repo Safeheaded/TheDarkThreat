@@ -16,15 +16,12 @@ private:
     float attackCooldown;
     float timer;
     float health;
-    std::vector<Missile*>* missiles;
     sf::RenderWindow* window;
-    sf::Texture* attackTexture;
-    std::vector<Entity*> enemy;
 public:
     Wraith(
         Player* player,
         sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
-        const float& fps, std::vector<Missile*>* missiles
+        const float& fps
     );
     ~Wraith();
 

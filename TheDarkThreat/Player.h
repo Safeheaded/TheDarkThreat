@@ -22,9 +22,8 @@ private:
     bool canChangeState;
     sf::Texture* spellTexture;
     sf::Texture* particleSpellTexture;
-    std::vector<Missile*>* missiles;
     std::vector<Spell*> spells;
-    std::vector<Entity*>* enemies;
+    std::vector<Entity*>* entities;
     int selectedSpell;
 
     // Methods
@@ -37,12 +36,12 @@ private:
     void attack(std::vector<Entity*>* entities);
 public:
     Player(sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
-        const float& fps, std::vector<Missile*>* missiles);
+        const float& fps);
     ~Player();
 
     // Methods
     void update(const float& deltaTime, std::vector<Entity*>* entities);
-    void EvaluateState(std::vector<Missile*>* missiles);
+    void EvaluateState(std::vector<Entity*>* entities);
     void dealDamage(const float& damage);
 };
 

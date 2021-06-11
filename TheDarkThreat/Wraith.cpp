@@ -8,10 +8,10 @@ void Wraith::animationEnd(std::vector<Entity*>* entities)
 Wraith::Wraith(
 	Player* player,
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
-	const float& fps, std::vector<Missile*>* missiles
+	const float& fps
 ): Entity(textures, fps), player(player), 
 sightDistance(500), attackDistance(200), 
-speed(150), attackCooldown(4), timer(attackCooldown), health(100), missiles(missiles), 
+speed(150), attackCooldown(4), timer(attackCooldown), health(100), 
 window(window)
 {
 	this->addAnimation(EntityState::Idle, {
@@ -26,12 +26,9 @@ window(window)
 		});
 	this->setTexture(*this->textures->operator[]("WRAITH"));
 	this->setFirstFrame();
-
-	this->enemy.emplace_back(this->player);
 }
 
 Wraith::~Wraith(){
-	delete this->attackTexture;
 }
 
 void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities)
@@ -57,7 +54,7 @@ void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities)
 	if (distance <= this->sightDistance) {
 		if (this->timer >= this->attackCooldown) {
 			this->timer -= this->attackCooldown;
-			this->missiles->emplace_back(
+			entities->emplace_back(
 				new EnemyMissile(
 					this->window,
 					this->textures,

@@ -3,11 +3,11 @@
 
 Player::Player(
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
-	const float& fps, std::vector<Missile*>* missiles
+	const float& fps
 ):
 	Entity(textures, fps), speed(500), 
 	window(window), isRunning(false), 
-	prevState(EntityState::Idle), maxHealth(100), health(100), missiles(missiles),
+	prevState(EntityState::Idle), maxHealth(100), health(100),
 	maxMana(100), mana(100)
 {
 	this->selectedSpell = 0;
@@ -15,10 +15,10 @@ Player::Player(
 	this->canChangeState = true;
 
 	this->spells.emplace_back(new FireballSpell(
-		this->missiles, this->textures
+		this->textures
 	));
 	this->spells.emplace_back(
-		new ParticleSpell(this->missiles, this->textures
+		new ParticleSpell(this->textures
 		));
 }
 
@@ -45,7 +45,7 @@ void Player::update(const float& deltaTime, std::vector<Entity*>* entities)
 
 	// changes state & resets counter if needed
 	if (this->canChangeState) {
-		EvaluateState(missiles);
+		EvaluateState(entities);
 	}
 
 	// fires animation
@@ -61,7 +61,7 @@ void Player::update(const float& deltaTime, std::vector<Entity*>* entities)
 
 }
 
-void Player::EvaluateState(std::vector<Missile*>* missiles)
+void Player::EvaluateState(std::vector<Entity*>* entities)
 {
 	// Handles running / idle state
 	if (this->isRunning) {

@@ -6,14 +6,13 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 	setupTextures();
 
 	// Setups player
-	this->player = new Player(this->window, &this->textures, 10.0f, 
-		&this->missiles);
+	this->player = new Player(this->window, &this->textures, 10.0f);
 	this->player->setPosition(100, 100);
 
 	this->entities.emplace_back(player);
 
 	this->entities.emplace_back(
-		new Wraith(this->player, this->window, &this->textures, 7.0f, &this->missiles)
+		new Wraith(this->player, this->window, &this->textures, 7.0f)
 	);
 }
 
@@ -41,15 +40,8 @@ Level1::~Level1()
 		delete texture.second;
 	}
 
-	// Player is deleted in entities vector
-	//delete this->player;
-
-	for (const auto& missile : this->missiles) {
-		delete missile;
-	}
-
-	for (const auto& enemy : this->entities) {
-		delete enemy;
+	for (const auto& entity : this->entities) {
+		delete entity;
 	}
 
 }
@@ -57,15 +49,6 @@ Level1::~Level1()
 void Level1::update(const float& deltaTime)
 {
 	//this->player->update(deltaTime);
-
-
-	for (size_t i = 0; i < this->missiles.size(); i++) {
-		this->missiles[i]->update(deltaTime, &this->entities);
-		if (this->missiles[i]->getCanDie()) {
-			delete this->missiles[i];
-			this->missiles.erase(this->missiles.begin() + i);
-		}
-	}
 
 	for (size_t i = 0; i < this->entities.size(); i++) {
 		this->entities[i]->update(deltaTime, &this->entities);
@@ -80,12 +63,8 @@ void Level1::render(const float& deltaTime)
 {
 	//this->window->draw(*this->player);
 
-	for (const auto& mis : this->missiles) {
-		this->window->draw(*mis);
-	}
-
-	for (const auto& enemy : this->entities) {
-		this->window->draw(*enemy);
+	for (const auto& entity : this->entities) {
+		this->window->draw(*entity);
 	}
 }
 
