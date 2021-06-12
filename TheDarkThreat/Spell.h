@@ -6,9 +6,11 @@ class Spell
 protected:
 	float manaCost;
 	std::map<std::string, sf::Texture*>* textures;
+private:
+	std::string name;
 public:
 	Spell(const float& manaCost, 
-		std::map<std::string, sf::Texture*>* textures);
+		std::map<std::string, sf::Texture*>* textures, const std::string& name);
 	virtual ~Spell();
 
 	virtual void fire(
@@ -18,5 +20,7 @@ public:
 		std::vector<Entity*>* entities
 	) = 0;
 	const float getManaCost() const;
+
+	const std::string getName() const;
 };
 

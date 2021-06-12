@@ -5,7 +5,7 @@ class ParticleSpell :
     public Spell
 {
 public:
-    ParticleSpell(std::map<std::string, sf::Texture*>* textures);
+    ParticleSpell(std::map<std::string, sf::Texture*>* textures, const std::string& name);
     ~ParticleSpell();
 
 	void fire(

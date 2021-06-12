@@ -15,10 +15,10 @@ Player::Player(
 	this->canChangeState = true;
 
 	this->spells.emplace_back(new FireballSpell(
-		this->textures
+		this->textures, "Kula ognia"
 	));
 	this->spells.emplace_back(
-		new ParticleSpell(this->textures
+		new ParticleSpell(this->textures, "Wir œmierci"
 		));
 }
 
@@ -120,6 +120,11 @@ const float Player::getMana() const
 const float Player::getMaxMana() const
 {
 	return this->maxMana;
+}
+
+const std::string Player::getSpellName() const
+{
+	return this->spells[this->selectedSpell]->getName();
 }
 
 void Player::handleWindowCollision(sf::FloatRect& playerBounds)

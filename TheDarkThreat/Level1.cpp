@@ -54,8 +54,14 @@ void Level1::update(const float& deltaTime)
 	for (size_t i = 0; i < this->entities.size(); i++) {
 		this->entities[i]->update(deltaTime, &this->entities);
 		if (this->entities[i]->getCanDie()) {
-			delete this->entities[i];
-			this->entities.erase(this->entities.begin() + i);
+			// Temporary workaround so I won't get flowed by erros
+			if (typeid(*this->entities[i]) == typeid(Player)) {
+				//delete this->playerGUI;
+			}
+			else {
+				delete this->entities[i];
+				this->entities.erase(this->entities.begin() + i);
+			}
 		}
 	}
 

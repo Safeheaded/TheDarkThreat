@@ -47,5 +47,6 @@ public:
 
     const float getMana() const;
     const float getMaxMana() const;
+    const std::string getSpellName() const;
 };
 

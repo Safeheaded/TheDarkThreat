@@ -1,8 +1,8 @@
 #include "ParticleSpell.h"
 
 ParticleSpell::ParticleSpell(
-	std::map<std::string, sf::Texture*>* textures
-): Spell(10, textures)
+	std::map<std::string, sf::Texture*>* textures, const std::string& name
+): Spell(10, textures, name)
 {
 }
 

@@ -1,8 +1,8 @@
 #include "FireballSpell.h"
 
 FireballSpell::FireballSpell(std::map<std::string, 
-	sf::Texture*>* textures): 
-	Spell(0, textures)
+	sf::Texture*>* textures, const std::string& name):
+	Spell(0, textures, name)
 {
 }
 

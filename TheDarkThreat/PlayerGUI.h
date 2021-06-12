@@ -8,9 +8,11 @@ private:
 	sf::RenderWindow* window;
 	sf::RectangleShape healthBar;
 	sf::RectangleShape manaBar;
+	sf::Text spellName;
 	float prevHealth;
 	float prevMana;
 	float barsLength;
+	sf::Font font;
 public:
 	PlayerGUI(sf::RenderWindow* window, Player* player);
 	~PlayerGUI();
