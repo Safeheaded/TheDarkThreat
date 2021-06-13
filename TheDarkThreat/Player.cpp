@@ -55,7 +55,7 @@ void Player::update(const float& deltaTime, std::vector<Entity*>* entities)
 	}
 
 	// Window collision
-	handleWindowCollision(playerBounds);
+	//handleWindowCollision(playerBounds);
 
 }
 

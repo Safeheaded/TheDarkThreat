@@ -162,6 +162,7 @@
     <ClCompile Include="PlotScene.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="TileMap.cpp" />
     <ClCompile Include="Wraith.cpp" />
     <ClCompile Include="Spell.cpp" />
     <ClCompile Include="TextButton.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="PlotScene.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="TileMap.h" />
     <ClInclude Include="Wraith.h" />
     <ClInclude Include="Spell.h" />
     <ClInclude Include="TextButton.h" />

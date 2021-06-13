@@ -4,6 +4,7 @@
 #include "Missile.h"
 #include "Wraith.h"
 #include "PlayerGUI.h"
+#include "TileMap.h"
 
 class Level1 :
     public Scene
@@ -13,12 +14,15 @@ private:
     Player* player;
     std::vector<Entity*> entities;
     PlayerGUI* playerGUI;
+    TileMap map;
+    sf::View view;
 public:
     Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes);
     void setupTextures();
     ~Level1();
 
     void update(const float& deltaTime);
+    void handleView();
     void render(const float& deltaTime);
     void handleEvents(const sf::Event& event);
 };
