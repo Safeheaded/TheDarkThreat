@@ -13,15 +13,23 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 
 	this->playerGUI = new PlayerGUI(this->window, this->player);
 
-	/*this->entities.emplace_back(
+	this->entities.emplace_back(
 		new Wraith(this->player, this->window, &this->textures, 10.0f)
-	);*/
+	);
 
 	this->view.setSize(600, 600);
 
 	const int level[] =
 	{
+		0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -31,25 +39,29 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 	};
 
-	this->map.load("tileset.png", sf::Vector2u(128, 128), level, 16, 8);
+	this->map.load("assets\\textures\\tileset.png", 
+		sf::Vector2u(64, 64), level, 16, 16, &this->textures, &this->entities);
 }
 
 void Level1::setupTextures()
 {
 	this->textures["PLAYER"] = new sf::Texture();
-	Utils::loadTexture("wizard.png", this->textures["PLAYER"]);
+	Utils::loadTexture("assets\\textures\\wizard.png", this->textures["PLAYER"]);
 
 	this->textures["WRAITH"] = new sf::Texture();
-	Utils::loadTexture("wraith.png", this->textures["WRAITH"]);
+	Utils::loadTexture("assets\\textures\\wraith.png", this->textures["WRAITH"]);
 
 	this->textures["ENEMY_ATTACK"] = new sf::Texture();
-	Utils::loadTexture("wraithAttack.png", this->textures["ENEMY_ATTACK"]);
+	Utils::loadTexture("assets\\textures\\wraithAttack.png", this->textures["ENEMY_ATTACK"]);
 
 	this->textures["FIREBALL"] = new sf::Texture();
-	Utils::loadTexture("primaryAttack.png", this->textures["FIREBALL"]);
+	Utils::loadTexture("assets\\textures\\primaryAttack.png", this->textures["FIREBALL"]);
 
 	this->textures["PARTICLE"] = new sf::Texture();
-	Utils::loadTexture("particleSpell.png", this->textures["PARTICLE"]);
+	Utils::loadTexture("assets\\textures\\particleSpell.png", this->textures["PARTICLE"]);
+
+	this->textures["TREE"] = new sf::Texture();
+	Utils::loadTexture("assets\\textures\\plant.png", this->textures["TREE"]);
 }
 
 Level1::~Level1()

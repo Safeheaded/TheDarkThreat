@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity.h"
+#include "Obstacle.h"
 
 class TileMap : public sf::Drawable, public sf::Transformable
 {
@@ -10,7 +10,11 @@ public:
         return this->size;
     }
 
-    bool load(const std::string& tileset, sf::Vector2u tileSize, const int* tiles, unsigned int width, unsigned int height)
+    bool load(
+        const std::string& tileset, sf::Vector2u tileSize, 
+        const int* tiles, unsigned int width, unsigned int height,
+        std::map<std::string, sf::Texture*>* textures, std::vector<Entity*>* entities
+    )
     {
         this->size = {(float)(tileSize.x * width), (float)(tileSize.y * height)};
         // load the tileset texture
@@ -31,6 +35,12 @@ public:
                 // find its position in the tileset texture
                 int tu = tileNumber % (m_tileset.getSize().x / tileSize.x);
                 int tv = tileNumber / (m_tileset.getSize().x / tileSize.x);
+
+                if (tileNumber == 1) {
+                    Obstacle* obstacle = new Obstacle(textures, 1);
+                    obstacle->setPosition(i * tileSize.x, j * tileSize.y);
+                    entities->emplace_back(obstacle);
+                }
 
                 // get a pointer to the current tile's quad
                 sf::Vertex* quad = &m_vertices[(i + j * width) * 4];
