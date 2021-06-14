@@ -28,7 +28,7 @@ private:
     void handleMovement(
         sf::Vector2f& velocity, const float& deltaTime, sf::FloatRect& playerBounds
     );
-    void handleWindowCollision(sf::FloatRect& playerBounds);
+    void handleVoidCollision(sf::FloatRect& playerBounds, const sf::Vector2f& mapSize);
     void setupAnimations();
     void animationEnd(std::vector<Entity*>* entities);
     void attack(std::vector<Entity*>* entities);
@@ -38,7 +38,7 @@ public:
     ~Player();
 
     // Methods
-    void update(const float& deltaTime, std::vector<Entity*>* entities);
+    void update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize);
     void EvaluateState(std::vector<Entity*>* entities);
     void dealDamage(const float& damage);
 

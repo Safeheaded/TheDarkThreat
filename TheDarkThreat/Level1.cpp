@@ -13,9 +13,9 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 
 	this->playerGUI = new PlayerGUI(this->window, this->player);
 
-	this->entities.emplace_back(
+	/*this->entities.emplace_back(
 		new Wraith(this->player, this->window, &this->textures, 10.0f)
-	);
+	);*/
 
 	this->view.setSize(600, 600);
 
@@ -67,7 +67,7 @@ void Level1::update(const float& deltaTime)
 {
 
 	for (size_t i = 0; i < this->entities.size(); i++) {
-		this->entities[i]->update(deltaTime, &this->entities);
+		this->entities[i]->update(deltaTime, &this->entities, this->map.getSize());
 		if (this->entities[i]->getCanDie()) {
 			// Temporary workaround so I won't get flowed by erros
 			if (typeid(*this->entities[i]) == typeid(Player)) {
@@ -89,6 +89,7 @@ void Level1::update(const float& deltaTime)
 
 void Level1::handleView()
 {
+	auto playerBounds = this->player->getGlobalBounds();
 	this->view.setCenter(this->player->getPosition());
 
 	auto viewSize = this->view.getSize();

@@ -30,7 +30,7 @@ Missile::~Missile()
 {
 }
 
-void Missile::update(const float& deltaTime, std::vector<Entity*>* entities)
+void Missile::update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize)
 {
 	auto missileBounds = this->getGlobalBounds();
 	this->setOrigin(missileBounds.width/2, missileBounds.height/2);

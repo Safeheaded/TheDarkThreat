@@ -25,7 +25,7 @@ public:
     );
     ~Wraith();
 
-    void update(const float& deltaTime, std::vector<Entity*>* entities);
+    void update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize);
     void dealDamage(const float& damage);
 };
 

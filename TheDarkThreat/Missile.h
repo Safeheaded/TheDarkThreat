@@ -28,6 +28,6 @@ public:
         const sf::Vector2f& pos
     );
     ~Missile();
-    void update(const float& deltaTime, std::vector<Entity*>* entities);
+    void update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize);
 };
 

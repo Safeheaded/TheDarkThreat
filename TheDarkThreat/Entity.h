@@ -35,7 +35,8 @@ public:
 	const bool getIsBlocking() const;
 	const EntityState getState() const;
 
-	virtual void update(const float& deltaTime, std::vector<Entity*>* entities) = 0;
+	virtual void update(const float& deltaTime, 
+		std::vector<Entity*>* entities, sf::Vector2f mapSize) = 0;
 
 	virtual void dealDamage(const float& damage);
 	const bool getCanDie() const;

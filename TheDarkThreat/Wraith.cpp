@@ -31,7 +31,7 @@ window(window)
 Wraith::~Wraith(){
 }
 
-void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities)
+void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize)
 {
 	sf::Vector2f velocity;
 

@@ -30,7 +30,7 @@ Player::~Player()
 	}
 }
 
-void Player::update(const float& deltaTime, std::vector<Entity*>* entities)
+void Player::update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize)
 {
 	this->isRunning = false;
 	auto playerBounds = this->getGlobalBounds();
@@ -55,7 +55,7 @@ void Player::update(const float& deltaTime, std::vector<Entity*>* entities)
 	}
 
 	// Window collision
-	//handleWindowCollision(playerBounds);
+	handleVoidCollision(playerBounds, mapSize);
 
 }
 
@@ -127,19 +127,19 @@ const std::string Player::getSpellName() const
 	return this->spells[this->selectedSpell]->getName();
 }
 
-void Player::handleWindowCollision(sf::FloatRect& playerBounds)
+void Player::handleVoidCollision(sf::FloatRect& playerBounds, const sf::Vector2f& mapSize)
 {
-	if (getPosition().x < 0) {
-		setPosition(0, getPosition().y);
+	if (this->getPosition().x - playerBounds.width/2 < 0) {
+		this->setPosition(playerBounds.width / 2, this->getPosition().y);
 	}
-	if (getPosition().y < 0) {
-		setPosition(getPosition().x, 0);
+	if (this->getPosition().y - playerBounds.height / 2 < 0) {
+		this->setPosition(this->getPosition().x, playerBounds.height / 2);
 	}
-	if (getPosition().x + playerBounds.width > window->getSize().x) {
-		setPosition(window->getSize().x - playerBounds.width, getPosition().y);
+	if (this->getPosition().x + playerBounds.width/2 > mapSize.x) {
+		this->setPosition(mapSize.x - playerBounds.width/2, this->getPosition().y);
 	}
-	if (getPosition().y + playerBounds.height > window->getSize().y) {
-		setPosition(getPosition().x, window->getSize().y - playerBounds.height);
+	if (this->getPosition().y + playerBounds.height/2 > mapSize.y) {
+		this->setPosition(this->getPosition().x, mapSize.y - playerBounds.height/2);
 	}
 }
 
@@ -155,13 +155,13 @@ void Player::setupAnimations()
 		});
 	this->addAnimation(EntityState::Move, {
 		{73, 255, 75, 75},
-		{308, 255, 70, 75},
-		{547, 255, 59, 75},
-		{764, 255, 71, 75},
+		{308, 255, 75, 75},
+		{547, 255, 75, 75},
+		{764, 255, 75, 75},
 		{997, 255, 75, 75},
-		{1234, 255, 63, 75},
-		{1474, 255, 55, 75},
-		{1691, 255, 71, 75}
+		{1234, 255, 75, 75},
+		{1474, 255, 75, 75},
+		{1691, 255, 75, 75}
 		});
 	this->addAnimation(EntityState::Death, {
 		{80, 801, 65, 99},
@@ -215,6 +215,7 @@ void Player::attack(std::vector<Entity*>* entities)
 
 void Player::handleMovement(sf::Vector2f& velocity, const float& deltaTime, sf::FloatRect& playerBounds)
 {
+	this->setOrigin(playerBounds.width/2, playerBounds.height / 2);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 		velocity.y = -this->speed * deltaTime;
 	}
@@ -226,12 +227,10 @@ void Player::handleMovement(sf::Vector2f& velocity, const float& deltaTime, sf::
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		velocity.x = -this->speed * deltaTime;
 		this->setScale(-1, 1);
-		this->setOrigin({ playerBounds.width, 0 });
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 		velocity.x = this->speed * deltaTime;
 		this->setScale(1, 1);
-		this->setOrigin({ 0, 0 });
 	}
 
 	// Checks if player is moving
