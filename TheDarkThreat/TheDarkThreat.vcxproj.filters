@@ -37,6 +37,12 @@
     <Filter Include="Pliki źródłowe\Missiles">
       <UniqueIdentifier>{85a85cb7-7509-42c9-aa45-cca7a518477b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\Spells">
+      <UniqueIdentifier>{2283a2d0-ea05-48ac-a961-12f4be211f60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Spells">
+      <UniqueIdentifier>{073f1998-9250-48dd-9929-890a7b353248}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -84,12 +90,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Pliki źródłowe\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Spell.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="FireballSpell.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="Missile.cpp">
       <Filter>Pliki źródłowe\Missiles</Filter>
     </ClCompile>
@@ -99,23 +99,29 @@
     <ClCompile Include="ParticleMissile.cpp">
       <Filter>Pliki źródłowe\Missiles</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleSpell.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Wraith.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="EnemyMissile.cpp">
       <Filter>Pliki źródłowe\Missiles</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerGUI.cpp">
-      <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="TileMap.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="Obstacle.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerGUI.cpp">
+      <Filter>Pliki źródłowe\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Wraith.cpp">
+      <Filter>Pliki źródłowe\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="FireballSpell.cpp">
+      <Filter>Pliki źródłowe\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSpell.cpp">
+      <Filter>Pliki źródłowe\Spells</Filter>
+    </ClCompile>
+    <ClCompile Include="Spell.cpp">
+      <Filter>Pliki źródłowe\Spells</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -161,12 +167,6 @@
     <ClInclude Include="Player.h">
       <Filter>Pliki nagłówkowe\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Spell.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="FireballSpell.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="Missile.h">
       <Filter>Pliki nagłówkowe\Missiles</Filter>
     </ClInclude>
@@ -175,12 +175,6 @@
     </ClInclude>
     <ClInclude Include="ParticleMissile.h">
       <Filter>Pliki nagłówkowe\Missiles</Filter>
-    </ClInclude>
-    <ClInclude Include="ParticleSpell.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Wraith.h">
-      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="EnemyMissile.h">
       <Filter>Pliki nagłówkowe\Missiles</Filter>
@@ -191,8 +185,20 @@
     <ClInclude Include="TileMap.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="Wraith.h">
+      <Filter>Pliki nagłówkowe\Entities</Filter>
+    </ClInclude>
     <ClInclude Include="Obstacle.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Pliki nagłówkowe\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSpell.h">
+      <Filter>Pliki nagłówkowe\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="Spell.h">
+      <Filter>Pliki nagłówkowe\Spells</Filter>
+    </ClInclude>
+    <ClInclude Include="FireballSpell.h">
+      <Filter>Pliki nagłówkowe\Spells</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
