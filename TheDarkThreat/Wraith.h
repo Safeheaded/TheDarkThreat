@@ -17,6 +17,8 @@ private:
     float timer;
     float health;
     sf::RenderWindow* window;
+
+    bool isAttacked;
 public:
     Wraith(
         Player* player,

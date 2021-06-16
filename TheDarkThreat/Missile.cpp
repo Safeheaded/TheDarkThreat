@@ -54,9 +54,7 @@ void Missile::update(const float& deltaTime, std::vector<Entity*>* entities, sf:
 		if (missileBounds.intersects(entity->getGlobalBounds())) {
 			if (this->type == MissileType::Friendly && typeid(*entity) == typeid(Wraith) ||
 				this->type == MissileType::Hostile && typeid(*entity) == typeid(Player)) {
-				//this->customBehaviour(deltaTime);
 				this->customAttackBehaviour(deltaTime, entity);
-				//entity->dealDamage(this->damage);
 			}
 		}
 	}

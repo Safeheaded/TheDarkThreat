@@ -10,9 +10,9 @@ Wraith::Wraith(
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps
 ): Entity(textures, fps), player(player), 
-sightDistance(1000), attackDistance(150), 
-speed(150), attackCooldown(4), timer(attackCooldown), health(500), 
-window(window)
+sightDistance(300), attackDistance(150), 
+speed(150), attackCooldown(4), timer(attackCooldown), health(200), 
+window(window), isAttacked(false)
 {
 	this->addAnimation(EntityState::Idle, {
 		{34, 21, 45, 62},
@@ -46,7 +46,9 @@ void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities, sf::
 	
 	float distance = Utils::getVectorLength(direction);
 
-	if (distance <= this->sightDistance && distance > this->attackDistance) {
+	if ((distance <= this->sightDistance && distance > this->attackDistance) || 
+		(isAttacked && distance > this->attackDistance)) {
+		this->isAttacked = true;
 		auto normalisedDirection = Utils::normalizeVector(direction);
 		velocity = normalisedDirection;
 		
@@ -74,6 +76,7 @@ void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities, sf::
 
 void Wraith::dealDamage(const float& damage)
 {
+	this->isAttacked = true;
 	this->health -= damage;
 	if (this->health <= 0) {
 		this->canDie = true;
