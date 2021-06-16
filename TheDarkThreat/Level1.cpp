@@ -17,7 +17,7 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 		new Wraith(this->player, this->window, &this->textures, 10.0f)
 	);
 
-	this->view.setSize(600, 600);
+	this->view.setSize(800, 800);
 
 	std::vector<int> level =
 	{

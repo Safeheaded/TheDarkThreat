@@ -2,8 +2,6 @@
 
 void ParticleMissile::customBehaviour(const float& deltaTime)
 {
-	//this->rotate(180 * deltaTime);
-
 	this->timePassed += deltaTime;
 
 	if (this->timePassed >= this->lifeTime) {
@@ -13,11 +11,23 @@ void ParticleMissile::customBehaviour(const float& deltaTime)
 	this->speed = 0;
 }
 
+void ParticleMissile::customAttackBehaviour(const float& deltaTime, Entity* entity)
+{
+	if (this->attackTimeCounter >= this->attacksPerSecond) {
+		entity->dealDamage(this->damage);
+		this->attackTimeCounter -= this->attacksPerSecond;
+	}
+	else {
+		this->attackTimeCounter += deltaTime;
+	}
+}
+
 ParticleMissile::ParticleMissile(
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps, const sf::Vector2f& target, 
 	const sf::Vector2f& pos
-):Missile(window, textures, fps, target, pos)
+):Missile(window, textures, fps, target, pos), 
+attacksPerSecond(1), attackTimeCounter(attacksPerSecond)
 {
 	this->damage = 100;
 	this->addAnimation(EntityState::Idle, {
@@ -32,7 +42,7 @@ ParticleMissile::ParticleMissile(
 		});
 	this->setTexture(*this->textures->operator[]("PARTICLE"));
 	this->setFirstFrame();
-	this->lifeTime = 3;
+	this->lifeTime = 5;
 	this->timePassed = 0;
 }
 

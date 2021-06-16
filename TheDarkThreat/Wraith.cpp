@@ -10,8 +10,8 @@ Wraith::Wraith(
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps
 ): Entity(textures, fps), player(player), 
-sightDistance(1000), attackDistance(250), 
-speed(150), attackCooldown(4), timer(attackCooldown), health(100), 
+sightDistance(1000), attackDistance(150), 
+speed(150), attackCooldown(4), timer(attackCooldown), health(500), 
 window(window)
 {
 	this->addAnimation(EntityState::Idle, {

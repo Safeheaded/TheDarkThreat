@@ -12,5 +12,6 @@ public:
     ~FireballMissile();
 private:
     void customBehaviour(const float& deltaTime);
+    void customAttackBehaviour(const float& deltaTime, Entity* entity);
 };
 

@@ -5,8 +5,13 @@ class ParticleMissile :
 {
 private:
     void customBehaviour(const float& deltaTime);
+    void customAttackBehaviour(const float& deltaTime, Entity* entity);
+
     float lifeTime;
     float timePassed;
+
+    float attackTimeCounter;
+    float attacksPerSecond;
 public:
     ParticleMissile(
         sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,

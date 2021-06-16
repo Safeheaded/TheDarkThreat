@@ -21,6 +21,7 @@ protected:
 
     void animationEnd(std::vector<Entity*>* entities);
     virtual void customBehaviour(const float& deltaTime) = 0;
+    virtual void customAttackBehaviour(const float& deltaTime, Entity* entity) = 0;
 public:
     Missile(
         sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,

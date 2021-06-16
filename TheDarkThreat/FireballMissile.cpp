@@ -64,3 +64,9 @@ void FireballMissile::customBehaviour(const float& deltaTime)
 {
 	this->canDie = true;
 }
+
+void FireballMissile::customAttackBehaviour(const float& deltaTime, Entity* entity)
+{
+	this->customBehaviour(deltaTime);
+	entity->dealDamage(this->damage);
+}

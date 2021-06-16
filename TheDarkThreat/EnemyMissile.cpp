@@ -9,6 +9,12 @@ void EnemyMissile::customBehaviour(const float& deltaTime)
 	this->canDie = true;
 }
 
+void EnemyMissile::customAttackBehaviour(const float& deltaTime, Entity* entity)
+{
+	this->canDie = true;
+	entity->dealDamage(this->damage);
+}
+
 EnemyMissile::EnemyMissile(
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures, const float& fps,
 	const sf::Vector2f& target, const sf::Vector2f& pos

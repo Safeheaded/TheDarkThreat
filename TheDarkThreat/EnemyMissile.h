@@ -7,6 +7,7 @@ private:
 
     void animationEnd();
     void customBehaviour(const float& deltaTime);
+    void customAttackBehaviour(const float& deltaTime, Entity* entity);
 public:
     EnemyMissile(
         sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
