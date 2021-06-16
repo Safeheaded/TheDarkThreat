@@ -20,6 +20,8 @@ Player::Player(
 	this->spells.emplace_back(
 		new ParticleSpell(this->textures, "Wir œmierci"
 		));
+
+	this->isBlocking = true;
 }
 
 Player::~Player()

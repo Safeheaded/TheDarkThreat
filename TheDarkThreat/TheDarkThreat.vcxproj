@@ -156,6 +156,7 @@
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="Missile.cpp" />
     <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="Tree.cpp" />
     <ClCompile Include="ParticleMissile.cpp" />
     <ClCompile Include="ParticleSpell.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Missile.h" />
     <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="Tree.h" />
     <ClInclude Include="ParticleMissile.h" />
     <ClInclude Include="ParticleSpell.h" />
     <ClInclude Include="Player.h" />

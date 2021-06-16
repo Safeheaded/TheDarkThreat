@@ -1,6 +1,10 @@
 #include "TileMap.h"
 
-bool TileMap::load(const std::string& tileset, sf::Vector2u tileSize, const int* tiles, unsigned int width, unsigned int height, std::map<std::string, sf::Texture*>* textures, std::vector<Entity*>* entities)
+bool TileMap::load(
+	const std::string& tileset, sf::Vector2u tileSize, std::vector<int> tiles, 
+	unsigned int width, unsigned int height, std::map<std::string, 
+	sf::Texture*>* textures, std::vector<Entity*>* entities,
+	std::vector<Obstacle*>* obstacles)
 {
 	this->size = { (float)(tileSize.x * width), (float)(tileSize.y * height) };
 	// load the tileset texture
@@ -23,9 +27,11 @@ bool TileMap::load(const std::string& tileset, sf::Vector2u tileSize, const int*
 			int tv = tileNumber / (m_tileset.getSize().x / tileSize.x);
 
 			if (tileNumber == 1) {
-				Obstacle* obstacle = new Obstacle(textures, 1);
-				obstacle->setPosition(i * tileSize.x, j * tileSize.y);
-				entities->emplace_back(obstacle);
+				Tree* tree = new Tree(textures, 1);
+				tree->setPosition(i * tileSize.x, j * tileSize.y);
+				Obstacle* obstacle = new Obstacle({100, 100}, tree->getPosition());
+				entities->emplace_back(tree);
+				obstacles->emplace_back(obstacle);
 			}
 
 			// get a pointer to the current tile's quad

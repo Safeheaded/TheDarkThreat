@@ -5,6 +5,7 @@
 #include "Wraith.h"
 #include "PlayerGUI.h"
 #include "TileMap.h"
+#include "Obstacle.h"
 
 class Level1 :
     public Scene
@@ -13,6 +14,7 @@ private:
     std::map<std::string, sf::Texture*> textures;
     Player* player;
     std::vector<Entity*> entities;
+    std::vector<Obstacle*> obstacles;
     PlayerGUI* playerGUI;
     TileMap map;
     sf::View view;

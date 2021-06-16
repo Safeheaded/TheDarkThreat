@@ -1,4 +1,5 @@
 #pragma once
+#include "Tree.h"
 #include "Obstacle.h"
 
 class TileMap : public sf::Drawable, public sf::Transformable
@@ -10,8 +11,9 @@ public:
 
     bool load(
         const std::string& tileset, sf::Vector2u tileSize,
-        const int* tiles, unsigned int width, unsigned int height,
-        std::map<std::string, sf::Texture*>* textures, std::vector<Entity*>* entities
+        std::vector<int> tiles, unsigned int width, unsigned int height,
+        std::map<std::string, sf::Texture*>* textures, std::vector<Entity*>* entities,
+        std::vector<Obstacle*>* obstacles
     );
 
 private:

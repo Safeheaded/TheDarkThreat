@@ -2,7 +2,7 @@
 
 ParticleSpell::ParticleSpell(
 	std::map<std::string, sf::Texture*>* textures, const std::string& name
-): Spell(10, textures, name)
+): Spell(30, textures, name)
 {
 }
 

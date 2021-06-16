@@ -10,7 +10,7 @@ Wraith::Wraith(
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps
 ): Entity(textures, fps), player(player), 
-sightDistance(500), attackDistance(200), 
+sightDistance(1000), attackDistance(250), 
 speed(150), attackCooldown(4), timer(attackCooldown), health(100), 
 window(window)
 {
