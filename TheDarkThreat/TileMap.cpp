@@ -46,7 +46,7 @@ bool TileMap::load(
 			else if (tileNumber == 3) {
 				Wraith* wraith = new Wraith(player, window, textures, 10);
 				wraith->setPosition(i * tileSize.x, j * tileSize.y);
-				//entities->emplace_back(wraith);
+				entities->emplace_back(wraith);
 			}
 
 			sf::Vertex* quad = &vertices[(i + j * width) * 4];

@@ -83,7 +83,7 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	};
 
 	this->map.load("assets\\textures\\tileset.png",
-		sf::Vector2u(32, 32), level, &this->textures, 
+		sf::Vector2u(32, 32), level, &this->textures,
 		&this->entities, &this->obstacles, this->player, this->window
 	);
 }
@@ -131,13 +131,13 @@ void Level1::update(const float& deltaTime)
 		this->entities[i]->update(deltaTime, &this->entities, this->map.getSize());
 
 		// collision detection
-		if (this->entities[i]->getIsBlocking()) {
+		/*if (this->entities[i]->getIsBlocking()) {
 			for (const auto& obstacle : this->obstacles) {
 				if (this->entities[i]->getGlobalBounds().intersects(obstacle->getGlobalBounds())) {
 					std::cout << "Colliding" << std::endl;
 				}
 			}
-		}
+		}*/
 
 		if (this->entities[i]->getCanDie()) {
 			// Temporary workaround so I won't get flowed by erros
@@ -193,10 +193,10 @@ void Level1::render(const float& deltaTime)
 	}
 
 	// Drawing for testing
-	for (const auto& obstacle : this->obstacles) {
+	/*for (const auto& obstacle : this->obstacles) {
 
 		this->window->draw(*obstacle);
-	}
+	}*/
 
 	this->playerGUI->setPosition(this->view.getCenter() - this->view.getSize() / 2.f);
 

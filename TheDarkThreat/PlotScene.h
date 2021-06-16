@@ -1,5 +1,7 @@
 #pragma once
 #include "Scene.h"
+#include "Level1.h"
+
 class PlotScene :
     public Scene
 {

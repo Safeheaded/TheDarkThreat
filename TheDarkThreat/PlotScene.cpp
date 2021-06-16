@@ -30,6 +30,10 @@ void PlotScene::update(const float& deltaTime)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 		// TODO: Load 1 st game level
+		auto* currentScene = this->scenes->top();
+		this->scenes->pop();
+		this->scenes->push(new Level1(this->window, this->scenes));
+		delete currentScene;
 	}
 }
 
