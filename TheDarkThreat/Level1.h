@@ -7,6 +7,7 @@
 #include "OverworldMap.h"
 #include "Obstacle.h"
 #include "GameOverScene.h"
+#include "PauseScene.h"
 
 class Level1 :
     public Scene

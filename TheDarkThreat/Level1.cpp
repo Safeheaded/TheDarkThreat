@@ -128,6 +128,10 @@ Level1::~Level1()
 
 void Level1::update(const float& deltaTime)
 {
+	// Handles pause screen
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+		this->scenes->push(new PauseScene(this->window, this->scenes));
+	}
 
 	for (size_t i = 0; i < this->entities.size(); i++) {
 		this->entities[i]->update(deltaTime, &this->entities, this->map.getSize());
@@ -170,6 +174,7 @@ void Level1::update(const float& deltaTime)
 	// Handling view
 
 	handleView();
+
 }
 
 void Level1::handleView()
