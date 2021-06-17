@@ -115,6 +115,8 @@ Level1::~Level1()
 		delete texture.second;
 	}
 
+	delete this->playerGUI;
+
 	for (const auto& entity : this->entities) {
 		delete entity;
 	}
@@ -142,7 +144,17 @@ void Level1::update(const float& deltaTime)
 		if (this->entities[i]->getCanDie()) {
 			// Temporary workaround so I won't get flowed by erros
 			if (typeid(*this->entities[i]) == typeid(Player)) {
-				//delete this->playerGUI;
+				// Kills the scene and loads GameOverScreen
+				auto* currentScene = this->scenes->top();
+				this->scenes->pop();
+				this->scenes->push(new GameOverScene(this->window, this->scenes));
+
+				/*const auto& defaultView = this->window->getDefaultView();
+				this->window->setView(defaultView);*/
+
+				delete currentScene;
+				// Return needed to avoid updating nonexisting PlayerGUI
+				return;
 			}
 			else {
 				delete this->entities[i];

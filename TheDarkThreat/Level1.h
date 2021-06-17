@@ -6,6 +6,7 @@
 #include "PlayerGUI.h"
 #include "OverworldMap.h"
 #include "Obstacle.h"
+#include "GameOverScene.h"
 
 class Level1 :
     public Scene

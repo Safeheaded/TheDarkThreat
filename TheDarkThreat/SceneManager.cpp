@@ -2,6 +2,7 @@
 #include "MenuScene.h"
 #include "PlotScene.h"
 #include "Level1.h"
+#include "GameOverScene.h"
 
 void SceneManager::initScenes()
 {
@@ -9,6 +10,7 @@ void SceneManager::initScenes()
     this->scenes.push(new PlotScene(this->window, &this->scenes, text));*/
     this->scenes.push(new MenuScene(this->window, &this->scenes));
     //this->scenes.push(new Level1(this->window, &this->scenes));
+    //this->scenes.push(new GameOverScene(this->window, &this->scenes));
 }
 
 SceneManager::SceneManager(sf::RenderWindow* window): window(window)

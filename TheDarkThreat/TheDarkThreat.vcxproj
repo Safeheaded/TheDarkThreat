@@ -151,6 +151,7 @@
     <ClCompile Include="FireballMissile.cpp" />
     <ClCompile Include="FireballSpell.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuScene.cpp" />
@@ -166,6 +167,8 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TileMap.cpp" />
+    <ClCompile Include="UIGotoMenu.cpp" />
+    <ClCompile Include="UIRepeatLevel.cpp" />
     <ClCompile Include="Wraith.cpp" />
     <ClCompile Include="Spell.cpp" />
     <ClCompile Include="TextButton.cpp" />
@@ -181,6 +184,7 @@
     <ClInclude Include="FireballMissile.h" />
     <ClInclude Include="FireballSpell.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="Level1.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Missile.h" />
@@ -195,6 +199,8 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="TileMap.h" />
+    <ClInclude Include="UIGotoMenu.h" />
+    <ClInclude Include="UIRepeatLevel.h" />
     <ClInclude Include="Wraith.h" />
     <ClInclude Include="Spell.h" />
     <ClInclude Include="TextButton.h" />
