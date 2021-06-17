@@ -1,0 +1,148 @@
+\hypertarget{class_missile}{}\doxysection{Missile Class Reference}
+\label{class_missile}\index{Missile@{Missile}}
+
+
+{\ttfamily \#include $<$Missile.\+h$>$}
+
+Inheritance diagram for Missile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_missile}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_missile_a8cde760f6c87331a6229536f994892a5}{Missile}} (sf\+::\+Render\+Window $\ast$\mbox{\hyperlink{class_missile_a5b44dad1cbdc5182e7a75a65dfc13044}{window}}, std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$\mbox{\hyperlink{class_entity_a13390551b7845805ff1be29f487a632b}{textures}}, const float \&fps, const sf\+::\+Vector2f \&\mbox{\hyperlink{class_missile_a550b634d6f20f48c84084dba55a1d691}{target}}, const sf\+::\+Vector2f \&pos)
+\item 
+\mbox{\hyperlink{class_missile_ad42379e48a46ec3556056f98ce8bd912}{$\sim$\+Missile}} ()
+\item 
+void \mbox{\hyperlink{class_missile_a56f11db6ae168926864e41954df4805c}{update}} (const float \&delta\+Time, std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities, sf\+::\+Vector2f map\+Size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_missile_a025e56df9438fcac4cdf5586ead31a9b}{animation\+End}} (std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities)
+\item 
+virtual void \mbox{\hyperlink{class_missile_aa1e7c9cfdef496928656137299d298d1}{custom\+Behaviour}} (const float \&delta\+Time)=0
+\item 
+virtual void \mbox{\hyperlink{class_missile_a2ad48ffe7f813f91e5d08c64c594aa92}{custom\+Attack\+Behaviour}} (const float \&delta\+Time, \mbox{\hyperlink{class_entity}{Entity}} $\ast$entity)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Window $\ast$ \mbox{\hyperlink{class_missile_a5b44dad1cbdc5182e7a75a65dfc13044}{window}}
+\item 
+float \mbox{\hyperlink{class_missile_a6d40d98f169464ca3b6f56a348eea4ac}{speed}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_missile_a550b634d6f20f48c84084dba55a1d691}{target}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_missile_a2125b82bb99a9a9a5524ff1fb0ea1b8f}{direction}}
+\item 
+sf\+::\+Vector2f \mbox{\hyperlink{class_missile_aad0423bdb706bdef0762afe5c16ab937}{initial\+Position}}
+\item 
+float \mbox{\hyperlink{class_missile_ad9476062fa33135b2f03562db4bfa365}{damage}}
+\item 
+\mbox{\hyperlink{_missile_8h_ab2015c34fa4aba006155e79123d526b4}{Missile\+Type}} \mbox{\hyperlink{class_missile_af3cb4d9eaafc9f94137529f53af80ef8}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_missile_a8cde760f6c87331a6229536f994892a5}\label{class_missile_a8cde760f6c87331a6229536f994892a5}} 
+\index{Missile@{Missile}!Missile@{Missile}}
+\index{Missile@{Missile}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{Missile()}{Missile()}}
+{\footnotesize\ttfamily Missile\+::\+Missile (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{window,  }\item[{std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$}]{textures,  }\item[{const float \&}]{fps,  }\item[{const sf\+::\+Vector2f \&}]{target,  }\item[{const sf\+::\+Vector2f \&}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_missile_ad42379e48a46ec3556056f98ce8bd912}\label{class_missile_ad42379e48a46ec3556056f98ce8bd912}} 
+\index{Missile@{Missile}!````~Missile@{$\sim$Missile}}
+\index{````~Missile@{$\sim$Missile}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{$\sim$Missile()}{~Missile()}}
+{\footnotesize\ttfamily Missile\+::$\sim$\+Missile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_missile_a025e56df9438fcac4cdf5586ead31a9b}\label{class_missile_a025e56df9438fcac4cdf5586ead31a9b}} 
+\index{Missile@{Missile}!animationEnd@{animationEnd}}
+\index{animationEnd@{animationEnd}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{animationEnd()}{animationEnd()}}
+{\footnotesize\ttfamily void Missile\+::animation\+End (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entities }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_entity_a99e5722febbdd1daa9865ce291c374e2}{Entity}}.
+
+\mbox{\Hypertarget{class_missile_a2ad48ffe7f813f91e5d08c64c594aa92}\label{class_missile_a2ad48ffe7f813f91e5d08c64c594aa92}} 
+\index{Missile@{Missile}!customAttackBehaviour@{customAttackBehaviour}}
+\index{customAttackBehaviour@{customAttackBehaviour}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{customAttackBehaviour()}{customAttackBehaviour()}}
+{\footnotesize\ttfamily virtual void Missile\+::custom\+Attack\+Behaviour (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time,  }\item[{\mbox{\hyperlink{class_entity}{Entity}} $\ast$}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{class_missile_aa1e7c9cfdef496928656137299d298d1}\label{class_missile_aa1e7c9cfdef496928656137299d298d1}} 
+\index{Missile@{Missile}!customBehaviour@{customBehaviour}}
+\index{customBehaviour@{customBehaviour}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{customBehaviour()}{customBehaviour()}}
+{\footnotesize\ttfamily virtual void Missile\+::custom\+Behaviour (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{class_missile_a56f11db6ae168926864e41954df4805c}\label{class_missile_a56f11db6ae168926864e41954df4805c}} 
+\index{Missile@{Missile}!update@{update}}
+\index{update@{update}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Missile\+::update (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entities,  }\item[{sf\+::\+Vector2f}]{map\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_entity_adf844c991dbb08eb79609223c6acc978}{Entity}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_missile_ad9476062fa33135b2f03562db4bfa365}\label{class_missile_ad9476062fa33135b2f03562db4bfa365}} 
+\index{Missile@{Missile}!damage@{damage}}
+\index{damage@{damage}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{damage}{damage}}
+{\footnotesize\ttfamily float Missile\+::damage\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_missile_a2125b82bb99a9a9a5524ff1fb0ea1b8f}\label{class_missile_a2125b82bb99a9a9a5524ff1fb0ea1b8f}} 
+\index{Missile@{Missile}!direction@{direction}}
+\index{direction@{direction}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Missile\+::direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_missile_aad0423bdb706bdef0762afe5c16ab937}\label{class_missile_aad0423bdb706bdef0762afe5c16ab937}} 
+\index{Missile@{Missile}!initialPosition@{initialPosition}}
+\index{initialPosition@{initialPosition}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{initialPosition}{initialPosition}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Missile\+::initial\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_missile_a6d40d98f169464ca3b6f56a348eea4ac}\label{class_missile_a6d40d98f169464ca3b6f56a348eea4ac}} 
+\index{Missile@{Missile}!speed@{speed}}
+\index{speed@{speed}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float Missile\+::speed\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_missile_a550b634d6f20f48c84084dba55a1d691}\label{class_missile_a550b634d6f20f48c84084dba55a1d691}} 
+\index{Missile@{Missile}!target@{target}}
+\index{target@{target}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{target}{target}}
+{\footnotesize\ttfamily sf\+::\+Vector2f Missile\+::target\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_missile_af3cb4d9eaafc9f94137529f53af80ef8}\label{class_missile_af3cb4d9eaafc9f94137529f53af80ef8}} 
+\index{Missile@{Missile}!type@{type}}
+\index{type@{type}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_missile_8h_ab2015c34fa4aba006155e79123d526b4}{Missile\+Type}} Missile\+::type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_missile_a5b44dad1cbdc5182e7a75a65dfc13044}\label{class_missile_a5b44dad1cbdc5182e7a75a65dfc13044}} 
+\index{Missile@{Missile}!window@{window}}
+\index{window@{window}!Missile@{Missile}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily sf\+::\+Window$\ast$ Missile\+::window\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_missile_8h}{Missile.\+h}}\item 
+\mbox{\hyperlink{_missile_8cpp}{Missile.\+cpp}}\end{DoxyCompactItemize}

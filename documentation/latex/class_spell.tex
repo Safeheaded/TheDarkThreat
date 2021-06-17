@@ -1,0 +1,93 @@
+\hypertarget{class_spell}{}\doxysection{Spell Class Reference}
+\label{class_spell}\index{Spell@{Spell}}
+
+
+{\ttfamily \#include $<$Spell.\+h$>$}
+
+Inheritance diagram for Spell\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_spell}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_spell_a3fd8d2e63ddb04070b39bc04673afb88}{Spell}} (const float \&\mbox{\hyperlink{class_spell_aee2b34273f5d087dfade4a116e2eaca5}{mana\+Cost}}, std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$\mbox{\hyperlink{class_spell_a02b6a8c887323d03c9b39697cc3dda48}{textures}}, const std\+::string \&name)
+\item 
+virtual \mbox{\hyperlink{class_spell_ab00bfde34dc5dcdc6e1035608e14c067}{$\sim$\+Spell}} ()
+\item 
+virtual void \mbox{\hyperlink{class_spell_a26ac97fb40b59dc6c3065e41c91d7568}{fire}} (sf\+::\+Render\+Window $\ast$window, const float \&fps, const sf\+::\+Vector2f \&target, const sf\+::\+Vector2f \&pos, std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities)=0
+\item 
+const float \mbox{\hyperlink{class_spell_ae3bc20627f38c8f2be797cf1d465fdba}{get\+Mana\+Cost}} () const
+\item 
+const std\+::string \mbox{\hyperlink{class_spell_a3f6bdd758d5ce61798cc602087a97d45}{get\+Name}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_spell_aee2b34273f5d087dfade4a116e2eaca5}{mana\+Cost}}
+\item 
+std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_spell_a02b6a8c887323d03c9b39697cc3dda48}{textures}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_spell_a3fd8d2e63ddb04070b39bc04673afb88}\label{class_spell_a3fd8d2e63ddb04070b39bc04673afb88}} 
+\index{Spell@{Spell}!Spell@{Spell}}
+\index{Spell@{Spell}!Spell@{Spell}}
+\doxysubsubsection{\texorpdfstring{Spell()}{Spell()}}
+{\footnotesize\ttfamily Spell\+::\+Spell (\begin{DoxyParamCaption}\item[{const float \&}]{mana\+Cost,  }\item[{std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$}]{textures,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_spell_ab00bfde34dc5dcdc6e1035608e14c067}\label{class_spell_ab00bfde34dc5dcdc6e1035608e14c067}} 
+\index{Spell@{Spell}!````~Spell@{$\sim$Spell}}
+\index{````~Spell@{$\sim$Spell}!Spell@{Spell}}
+\doxysubsubsection{\texorpdfstring{$\sim$Spell()}{~Spell()}}
+{\footnotesize\ttfamily Spell\+::$\sim$\+Spell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_spell_a26ac97fb40b59dc6c3065e41c91d7568}\label{class_spell_a26ac97fb40b59dc6c3065e41c91d7568}} 
+\index{Spell@{Spell}!fire@{fire}}
+\index{fire@{fire}!Spell@{Spell}}
+\doxysubsubsection{\texorpdfstring{fire()}{fire()}}
+{\footnotesize\ttfamily virtual void Spell\+::fire (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{window,  }\item[{const float \&}]{fps,  }\item[{const sf\+::\+Vector2f \&}]{target,  }\item[{const sf\+::\+Vector2f \&}]{pos,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entities }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_particle_spell_a96380601970fea46ef806eff9fe9a70c}{Particle\+Spell}}, and \mbox{\hyperlink{class_fireball_spell_a0e0517ff2bfaa7bd174a59eb1e140578}{Fireball\+Spell}}.
+
+\mbox{\Hypertarget{class_spell_ae3bc20627f38c8f2be797cf1d465fdba}\label{class_spell_ae3bc20627f38c8f2be797cf1d465fdba}} 
+\index{Spell@{Spell}!getManaCost@{getManaCost}}
+\index{getManaCost@{getManaCost}!Spell@{Spell}}
+\doxysubsubsection{\texorpdfstring{getManaCost()}{getManaCost()}}
+{\footnotesize\ttfamily const float Spell\+::get\+Mana\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_spell_a3f6bdd758d5ce61798cc602087a97d45}\label{class_spell_a3f6bdd758d5ce61798cc602087a97d45}} 
+\index{Spell@{Spell}!getName@{getName}}
+\index{getName@{getName}!Spell@{Spell}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string Spell\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_spell_aee2b34273f5d087dfade4a116e2eaca5}\label{class_spell_aee2b34273f5d087dfade4a116e2eaca5}} 
+\index{Spell@{Spell}!manaCost@{manaCost}}
+\index{manaCost@{manaCost}!Spell@{Spell}}
+\doxysubsubsection{\texorpdfstring{manaCost}{manaCost}}
+{\footnotesize\ttfamily float Spell\+::mana\+Cost\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_spell_a02b6a8c887323d03c9b39697cc3dda48}\label{class_spell_a02b6a8c887323d03c9b39697cc3dda48}} 
+\index{Spell@{Spell}!textures@{textures}}
+\index{textures@{textures}!Spell@{Spell}}
+\doxysubsubsection{\texorpdfstring{textures}{textures}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Texture$\ast$$>$$\ast$ Spell\+::textures\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_spell_8h}{Spell.\+h}}\item 
+\mbox{\hyperlink{_spell_8cpp}{Spell.\+cpp}}\end{DoxyCompactItemize}

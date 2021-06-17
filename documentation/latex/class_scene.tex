@@ -1,0 +1,101 @@
+\hypertarget{class_scene}{}\doxysection{Scene Class Reference}
+\label{class_scene}\index{Scene@{Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+Inheritance diagram for Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.914530cm]{class_scene}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_a80713e569835a9b3209beedaf9ee9bf9}{Scene}} (sf\+::\+Render\+Window $\ast$\mbox{\hyperlink{class_scene_a0154fc93c1653154461a19a3209914a3}{window}}, std\+::stack$<$ \mbox{\hyperlink{class_scene}{Scene}} $\ast$ $>$ $\ast$\mbox{\hyperlink{class_scene_ac87d34d8d9076a025cca7240431350b7}{scenes}})
+\item 
+virtual \mbox{\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
+\item 
+virtual void \mbox{\hyperlink{class_scene_abf828565200f70447ab3b6fa65141456}{update}} (const float \&delta\+Time)=0
+\item 
+virtual void \mbox{\hyperlink{class_scene_a36784c445a7dfd998eaa1a9ea74e6b32}{render}} (const float \&delta\+Time)=0
+\item 
+virtual void \mbox{\hyperlink{class_scene_a2c46b4cac729891d7e5875c3fbaa910d}{handle\+Events}} (const sf\+::\+Event \&event)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window $\ast$ \mbox{\hyperlink{class_scene_a0154fc93c1653154461a19a3209914a3}{window}}
+\item 
+std\+::stack$<$ \mbox{\hyperlink{class_scene}{Scene}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_scene_ac87d34d8d9076a025cca7240431350b7}{scenes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_scene_a80713e569835a9b3209beedaf9ee9bf9}\label{class_scene_a80713e569835a9b3209beedaf9ee9bf9}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{window,  }\item[{std\+::stack$<$ \mbox{\hyperlink{class_scene}{Scene}} $\ast$ $>$ $\ast$}]{scenes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_scene_a3b8cec2e32546713915f8c6303c951f1}\label{class_scene_a3b8cec2e32546713915f8c6303c951f1}} 
+\index{Scene@{Scene}!````~Scene@{$\sim$Scene}}
+\index{````~Scene@{$\sim$Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{$\sim$Scene()}{~Scene()}}
+{\footnotesize\ttfamily Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_scene_a2c46b4cac729891d7e5875c3fbaa910d}\label{class_scene_a2c46b4cac729891d7e5875c3fbaa910d}} 
+\index{Scene@{Scene}!handleEvents@{handleEvents}}
+\index{handleEvents@{handleEvents}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
+{\footnotesize\ttfamily virtual void Scene\+::handle\+Events (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_plot_scene_a662a99cb1b7d22f580165de90ba974f4}{Plot\+Scene}}, \mbox{\hyperlink{class_pause_scene_aea0f441be06beb334f82b13aef85482e}{Pause\+Scene}}, \mbox{\hyperlink{class_menu_scene_af6a4c2de2973c441591c67e73e1c6a3d}{Menu\+Scene}}, \mbox{\hyperlink{class_level1_a157c6360072f08f812840eec1594bdb9}{Level1}}, and \mbox{\hyperlink{class_game_over_scene_a5b165bff697a3a7bc45f680be038c477}{Game\+Over\+Scene}}.
+
+\mbox{\Hypertarget{class_scene_a36784c445a7dfd998eaa1a9ea74e6b32}\label{class_scene_a36784c445a7dfd998eaa1a9ea74e6b32}} 
+\index{Scene@{Scene}!render@{render}}
+\index{render@{render}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily virtual void Scene\+::render (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_plot_scene_af2153712d615ef3e2b4f84cd09183db4}{Plot\+Scene}}, \mbox{\hyperlink{class_pause_scene_afd6cd8d843d6ab2ecdebc38ec4f23028}{Pause\+Scene}}, \mbox{\hyperlink{class_menu_scene_adfe393fe5bd1e412a0d96d38396f05b2}{Menu\+Scene}}, \mbox{\hyperlink{class_level1_a4abb56ea505972be228f0ddd1dbec626}{Level1}}, and \mbox{\hyperlink{class_game_over_scene_a08ed4148a63d02f61aa2835fbc012b8a}{Game\+Over\+Scene}}.
+
+\mbox{\Hypertarget{class_scene_abf828565200f70447ab3b6fa65141456}\label{class_scene_abf828565200f70447ab3b6fa65141456}} 
+\index{Scene@{Scene}!update@{update}}
+\index{update@{update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Scene\+::update (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_plot_scene_ac199f3bb1400fb47609839b9ed82a972}{Plot\+Scene}}, \mbox{\hyperlink{class_pause_scene_a2d64b5c1a95fb8daef3e6e3a4ecc4b0d}{Pause\+Scene}}, \mbox{\hyperlink{class_menu_scene_a9fe297c6a790a550c11fed551de0fb96}{Menu\+Scene}}, \mbox{\hyperlink{class_level1_a3eed2109db76dbac21f404667e314b6b}{Level1}}, and \mbox{\hyperlink{class_game_over_scene_ad666f0a5ec5a61a8154da5957452ef09}{Game\+Over\+Scene}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_scene_ac87d34d8d9076a025cca7240431350b7}\label{class_scene_ac87d34d8d9076a025cca7240431350b7}} 
+\index{Scene@{Scene}!scenes@{scenes}}
+\index{scenes@{scenes}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{scenes}{scenes}}
+{\footnotesize\ttfamily std\+::stack$<$\mbox{\hyperlink{class_scene}{Scene}}$\ast$$>$$\ast$ Scene\+::scenes\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_scene_a0154fc93c1653154461a19a3209914a3}\label{class_scene_a0154fc93c1653154461a19a3209914a3}} 
+\index{Scene@{Scene}!window@{window}}
+\index{window@{window}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window$\ast$ Scene\+::window\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_scene_8h}{Scene.\+h}}\item 
+\mbox{\hyperlink{_scene_8cpp}{Scene.\+cpp}}\end{DoxyCompactItemize}

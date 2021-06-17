@@ -1,0 +1,200 @@
+\hypertarget{class_entity}{}\doxysection{Entity Class Reference}
+\label{class_entity}\index{Entity@{Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+Inheritance diagram for Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_entity}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_aa4e1cf94033b81809c0420162eee5582}{Entity}} (std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$\mbox{\hyperlink{class_entity_a13390551b7845805ff1be29f487a632b}{textures}}, const float \&fps, bool \mbox{\hyperlink{class_entity_a13d62242227f82f27fae78f08a32e414}{is\+Blocking}}=false, \mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}} \mbox{\hyperlink{class_entity_a5a61b24410d1e9e7560ab142cf439dc8}{state}}=\mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022ae599161956d626eda4cb0a5ffb85271c}{Entity\+State\+::\+Idle}})
+\item 
+virtual \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{$\sim$\+Entity}} ()=default
+\item 
+const bool \mbox{\hyperlink{class_entity_ad47e03c54d4c282155e471197fd32924}{get\+Is\+Blocking}} () const
+\item 
+const \mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}} \mbox{\hyperlink{class_entity_a48197348d23b462c1e23e2d1025fab65}{get\+State}} () const
+\item 
+virtual void \mbox{\hyperlink{class_entity_adf844c991dbb08eb79609223c6acc978}{update}} (const float \&delta\+Time, std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities, sf\+::\+Vector2f map\+Size)=0
+\item 
+virtual void \mbox{\hyperlink{class_entity_a9d0d2d2d983d3bbdd5d34aa93d2c00b0}{deal\+Damage}} (const float \&damage)
+\item 
+const bool \mbox{\hyperlink{class_entity_a6f5407ec843ff04eda498115fe9954b3}{get\+Can\+Die}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_entity_a99e5722febbdd1daa9865ce291c374e2}{animation\+End}} (std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities)=0
+\item 
+void \mbox{\hyperlink{class_entity_a600e37c9a5f52415b595441f453eb837}{set\+First\+Frame}} ()
+\item 
+void \mbox{\hyperlink{class_entity_ad1dce7e7c36e19891c707c4a5b50ab67}{animate}} (const float \&delta\+Time, std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities)
+\item 
+void \mbox{\hyperlink{class_entity_ac2915dede7c7f8c316ed57a5661b78a0}{add\+Animation}} (\mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}} \mbox{\hyperlink{class_entity_a5a61b24410d1e9e7560ab142cf439dc8}{state}}, const std\+::vector$<$ sf\+::\+Int\+Rect $>$ \&frames)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_entity_a13d62242227f82f27fae78f08a32e414}{is\+Blocking}}
+\item 
+\mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}} \mbox{\hyperlink{class_entity_a5a61b24410d1e9e7560ab142cf439dc8}{state}}
+\item 
+std\+::map$<$ \mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}}, std\+::vector$<$ sf\+::\+Int\+Rect $>$ $>$ \mbox{\hyperlink{class_entity_a11f674ab8a194dae5bcd699a61df2ee4}{animations}}
+\item 
+std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_entity_a13390551b7845805ff1be29f487a632b}{textures}}
+\item 
+float \mbox{\hyperlink{class_entity_ae5e52a7b82201b43357ab4b245051c32}{time\+Per\+Frame}}
+\item 
+float \mbox{\hyperlink{class_entity_a69f951f794008db5c46529840c781784}{time\+Counter}}
+\item 
+float \mbox{\hyperlink{class_entity_a43f52d20ac434916d77ec25dfff976ef}{counter}}
+\item 
+bool \mbox{\hyperlink{class_entity_accc2f5dfb05ee72da2aca8dba58d9899}{can\+Die}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_entity_aa4e1cf94033b81809c0420162eee5582}\label{class_entity_aa4e1cf94033b81809c0420162eee5582}} 
+\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$}]{textures,  }\item[{const float \&}]{fps,  }\item[{bool}]{is\+Blocking = {\ttfamily false},  }\item[{\mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}}}]{state = {\ttfamily \mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022ae599161956d626eda4cb0a5ffb85271c}{Entity\+State\+::\+Idle}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_entity_ac479d009ddde62dfb378ca0a70d81307}\label{class_entity_ac479d009ddde62dfb378ca0a70d81307}} 
+\index{Entity@{Entity}!````~Entity@{$\sim$Entity}}
+\index{````~Entity@{$\sim$Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{$\sim$Entity()}{~Entity()}}
+{\footnotesize\ttfamily virtual Entity\+::$\sim$\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_entity_ac2915dede7c7f8c316ed57a5661b78a0}\label{class_entity_ac2915dede7c7f8c316ed57a5661b78a0}} 
+\index{Entity@{Entity}!addAnimation@{addAnimation}}
+\index{addAnimation@{addAnimation}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{addAnimation()}{addAnimation()}}
+{\footnotesize\ttfamily void Entity\+::add\+Animation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}}}]{state,  }\item[{const std\+::vector$<$ sf\+::\+Int\+Rect $>$ \&}]{frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_ad1dce7e7c36e19891c707c4a5b50ab67}\label{class_entity_ad1dce7e7c36e19891c707c4a5b50ab67}} 
+\index{Entity@{Entity}!animate@{animate}}
+\index{animate@{animate}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{animate()}{animate()}}
+{\footnotesize\ttfamily void Entity\+::animate (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entities }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_a99e5722febbdd1daa9865ce291c374e2}\label{class_entity_a99e5722febbdd1daa9865ce291c374e2}} 
+\index{Entity@{Entity}!animationEnd@{animationEnd}}
+\index{animationEnd@{animationEnd}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{animationEnd()}{animationEnd()}}
+{\footnotesize\ttfamily virtual void Entity\+::animation\+End (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entities }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_enemy_a9a6692f8ed4c3ba2985d6210217d300d}{Enemy}}, and \mbox{\hyperlink{class_missile_a025e56df9438fcac4cdf5586ead31a9b}{Missile}}.
+
+\mbox{\Hypertarget{class_entity_a9d0d2d2d983d3bbdd5d34aa93d2c00b0}\label{class_entity_a9d0d2d2d983d3bbdd5d34aa93d2c00b0}} 
+\index{Entity@{Entity}!dealDamage@{dealDamage}}
+\index{dealDamage@{dealDamage}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{dealDamage()}{dealDamage()}}
+{\footnotesize\ttfamily void Entity\+::deal\+Damage (\begin{DoxyParamCaption}\item[{const float \&}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_wraith_ae87ac0483c15369f37ccfbf1c3ba2c92}{Wraith}}, and \mbox{\hyperlink{class_player_a58f7d958a9e9cea4385c55ac3c6e47a8}{Player}}.
+
+\mbox{\Hypertarget{class_entity_a6f5407ec843ff04eda498115fe9954b3}\label{class_entity_a6f5407ec843ff04eda498115fe9954b3}} 
+\index{Entity@{Entity}!getCanDie@{getCanDie}}
+\index{getCanDie@{getCanDie}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getCanDie()}{getCanDie()}}
+{\footnotesize\ttfamily const bool Entity\+::get\+Can\+Die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_entity_ad47e03c54d4c282155e471197fd32924}\label{class_entity_ad47e03c54d4c282155e471197fd32924}} 
+\index{Entity@{Entity}!getIsBlocking@{getIsBlocking}}
+\index{getIsBlocking@{getIsBlocking}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getIsBlocking()}{getIsBlocking()}}
+{\footnotesize\ttfamily const bool Entity\+::get\+Is\+Blocking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_entity_a48197348d23b462c1e23e2d1025fab65}\label{class_entity_a48197348d23b462c1e23e2d1025fab65}} 
+\index{Entity@{Entity}!getState@{getState}}
+\index{getState@{getState}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}} Entity\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_entity_a600e37c9a5f52415b595441f453eb837}\label{class_entity_a600e37c9a5f52415b595441f453eb837}} 
+\index{Entity@{Entity}!setFirstFrame@{setFirstFrame}}
+\index{setFirstFrame@{setFirstFrame}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{setFirstFrame()}{setFirstFrame()}}
+{\footnotesize\ttfamily void Entity\+::set\+First\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_adf844c991dbb08eb79609223c6acc978}\label{class_entity_adf844c991dbb08eb79609223c6acc978}} 
+\index{Entity@{Entity}!update@{update}}
+\index{update@{update}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Entity\+::update (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entities,  }\item[{sf\+::\+Vector2f}]{map\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_wraith_aad68a2d9a9dbe636e01a89c52b5d7cf3}{Wraith}}, \mbox{\hyperlink{class_tree_a17608913a7ed23a05dce1c2f4814761f}{Tree}}, \mbox{\hyperlink{class_player_ac976c892a9dbd0f3dc7b44384ca86385}{Player}}, and \mbox{\hyperlink{class_missile_a56f11db6ae168926864e41954df4805c}{Missile}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_entity_a11f674ab8a194dae5bcd699a61df2ee4}\label{class_entity_a11f674ab8a194dae5bcd699a61df2ee4}} 
+\index{Entity@{Entity}!animations@{animations}}
+\index{animations@{animations}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{animations}{animations}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}}, std\+::vector$<$sf\+::\+Int\+Rect$>$ $>$ Entity\+::animations\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_accc2f5dfb05ee72da2aca8dba58d9899}\label{class_entity_accc2f5dfb05ee72da2aca8dba58d9899}} 
+\index{Entity@{Entity}!canDie@{canDie}}
+\index{canDie@{canDie}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{canDie}{canDie}}
+{\footnotesize\ttfamily bool Entity\+::can\+Die\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_a43f52d20ac434916d77ec25dfff976ef}\label{class_entity_a43f52d20ac434916d77ec25dfff976ef}} 
+\index{Entity@{Entity}!counter@{counter}}
+\index{counter@{counter}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily float Entity\+::counter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_a13d62242227f82f27fae78f08a32e414}\label{class_entity_a13d62242227f82f27fae78f08a32e414}} 
+\index{Entity@{Entity}!isBlocking@{isBlocking}}
+\index{isBlocking@{isBlocking}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{isBlocking}{isBlocking}}
+{\footnotesize\ttfamily bool Entity\+::is\+Blocking\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_a5a61b24410d1e9e7560ab142cf439dc8}\label{class_entity_a5a61b24410d1e9e7560ab142cf439dc8}} 
+\index{Entity@{Entity}!state@{state}}
+\index{state@{state}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}} Entity\+::state\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_a13390551b7845805ff1be29f487a632b}\label{class_entity_a13390551b7845805ff1be29f487a632b}} 
+\index{Entity@{Entity}!textures@{textures}}
+\index{textures@{textures}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{textures}{textures}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, sf\+::\+Texture$\ast$$>$$\ast$ Entity\+::textures\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_a69f951f794008db5c46529840c781784}\label{class_entity_a69f951f794008db5c46529840c781784}} 
+\index{Entity@{Entity}!timeCounter@{timeCounter}}
+\index{timeCounter@{timeCounter}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{timeCounter}{timeCounter}}
+{\footnotesize\ttfamily float Entity\+::time\+Counter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_ae5e52a7b82201b43357ab4b245051c32}\label{class_entity_ae5e52a7b82201b43357ab4b245051c32}} 
+\index{Entity@{Entity}!timePerFrame@{timePerFrame}}
+\index{timePerFrame@{timePerFrame}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{timePerFrame}{timePerFrame}}
+{\footnotesize\ttfamily float Entity\+::time\+Per\+Frame\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

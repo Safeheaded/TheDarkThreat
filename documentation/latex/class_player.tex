@@ -1,0 +1,116 @@
+\hypertarget{class_player}{}\doxysection{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_player}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_a4e3bda1c5b317600b15dc58b931ba486}{Player}} (sf\+::\+Render\+Window $\ast$window, std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$\mbox{\hyperlink{class_entity_a13390551b7845805ff1be29f487a632b}{textures}}, const float \&fps)
+\item 
+\mbox{\hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{$\sim$\+Player}} ()
+\item 
+void \mbox{\hyperlink{class_player_ac976c892a9dbd0f3dc7b44384ca86385}{update}} (const float \&delta\+Time, std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities, sf\+::\+Vector2f map\+Size)
+\item 
+void \mbox{\hyperlink{class_player_a4113a6e4167574e42a3c1bcdfc9f2dbc}{Evaluate\+State}} (std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities)
+\item 
+void \mbox{\hyperlink{class_player_a58f7d958a9e9cea4385c55ac3c6e47a8}{deal\+Damage}} (const float \&damage)
+\item 
+const float \mbox{\hyperlink{class_player_afdec2f7be31cdf5453ec5e591dae5db5}{get\+Health}} () const
+\item 
+const float \mbox{\hyperlink{class_player_ad97ccdaee7c2bee6f87e8639b3a2091f}{get\+Max\+Health}} () const
+\item 
+const float \mbox{\hyperlink{class_player_a29d2432d3abe68bf11307ded45f0bf01}{get\+Mana}} () const
+\item 
+const float \mbox{\hyperlink{class_player_ac2afe264765ade09239a776ceb1c9a23}{get\+Max\+Mana}} () const
+\item 
+const std\+::string \mbox{\hyperlink{class_player_a572795cd02fe02bfa586b38e0366bc58}{get\+Spell\+Name}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_player_a4e3bda1c5b317600b15dc58b931ba486}\label{class_player_a4e3bda1c5b317600b15dc58b931ba486}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window $\ast$}]{window,  }\item[{std\+::map$<$ std\+::string, sf\+::\+Texture $\ast$ $>$ $\ast$}]{textures,  }\item[{const float \&}]{fps }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_player_a749d2c00e1fe0f5c2746f7505a58c062}\label{class_player_a749d2c00e1fe0f5c2746f7505a58c062}} 
+\index{Player@{Player}!````~Player@{$\sim$Player}}
+\index{````~Player@{$\sim$Player}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{$\sim$Player()}{~Player()}}
+{\footnotesize\ttfamily Player\+::$\sim$\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_a58f7d958a9e9cea4385c55ac3c6e47a8}\label{class_player_a58f7d958a9e9cea4385c55ac3c6e47a8}} 
+\index{Player@{Player}!dealDamage@{dealDamage}}
+\index{dealDamage@{dealDamage}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{dealDamage()}{dealDamage()}}
+{\footnotesize\ttfamily void Player\+::deal\+Damage (\begin{DoxyParamCaption}\item[{const float \&}]{damage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_entity_a9d0d2d2d983d3bbdd5d34aa93d2c00b0}{Entity}}.
+
+\mbox{\Hypertarget{class_player_a4113a6e4167574e42a3c1bcdfc9f2dbc}\label{class_player_a4113a6e4167574e42a3c1bcdfc9f2dbc}} 
+\index{Player@{Player}!EvaluateState@{EvaluateState}}
+\index{EvaluateState@{EvaluateState}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{EvaluateState()}{EvaluateState()}}
+{\footnotesize\ttfamily void Player\+::\+Evaluate\+State (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entities }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_player_afdec2f7be31cdf5453ec5e591dae5db5}\label{class_player_afdec2f7be31cdf5453ec5e591dae5db5}} 
+\index{Player@{Player}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily const float Player\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_player_a29d2432d3abe68bf11307ded45f0bf01}\label{class_player_a29d2432d3abe68bf11307ded45f0bf01}} 
+\index{Player@{Player}!getMana@{getMana}}
+\index{getMana@{getMana}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getMana()}{getMana()}}
+{\footnotesize\ttfamily const float Player\+::get\+Mana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_player_ad97ccdaee7c2bee6f87e8639b3a2091f}\label{class_player_ad97ccdaee7c2bee6f87e8639b3a2091f}} 
+\index{Player@{Player}!getMaxHealth@{getMaxHealth}}
+\index{getMaxHealth@{getMaxHealth}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getMaxHealth()}{getMaxHealth()}}
+{\footnotesize\ttfamily const float Player\+::get\+Max\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_player_ac2afe264765ade09239a776ceb1c9a23}\label{class_player_ac2afe264765ade09239a776ceb1c9a23}} 
+\index{Player@{Player}!getMaxMana@{getMaxMana}}
+\index{getMaxMana@{getMaxMana}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getMaxMana()}{getMaxMana()}}
+{\footnotesize\ttfamily const float Player\+::get\+Max\+Mana (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_player_a572795cd02fe02bfa586b38e0366bc58}\label{class_player_a572795cd02fe02bfa586b38e0366bc58}} 
+\index{Player@{Player}!getSpellName@{getSpellName}}
+\index{getSpellName@{getSpellName}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{getSpellName()}{getSpellName()}}
+{\footnotesize\ttfamily const std\+::string Player\+::get\+Spell\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_player_ac976c892a9dbd0f3dc7b44384ca86385}\label{class_player_ac976c892a9dbd0f3dc7b44384ca86385}} 
+\index{Player@{Player}!update@{update}}
+\index{update@{update}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Player\+::update (\begin{DoxyParamCaption}\item[{const float \&}]{delta\+Time,  }\item[{std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$}]{entities,  }\item[{sf\+::\+Vector2f}]{map\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_entity_adf844c991dbb08eb79609223c6acc978}{Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_player_8h}{Player.\+h}}\item 
+\mbox{\hyperlink{_player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}
