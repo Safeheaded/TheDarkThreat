@@ -23,31 +23,7 @@ bool TileMap::load(
 			int tu = tileNumber % (texture.getSize().x / tileSize.x);
 			int tv = tileNumber / (texture.getSize().x / tileSize.x);
 
-			if (tileNumber == 1) {
-				Tree* tree = new Tree(textures, 1);
-				auto treeBounds = tree->getGlobalBounds();
-				tree->setPosition(
-					i * tileSize.x + treeBounds.width/2, 
-					j * tileSize.y + treeBounds.height / 2
-				);
-
-				// setting collider
-				Obstacle* obstacle = new Obstacle({10, 10}, 
-					{ 
-						tree->getPosition().x + treeBounds.width/2 - 5,  
-						tree->getPosition().y + treeBounds.height - 5 
-					}
-				);
-				obstacle->setOutlineColor(sf::Color::Red);
-				obstacle->setOutlineThickness(2);
-				entities->emplace_back(tree);
-				obstacles->emplace_back(obstacle);
-			}
-			else if (tileNumber == 3) {
-				Wraith* wraith = new Wraith(player, window, textures, 10);
-				wraith->setPosition(i * tileSize.x, j * tileSize.y);
-				entities->emplace_back(wraith);
-			}
+			this->loadEntities(tileNumber, entities, window, player, textures, tileSize, i, j);
 
 			sf::Vertex* quad = &vertices[(i + j * width) * 4];
 

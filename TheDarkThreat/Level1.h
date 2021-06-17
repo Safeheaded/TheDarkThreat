@@ -4,7 +4,7 @@
 #include "Missile.h"
 #include "Wraith.h"
 #include "PlayerGUI.h"
-#include "TileMap.h"
+#include "OverworldMap.h"
 #include "Obstacle.h"
 
 class Level1 :
@@ -16,7 +16,7 @@ private:
     std::vector<Entity*> entities;
     std::vector<Obstacle*> obstacles;
     PlayerGUI* playerGUI;
-    TileMap map;
+    OverworldMap map;
     sf::View view;
 public:
     Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes);
