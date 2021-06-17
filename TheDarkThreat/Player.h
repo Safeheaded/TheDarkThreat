@@ -23,6 +23,7 @@ private:
     std::vector<Spell*> spells;
     std::vector<Entity*>* entities;
     int selectedSpell;
+    sf::Vector2f target;
 
     // Methods
     void handleMovement(

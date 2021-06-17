@@ -15,10 +15,10 @@ Player::Player(
 	this->canChangeState = true;
 
 	this->spells.emplace_back(new FireballSpell(
-		this->textures, "Kula ognia"
+		this->textures, "Fireball"
 	));
 	this->spells.emplace_back(
-		new ParticleSpell(this->textures, "Wir œmierci"
+		new ParticleSpell(this->textures, "Death\'s vortex"
 		));
 
 	this->isBlocking = true;
@@ -80,6 +80,7 @@ void Player::EvaluateState(std::vector<Entity*>* entities)
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 		this->state = EntityState::PrimaryAttack;
 		this->canChangeState = false;
+		this->target = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)) {
@@ -205,9 +206,8 @@ void Player::attack(std::vector<Entity*>* entities)
 {
 	// Fires only when enough mana
 	if (this->mana >= this->spells[this->selectedSpell]->getManaCost()) {
-		sf::Vector2f target = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
 		this->spells[this->selectedSpell]->fire(
-			this->window, 8.0f, target, this->getPosition(), entities
+			this->window, 8.0f, this->target, this->getPosition(), entities
 		);
 
 		// Decreases mana

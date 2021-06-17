@@ -4,6 +4,7 @@ void Button::textSetup(std::string text, const sf::Font& font)
 {
 	this->text.setString(text);
 	this->text.setFont(font);
+	this->text.setCharacterSize(20);
 
 	// Centering text
 
@@ -17,7 +18,6 @@ Button::Button(
 	sf::Vector2f pos, sf::Vector2f size, UICommand* command,
 	std::string text, const sf::Font& font, const sf::Color& color): RectangleShape(size), command(command)
 {
-
 	this->textSetup(text, font);
 	this->isPressed = false;
 	this->setPosition(pos);

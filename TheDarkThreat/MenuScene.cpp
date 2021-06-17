@@ -3,8 +3,8 @@
 void MenuScene::setupButtons()
 {
 	sf::Color color(122, 58, 18);
-	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["NEXT"], "Nowa gra", this->font, color);
-	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["CLOSE"], "WyjdŸ z gry", this->font, color);
+	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["NEXT"], "New Game", this->font, color);
+	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["CLOSE"], "Exit", this->font, color);
 }
 
 void MenuScene::setButtonsPosition()
@@ -48,7 +48,7 @@ void MenuScene::setupCommands()
 MenuScene::MenuScene(sf::RenderWindow* window, std::stack<Scene*>* scenes):
 	Scene(window, scenes)
 {
-	Utils::loadFont("akaFrivolity.ttf", &this->font);
+	Utils::loadFont("PressStart2P-Regular.ttf", &this->font);
 	this->setupCommands();
 	this->setupButtons();
 	this->setButtonsPosition();

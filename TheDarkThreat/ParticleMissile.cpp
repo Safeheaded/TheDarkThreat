@@ -2,6 +2,8 @@
 
 void ParticleMissile::customBehaviour(const float& deltaTime)
 {
+	//this->setOrigin(bounds.width / 2, bounds.height / 2);
+	//this->setScale(2, 2);
 	this->timePassed += deltaTime;
 
 	if (this->timePassed >= this->lifeTime) {
@@ -27,7 +29,7 @@ ParticleMissile::ParticleMissile(
 	const float& fps, const sf::Vector2f& target, 
 	const sf::Vector2f& pos
 ):Missile(window, textures, fps, target, pos), 
-attacksPerSecond(1), attackTimeCounter(attacksPerSecond)
+attacksPerSecond(1), attackTimeCounter(1)
 {
 	this->damage = 100;
 	this->addAnimation(EntityState::Idle, {
@@ -44,7 +46,9 @@ attacksPerSecond(1), attackTimeCounter(attacksPerSecond)
 	this->setFirstFrame();
 	this->lifeTime = 5;
 	this->timePassed = 0;
-	this->setScale(2, 2);
+	auto bounds = this->getGlobalBounds();
+	//this->setOrigin(bounds.width/2, bounds.height/2);
+	//this->setScale(2, 2);
 }
 
 ParticleMissile::~ParticleMissile()

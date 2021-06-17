@@ -5,8 +5,10 @@ void PlotScene::setupText(const std::string& text)
 	this->text.setString(text);
 	this->text.setFont(this->font);
 	this->text.setPosition(20, 20);
+	this->text.setCharacterSize(20);
 
-	this->instructionText.setString("Wciœnij \'Space\', aby kontynuowaæ");
+	this->instructionText.setString("Press \'Space\' to continue");
+	this->instructionText.setCharacterSize(15);
 	this->instructionText.setFont(this->font);
 	this->instructionText.setPosition(
 		this->window->getSize().x/2 - this->instructionText.getGlobalBounds().width/2, 
@@ -17,7 +19,7 @@ void PlotScene::setupText(const std::string& text)
 PlotScene::PlotScene(sf::RenderWindow* window, std::stack<Scene*>* scenes, const std::string& text):
 	Scene(window, scenes)
 {
-	Utils::loadFont("akaFrivolity.ttf", &this->font);
+	Utils::loadFont("PressStart2P-Regular.ttf", &this->font);
 
 	this->setupText(text);
 }

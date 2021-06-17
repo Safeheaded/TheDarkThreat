@@ -41,7 +41,7 @@ void Missile::update(const float& deltaTime, std::vector<Entity*>* entities, sf:
 
 	float missileRadius = 
 		static_cast<float>(sqrt(pow(missileBounds.width / 2, 2) + 
-			pow(missileBounds.height / 2, 2)));
+			pow(missileBounds.height / 2, 2)))/2;
 
 	if (missileBounds.contains(
 		this->target + this->direction * missileRadius
