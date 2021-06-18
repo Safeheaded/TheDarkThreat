@@ -8,6 +8,8 @@
 #include "Obstacle.h"
 #include "GameOverScene.h"
 #include "PauseScene.h"
+#include <thread>
+#include <chrono>
 
 class Level1 :
     public Scene
@@ -20,6 +22,7 @@ private:
     PlayerGUI* playerGUI;
     OverworldMap map;
     sf::View view;
+    bool isPaused;
 public:
     Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes);
     void setupTextures();

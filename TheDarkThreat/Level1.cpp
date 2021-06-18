@@ -1,7 +1,7 @@
 #include "Level1.h"
 
 Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
-	Scene(window, scenes)
+	Scene(window, scenes), isPaused(false)
 {
 	setupTextures();
 
@@ -128,10 +128,17 @@ Level1::~Level1()
 
 void Level1::update(const float& deltaTime)
 {
+	if (this->isPaused) {
+		std::this_thread::sleep_for(std::chrono::milliseconds(300));
+		this->isPaused = false;
+	}
+
 	// Handles pause screen
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
 		this->scenes->push(new PauseScene(this->window, this->scenes));
+		this->isPaused = true;
 	}
+
 
 	for (size_t i = 0; i < this->entities.size(); i++) {
 		this->entities[i]->update(deltaTime, &this->entities, this->map.getSize());
