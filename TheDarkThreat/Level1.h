@@ -10,6 +10,7 @@
 #include "PauseScene.h"
 #include <thread>
 #include <chrono>
+#include "Map.h"
 
 class Level1 :
     public Scene
