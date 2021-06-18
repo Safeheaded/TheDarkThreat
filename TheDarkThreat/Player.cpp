@@ -7,9 +7,12 @@ Player::Player(
 ):
 	Entity(textures, fps), speed(500), 
 	window(window), isRunning(false), 
-	prevState(EntityState::Idle), maxHealth(100), health(100),
+	prevState(EntityState::Idle),
 	maxMana(100), mana(100)
 {
+	this->maxHealth = 100;
+	this->health = this->maxHealth;
+
 	this->selectedSpell = 0;
 	this->setupAnimations();
 	this->canChangeState = true;
@@ -103,16 +106,6 @@ void Player::dealDamage(const float& damage)
 	if (this->health <= 0) {
 		this->state = EntityState::Death;
 	}
-}
-
-const float Player::getHealth() const
-{
-	return this->health;
-}
-
-const float Player::getMaxHealth() const
-{
-	return this->maxHealth;
 }
 
 const float Player::getMana() const

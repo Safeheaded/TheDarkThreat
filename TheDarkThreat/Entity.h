@@ -22,6 +22,8 @@ protected:
 	float timeCounter;
 	float counter;
 	bool canDie;
+	float maxHealth;
+	float health;
 
 	virtual void animationEnd(std::vector<Entity*>* entities) = 0;
 	void setFirstFrame();
@@ -34,6 +36,9 @@ public:
 
 	const bool getIsBlocking() const;
 	const EntityState getState() const;
+
+	const float getHealth() const;
+	const float getMaxHealth() const;
 
 	virtual void update(const float& deltaTime, 
 		std::vector<Entity*>* entities, sf::Vector2f mapSize) = 0;

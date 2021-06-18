@@ -41,6 +41,9 @@ void Level1::setupTextures()
 
 	this->textures["TREE"] = new sf::Texture();
 	Utils::loadTexture("assets\\textures\\plant.png", this->textures["TREE"]);
+
+	this->textures["ENEMY_HEALTH"] = new sf::Texture();
+	Utils::loadTexture("assets\\textures\\health.png", this->textures["ENEMY_HEALTH"]);
 }
 
 Level1::~Level1()

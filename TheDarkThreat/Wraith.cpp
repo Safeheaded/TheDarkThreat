@@ -11,9 +11,12 @@ Wraith::Wraith(
 	const float& fps
 ): Entity(textures, fps), player(player), 
 sightDistance(300), attackDistance(150), 
-speed(150), attackCooldown(4), timer(attackCooldown), health(200), 
+speed(150), attackCooldown(4), timer(attackCooldown), 
 window(window), isAttacked(false)
 {
+	this->maxHealth = 200;
+	this->health = this->maxHealth;
+
 	this->addAnimation(EntityState::Idle, {
 		{34, 21, 45, 62},
 		{134, 21, 45, 62},

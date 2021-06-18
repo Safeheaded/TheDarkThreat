@@ -2,7 +2,7 @@
 
 Entity::Entity(std::map<std::string, sf::Texture*>* textures, const float& fps, bool isBlocking, EntityState state):
 	isBlocking(isBlocking), state(state), timeCounter(0), 
-    timePerFrame(0), counter(0), textures(textures), canDie(false)
+    timePerFrame(0), counter(0), textures(textures), canDie(false), health(100), maxHealth(100)
 {
     this->timePerFrame = 1 / fps;
 }
@@ -54,4 +54,14 @@ void Entity::dealDamage(const float& damage)
 const bool Entity::getCanDie() const
 {
     return this->canDie;
+}
+
+const float Entity::getHealth() const 
+{
+    return this->health;
+}
+
+const float Entity::getMaxHealth() const
+{
+    return this->maxHealth;
 }

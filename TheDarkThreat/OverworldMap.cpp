@@ -27,6 +27,8 @@ void OverworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* en
 	else if (tileValue == 3) {
 		Wraith* wraith = new Wraith(player, window, textures, 10);
 		wraith->setPosition(i * tileSize.x, j * tileSize.y);
+		HealthBar* health = new HealthBar(textures, 1, wraith);
 		entities->emplace_back(wraith);
+		entities->emplace_back(health);
 	}
 }

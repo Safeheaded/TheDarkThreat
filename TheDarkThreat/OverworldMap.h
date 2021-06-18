@@ -1,5 +1,7 @@
 #pragma once
 #include "TileMap.h"
+#include "HealthBar.h"
+
 class OverworldMap :
     public TileMap
 {

@@ -15,8 +15,6 @@ private:
     sf::RenderWindow* window;
     bool isRunning;
     EntityState prevState;
-    float health;
-    float maxHealth;
     float mana;
     float maxMana;
     bool canChangeState;
@@ -42,9 +40,6 @@ public:
     void update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize);
     void EvaluateState(std::vector<Entity*>* entities);
     void dealDamage(const float& damage);
-
-    const float getHealth() const;
-    const float getMaxHealth() const;
 
     const float getMana() const;
     const float getMaxMana() const;
