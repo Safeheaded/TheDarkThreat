@@ -1,6 +1,7 @@
 #pragma once
 #include "TileMap.h"
 #include "HealthBar.h"
+#include "HealthPotion.h"
 
 class OverworldMap :
     public TileMap

@@ -7,6 +7,9 @@
 #include "ParticleMissile.h"
 #include "ParticleSpell.h"
 
+// This is to avoid circular dependencies (I spent like half an hour trying to figure out the errors :) )
+class HealthPotion;
+
 class Player :
     public Entity
 {
@@ -22,6 +25,7 @@ private:
     std::vector<Entity*>* entities;
     int selectedSpell;
     sf::Vector2f target;
+    friend class HealthPotion;
 
     // Methods
     void handleMovement(

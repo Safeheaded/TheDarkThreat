@@ -31,4 +31,9 @@ void OverworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* en
 		entities->emplace_back(wraith);
 		entities->emplace_back(health);
 	}
+	else if (tileValue == 4) {
+		HealthPotion* health = new HealthPotion(textures, 1, player);
+		health->setPosition(i * tileSize.x, j * tileSize.y);
+		entities->emplace_back(health);
+	}
 }

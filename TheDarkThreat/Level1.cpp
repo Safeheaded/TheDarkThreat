@@ -44,6 +44,12 @@ void Level1::setupTextures()
 
 	this->textures["ENEMY_HEALTH"] = new sf::Texture();
 	Utils::loadTexture("assets\\textures\\health.png", this->textures["ENEMY_HEALTH"]);
+
+	this->textures["HEALTH_POTION"] = new sf::Texture();
+	Utils::loadTexture("assets\\textures\\healthPotion.png", this->textures["HEALTH_POTION"]);
+
+	this->textures["MANA_POTION"] = new sf::Texture();
+	Utils::loadTexture("assets\\textures\\manaPotion.png", this->textures["MANA_POTION"]);
 }
 
 Level1::~Level1()

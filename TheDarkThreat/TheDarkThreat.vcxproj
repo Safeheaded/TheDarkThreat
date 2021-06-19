@@ -153,6 +153,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="HealthBar.cpp" />
+    <ClCompile Include="HealthPotion.cpp" />
     <ClCompile Include="Level1.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="HealthBar.h" />
+    <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="Level1.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MenuScene.h" />
