@@ -4,10 +4,11 @@ void HealthPotion::animationEnd(std::vector<Entity*>* entities)
 {
 }
 
-void HealthPotion::heal(Player* player)
+void HealthPotion::heal()
 {
-	if (player->getHealth() < player->getMaxHealth()) {
-		player->health = player->maxHealth;
+	if (this->player->getHealth() < this->player->getMaxHealth()) {
+		this->player->health = this->player->maxHealth;
+		this->canDie = true;
 	}
 }
 
@@ -30,7 +31,6 @@ void HealthPotion::update(const float& deltaTime, std::vector<Entity*>* entities
 	auto playerBounds = this->player->getGlobalBounds();
 	auto potionBounds = this->getGlobalBounds();
 	if (potionBounds.intersects(playerBounds)) {
-		this->heal(this->player);
-		this->canDie = true;
+		this->heal();
 	}
 }

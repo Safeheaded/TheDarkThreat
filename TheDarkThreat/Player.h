@@ -9,6 +9,7 @@
 
 // This is to avoid circular dependencies (I spent like half an hour trying to figure out the errors :) )
 class HealthPotion;
+class ManaPotion;
 
 class Player :
     public Entity
@@ -26,6 +27,7 @@ private:
     int selectedSpell;
     sf::Vector2f target;
     friend class HealthPotion;
+    friend class ManaPotion;
 
     // Methods
     void handleMovement(

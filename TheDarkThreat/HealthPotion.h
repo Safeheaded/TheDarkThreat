@@ -7,7 +7,7 @@ private:
     Player* player;
     void animationEnd(std::vector<Entity*>* entities);
 
-    void heal(Player* player);
+    void heal();
 public:
     HealthPotion(std::map<std::string, sf::Texture*>* textures, const float& fps, Player* player);
     ~HealthPotion();

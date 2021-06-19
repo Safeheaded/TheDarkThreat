@@ -2,6 +2,7 @@
 #include "TileMap.h"
 #include "HealthBar.h"
 #include "HealthPotion.h"
+#include "ManaPotion.h"
 
 class OverworldMap :
     public TileMap

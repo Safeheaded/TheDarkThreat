@@ -25,15 +25,20 @@ void OverworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* en
 		//obstacles->emplace_back(obstacle);
 	}
 	else if (tileValue == 3) {
-		Wraith* wraith = new Wraith(player, window, textures, 10);
+		/*Wraith* wraith = new Wraith(player, window, textures, 10);
 		wraith->setPosition(i * tileSize.x, j * tileSize.y);
 		HealthBar* health = new HealthBar(textures, 1, wraith);
 		entities->emplace_back(wraith);
-		entities->emplace_back(health);
+		entities->emplace_back(health);*/
 	}
 	else if (tileValue == 4) {
 		HealthPotion* health = new HealthPotion(textures, 1, player);
 		health->setPosition(i * tileSize.x, j * tileSize.y);
 		entities->emplace_back(health);
+	}
+	else if (tileValue == 5) {
+		ManaPotion* mana = new ManaPotion(textures, 1, player);
+		mana->setPosition(i * tileSize.x, j * tileSize.y);
+		entities->emplace_back(mana);
 	}
 }
