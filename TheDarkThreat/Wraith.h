@@ -15,6 +15,9 @@ private:
     float attackDistance;
     float attackCooldown;
     float timer;
+
+    float timeToAttack;
+    float toAttackTimer;
     sf::RenderWindow* window;
 
     bool isAttacked;

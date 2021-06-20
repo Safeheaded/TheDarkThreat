@@ -9,10 +9,10 @@ Wraith::Wraith(
 	Player* player,
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps
-): Entity(textures, fps), player(player), 
-sightDistance(300), attackDistance(150), 
-speed(150), attackCooldown(4), timer(attackCooldown), 
-window(window), isAttacked(false)
+) : Entity(textures, fps), player(player),
+sightDistance(300), attackDistance(150),
+speed(150), attackCooldown(4), timer(attackCooldown),
+window(window), isAttacked(false), timeToAttack(1), toAttackTimer(0)
 {
 	this->maxHealth = 200;
 	this->health = this->maxHealth;
@@ -54,10 +54,13 @@ void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities, sf::
 		this->isAttacked = true;
 		auto normalisedDirection = Utils::normalizeVector(direction);
 		velocity = normalisedDirection;
+		if (this->toAttackTimer < this->timeToAttack) {
+			this->toAttackTimer += deltaTime;
+		}
 		
 	}
 	if (distance <= this->sightDistance) {
-		if (this->timer >= this->attackCooldown) {
+		if (this->timer >= this->attackCooldown && this->toAttackTimer >= this->timeToAttack) {
 			this->timer -= this->attackCooldown;
 			entities->emplace_back(
 				new EnemyMissile(
