@@ -4,6 +4,17 @@ Game::Game()
 {
 	this->initWindow();
     this->sceneManager = new SceneManager(this->window);
+
+    setupMusic();
+}
+
+void Game::setupMusic()
+{
+    this->buffer.loadFromFile("assets\\music\\main_score.wav");
+    this->sound.setBuffer(this->buffer);
+    this->sound.setLoop(true);
+    this->sound.setVolume(5.f);
+    this->sound.play();
 }
 
 Game::~Game()

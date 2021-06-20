@@ -11,6 +11,8 @@ private:
 	sf::Clock clock;
 	float deltaTime;
 	SceneManager* sceneManager;
+	sf::SoundBuffer buffer;
+	sf::Sound sound;
 
 	// Methods
 	void initWindow();
@@ -21,6 +23,7 @@ private:
 public:
 	// Constructor / Destructor
 	Game();
+	void setupMusic();
 	~Game();
 
 	// Methods
