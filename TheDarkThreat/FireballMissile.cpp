@@ -5,7 +5,7 @@ FireballMissile::FireballMissile(
 	const sf::Vector2f& target, const sf::Vector2f& pos
 ): Missile(window, textures, fps, target, pos)
 {
-	this->damage = 100;
+	this->damage = 50;
 	this->addAnimation(EntityState::Idle, {
 		{23, 26, 53, 47},
 		{122, 26, 55, 47},
