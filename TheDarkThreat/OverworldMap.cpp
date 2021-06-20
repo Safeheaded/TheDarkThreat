@@ -8,8 +8,8 @@ void OverworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* en
 		Tree* tree = new Tree(textures, 1);
 		auto treeBounds = tree->getGlobalBounds();
 		tree->setPosition(
-			i * tileSize.x + treeBounds.width / 2,
-			j * tileSize.y + treeBounds.height / 2
+			i * tileSize.x,
+			j * tileSize.y
 		);
 
 		// setting collider
@@ -25,11 +25,11 @@ void OverworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* en
 		//obstacles->emplace_back(obstacle);
 	}
 	else if (tileValue == 3) {
-		/*Wraith* wraith = new Wraith(player, window, textures, 10);
+		Wraith* wraith = new Wraith(player, window, textures, 10);
 		wraith->setPosition(i * tileSize.x, j * tileSize.y);
 		HealthBar* health = new HealthBar(textures, 1, wraith);
-		entities->emplace_back(wraith);
-		entities->emplace_back(health);*/
+		entities->insert(entities->begin(), wraith);
+		entities->insert(entities->begin(), health);
 	}
 	else if (tileValue == 4) {
 		HealthPotion* health = new HealthPotion(textures, 1, player);

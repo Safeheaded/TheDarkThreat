@@ -7,7 +7,7 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 
 	// Setups player
 	this->player = new Player(this->window, &this->textures, 10.0f);
-	this->player->setPosition(100, 100);
+	this->player->setPosition(291, 257);
 
 	this->entities.emplace_back(player);
 

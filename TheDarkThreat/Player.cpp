@@ -42,6 +42,8 @@ void Player::update(const float& deltaTime, std::vector<Entity*>* entities, sf::
 
 	this->renegerateMana(deltaTime);
 
+	//std::cout << this->getPosition().x << "   " << this->getPosition().y << std::endl;
+
 	// Handles movement
 	sf::Vector2f velocity;
 	if (this->canChangeState) {
