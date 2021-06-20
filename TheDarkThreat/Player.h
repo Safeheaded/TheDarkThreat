@@ -29,6 +29,10 @@ private:
     friend class HealthPotion;
     friend class ManaPotion;
 
+    float manaCounter;
+    float manaRegenerationSpeed;
+    float manaRenegerationAmount;
+
     // Methods
     void handleMovement(
         sf::Vector2f& velocity, const float& deltaTime, sf::FloatRect& playerBounds
@@ -37,6 +41,8 @@ private:
     void setupAnimations();
     void animationEnd(std::vector<Entity*>* entities);
     void attack(std::vector<Entity*>* entities);
+
+    void renegerateMana(const float& deltaTime);
 public:
     Player(sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
         const float& fps);

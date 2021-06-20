@@ -8,7 +8,7 @@ Player::Player(
 	Entity(textures, fps), speed(500), 
 	window(window), isRunning(false), 
 	prevState(EntityState::Idle),
-	maxMana(100), mana(100)
+	maxMana(100), mana(100), manaCounter(0), manaRegenerationSpeed(1), manaRenegerationAmount(1)
 {
 	this->maxHealth = 100;
 	this->health = this->maxHealth;
@@ -39,6 +39,8 @@ void Player::update(const float& deltaTime, std::vector<Entity*>* entities, sf::
 {
 	this->isRunning = false;
 	auto playerBounds = this->getGlobalBounds();
+
+	this->renegerateMana(deltaTime);
 
 	// Handles movement
 	sf::Vector2f velocity;
@@ -205,6 +207,22 @@ void Player::attack(std::vector<Entity*>* entities)
 
 		// Decreases mana
 		this->mana -= this->spells[this->selectedSpell]->getManaCost();
+	}
+}
+
+void Player::renegerateMana(const float& deltaTime)
+{
+	if (this->mana < this->maxMana) {
+		if (this->manaCounter >= this->manaRegenerationSpeed) {
+			this->manaCounter -= this->manaRegenerationSpeed;
+			this->mana += this->manaRenegerationAmount;
+		}
+		else {
+			this->manaCounter += deltaTime;
+		}
+	}
+	else {
+		this->manaCounter = 0;
 	}
 }
 
