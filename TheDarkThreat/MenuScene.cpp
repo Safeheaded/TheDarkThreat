@@ -39,13 +39,20 @@ void MenuScene::setupCommands()
 {
 	this->commands["CLOSE"] = new UIClose();
 
+	auto* scenes = this->scenes;
+	auto* window = this->window;
 	std::string text = Utils::loadFullText("plot1.txt");
 	this->commands["NEXT"] = new UINextScene(
-		this->scenes, this, new PlotScene(this->window, this->scenes, text)
+		this->scenes, this, new PlotScene(this->window, this->scenes, text, [scenes, window]() {
+				auto* currentScene = scenes->top();
+				scenes->pop();
+				scenes->push(new Level1(window, scenes));
+				delete currentScene;
+			})
 	);
 }
 
-MenuScene::MenuScene(sf::RenderWindow* window, std::stack<Scene*>* scenes):
+MenuScene::MenuScene(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	Scene(window, scenes)
 {
 	Utils::loadFont("PressStart2P-Regular.ttf", &this->font);

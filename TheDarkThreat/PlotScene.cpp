@@ -16,8 +16,9 @@ void PlotScene::setupText(const std::string& text)
 	);
 }
 
-PlotScene::PlotScene(sf::RenderWindow* window, std::stack<Scene*>* scenes, const std::string& text):
-	Scene(window, scenes)
+PlotScene::PlotScene(sf::RenderWindow* window, std::stack<Scene*>* scenes, const std::string& text,
+	std::function<void()> fun):
+	Scene(window, scenes), fun(fun)
 {
 	Utils::loadFont("PressStart2P-Regular.ttf", &this->font);
 
@@ -32,10 +33,11 @@ void PlotScene::update(const float& deltaTime)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 		// TODO: Load 1 st game level
-		auto* currentScene = this->scenes->top();
-		this->scenes->pop();
-		this->scenes->push(new Level1(this->window, this->scenes));
-		delete currentScene;
+		//auto* currentScene = this->scenes->top();
+		//this->scenes->pop();
+		//this->scenes->push(new Level1(this->window, this->scenes));
+		//delete currentScene;
+		this->fun();
 	}
 }
 

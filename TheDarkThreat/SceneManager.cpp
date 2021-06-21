@@ -7,10 +7,17 @@
 
 void SceneManager::initScenes()
 {
-    /*std::string text = Utils::loadFullText("plot1.txt");
-    this->scenes.push(new PlotScene(this->window, &this->scenes, text));*/
-    //this->scenes.push(new MenuScene(this->window, &this->scenes));
-    this->scenes.push(new Level1(this->window, &this->scenes));
+    //auto* scenes = &this->scenes;
+    //auto* window = this->window;
+    //std::string text = Utils::loadFullText("plot1.txt");
+    //this->scenes.push(new PlotScene(this->window, &this->scenes, text, [scenes, window]() {
+    //        auto* currentScene = scenes->top();
+    //        scenes->pop();
+    //        scenes->push(new Level1(window, scenes));
+    //        delete currentScene;
+    //    }));
+    this->scenes.push(new MenuScene(this->window, &this->scenes));
+    //this->scenes.push(new Level1(this->window, &this->scenes));
     //this->scenes.push(new GameOverScene(this->window, &this->scenes));
 
     //this->scenes.push(new PauseScene(this->window, &this->scenes));
