@@ -11,18 +11,7 @@ void OverworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* en
 			i * tileSize.x,
 			j * tileSize.y
 		);
-
-		// setting collider
-		/*Obstacle* obstacle = new Obstacle({ 10, 10 },
-					{
-						tree->getPosition().x + treeBounds.width / 2 - 5,
-						tree->getPosition().y + treeBounds.height - 5
-					}
-					);
-		obstacle->setOutlineColor(sf::Color::Red);
-		obstacle->setOutlineThickness(2);*/
 		entities->emplace_back(tree);
-		//obstacles->emplace_back(obstacle);
 	}
 	else if (tileValue == 3) {
 		Wraith* wraith = new Wraith(player, window, textures, 10);
@@ -40,5 +29,10 @@ void OverworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* en
 		ManaPotion* mana = new ManaPotion(textures, 1, player);
 		mana->setPosition(i * tileSize.x, j * tileSize.y);
 		entities->emplace_back(mana);
+	}
+	else if (tileValue == 6) {
+		Crypt* crypt = new Crypt(textures, player);
+		crypt->setPosition(i * tileSize.x, j * tileSize.y);
+		entities->insert(entities->begin(), crypt);
 	}
 }

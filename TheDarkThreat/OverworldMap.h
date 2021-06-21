@@ -3,6 +3,7 @@
 #include "HealthBar.h"
 #include "HealthPotion.h"
 #include "ManaPotion.h"
+#include "Crypt.h"
 
 class OverworldMap :
     public TileMap

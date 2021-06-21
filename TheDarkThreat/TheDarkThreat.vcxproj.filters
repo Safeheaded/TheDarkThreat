@@ -162,6 +162,9 @@
     <ClCompile Include="UIRepeatLevel.cpp">
       <Filter>Pliki źródłowe\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="Crypt.cpp">
+      <Filter>Pliki źródłowe\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -271,6 +274,9 @@
     </ClInclude>
     <ClInclude Include="PauseScene.h">
       <Filter>Pliki nagłówkowe\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Crypt.h">
+      <Filter>Pliki nagłówkowe\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Crypt.cpp" />
     <ClCompile Include="EnemyMissile.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FireballMissile.cpp" />
@@ -185,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Button.h" />
+    <ClInclude Include="Crypt.h" />
     <ClInclude Include="EnemyMissile.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="FireballMissile.h" />

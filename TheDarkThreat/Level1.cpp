@@ -50,6 +50,10 @@ void Level1::setupTextures()
 
 	this->textures["MANA_POTION"] = new sf::Texture();
 	Utils::loadTexture("assets\\textures\\manaPotion.png", this->textures["MANA_POTION"]);
+
+	this->textures["CEMETERY"] = new sf::Texture();
+	Utils::loadTexture("assets\\textures\\cemetery.png", this->textures["CEMETERY"]);
+
 }
 
 Level1::~Level1()
@@ -71,6 +75,7 @@ Level1::~Level1()
 
 void Level1::update(const float& deltaTime)
 {
+	// Waits after exiting pause screen
 	if (this->isPaused) {
 		std::this_thread::sleep_for(std::chrono::milliseconds(300));
 		this->isPaused = false;
@@ -86,15 +91,6 @@ void Level1::update(const float& deltaTime)
 	for (size_t i = 0; i < this->entities.size(); i++) {
 		this->entities[i]->update(deltaTime, &this->entities, this->map.getSize());
 
-		// collision detection
-		/*if (this->entities[i]->getIsBlocking()) {
-			for (const auto& obstacle : this->obstacles) {
-				if (this->entities[i]->getGlobalBounds().intersects(obstacle->getGlobalBounds())) {
-					std::cout << "Colliding" << std::endl;
-				}
-			}
-		}*/
-
 		if (this->entities[i]->getCanDie()) {
 			// Temporary workaround so I won't get flowed by erros
 			if (typeid(*this->entities[i]) == typeid(Player)) {
@@ -102,9 +98,6 @@ void Level1::update(const float& deltaTime)
 				auto* currentScene = this->scenes->top();
 				this->scenes->pop();
 				this->scenes->push(new GameOverScene(this->window, this->scenes));
-
-				/*const auto& defaultView = this->window->getDefaultView();
-				this->window->setView(defaultView);*/
 
 				delete currentScene;
 				// Return needed to avoid updating nonexisting PlayerGUI

@@ -32,7 +32,6 @@ void HealthBar::update(const float& deltaTime, std::vector<Entity*>* entities, s
 		);
 	}
 	else {
-		std::cout << "Destroying healthBar" << std::endl;
 		this->canDie = true;
 	}
 }
