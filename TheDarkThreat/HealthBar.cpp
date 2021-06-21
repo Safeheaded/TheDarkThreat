@@ -18,7 +18,7 @@ HealthBar::~HealthBar()
 
 void HealthBar::update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize)
 {
-	if (this->entity != nullptr) {
+	if (!this->entity->getCanDie()) {
 		auto entityBounds = this->entity->getGlobalBounds();
 		auto barBounds = this->getGlobalBounds();
 		this->setPosition(
@@ -32,6 +32,7 @@ void HealthBar::update(const float& deltaTime, std::vector<Entity*>* entities, s
 		);
 	}
 	else {
+		std::cout << "Destroying healthBar" << std::endl;
 		this->canDie = true;
 	}
 }
