@@ -26,8 +26,17 @@ void Crypt::update(const float& deltaTime, std::vector<Entity*>* entities, sf::V
 		return typeid(*entity) == typeid(Wraith);
 		});
 
-
+	// Finished level
 	if (areEnemies == std::end(*entities) && bounds.intersects(playerBounds)) {
 		std::cout << "You Won 1st Level" << std::endl;
+	}
+	// if player enters crypt, all enemies attack
+	else if (areEnemies != std::end(*entities) && bounds.intersects(playerBounds)) {
+		for (auto& entity : *entities) {
+			Wraith* wraith = dynamic_cast<Wraith*>(entity);
+			if (wraith != nullptr) {
+				wraith->isAttacked = true;
+			}
+		}
 	}
 }

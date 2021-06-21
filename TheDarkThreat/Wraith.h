@@ -3,6 +3,8 @@
 #include "Missile.h"
 #include "Player.h"
 
+class Crypt;
+
 class Wraith :
     public Entity
 {
@@ -21,6 +23,7 @@ private:
     sf::RenderWindow* window;
 
     bool isAttacked;
+    friend class Crypt;
 public:
     Wraith(
         Player* player,
