@@ -54,12 +54,15 @@ void Wraith::update(const float& deltaTime, std::vector<Entity*>* entities, sf::
 		this->isAttacked = true;
 		auto normalisedDirection = Utils::normalizeVector(direction);
 		velocity = normalisedDirection;
+	}
+
+	if (this->isAttacked) {
 		// waits before attacking
 		if (this->toAttackTimer < this->timeToAttack) {
 			this->toAttackTimer += deltaTime;
 		}
-		
 	}
+
 	if (distance <= this->sightDistance) {
 		if (this->timer >= this->attackCooldown && this->toAttackTimer >= this->timeToAttack) {
 			this->timer -= this->attackCooldown;
