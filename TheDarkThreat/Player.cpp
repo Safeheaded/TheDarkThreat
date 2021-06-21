@@ -4,9 +4,9 @@
 Player::Player(
 	sf::RenderWindow* window, std::map<std::string, sf::Texture*>* textures,
 	const float& fps
-):
-	Entity(textures, fps), speed(500), 
-	window(window), isRunning(false), 
+) :
+	Entity(textures, fps), speed(500),
+	window(window), isRunning(false),
 	prevState(EntityState::Idle),
 	maxMana(100), mana(100), manaCounter(0), manaRegenerationSpeed(1), manaRenegerationAmount(1)
 {
@@ -84,7 +84,7 @@ void Player::EvaluateState(std::vector<Entity*>* entities)
 		this->canChangeState = false;
 	}
 
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && this->mana >= this->spells[this->selectedSpell]->getManaCost()) {
 		this->state = EntityState::PrimaryAttack;
 		this->canChangeState = false;
 		this->target = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
@@ -129,17 +129,17 @@ const std::string Player::getSpellName() const
 
 void Player::handleVoidCollision(sf::FloatRect& playerBounds, const sf::Vector2f& mapSize)
 {
-	if (this->getPosition().x - playerBounds.width/2 < 0) {
+	if (this->getPosition().x - playerBounds.width / 2 < 0) {
 		this->setPosition(playerBounds.width / 2, this->getPosition().y);
 	}
 	if (this->getPosition().y - playerBounds.height / 2 < 0) {
 		this->setPosition(this->getPosition().x, playerBounds.height / 2);
 	}
-	if (this->getPosition().x + playerBounds.width/2 > mapSize.x) {
-		this->setPosition(mapSize.x - playerBounds.width/2, this->getPosition().y);
+	if (this->getPosition().x + playerBounds.width / 2 > mapSize.x) {
+		this->setPosition(mapSize.x - playerBounds.width / 2, this->getPosition().y);
 	}
-	if (this->getPosition().y + playerBounds.height/2 > mapSize.y) {
-		this->setPosition(this->getPosition().x, mapSize.y - playerBounds.height/2);
+	if (this->getPosition().y + playerBounds.height / 2 > mapSize.y) {
+		this->setPosition(this->getPosition().x, mapSize.y - playerBounds.height / 2);
 	}
 }
 
@@ -201,15 +201,12 @@ void Player::animationEnd(std::vector<Entity*>* entities)
 
 void Player::attack(std::vector<Entity*>* entities)
 {
-	// Fires only when enough mana
-	if (this->mana >= this->spells[this->selectedSpell]->getManaCost()) {
-		this->spells[this->selectedSpell]->fire(
-			this->window, 8.0f, this->target, this->getPosition(), entities
-		);
+	this->spells[this->selectedSpell]->fire(
+		this->window, 8.0f, this->target, this->getPosition(), entities
+	);
 
-		// Decreases mana
-		this->mana -= this->spells[this->selectedSpell]->getManaCost();
-	}
+	// Decreases mana
+	this->mana -= this->spells[this->selectedSpell]->getManaCost();
 }
 
 void Player::renegerateMana(const float& deltaTime)
@@ -230,7 +227,7 @@ void Player::renegerateMana(const float& deltaTime)
 
 void Player::handleMovement(sf::Vector2f& velocity, const float& deltaTime, sf::FloatRect& playerBounds)
 {
-	this->setOrigin(playerBounds.width/2, playerBounds.height / 2);
+	this->setOrigin(playerBounds.width / 2, playerBounds.height / 2);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
 		velocity.y = -this->speed * deltaTime;
 	}
