@@ -35,4 +35,9 @@ void OverworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* en
 		crypt->setPosition(i * tileSize.x, j * tileSize.y);
 		entities->insert(entities->begin(), crypt);
 	}
+	else if (tileValue == 7) {
+		Cemetery* cemetery = new Cemetery(textures);
+		cemetery->setPosition(i * tileSize.x, j * tileSize.y);
+		entities->insert(entities->begin(), cemetery);
+	}
 }

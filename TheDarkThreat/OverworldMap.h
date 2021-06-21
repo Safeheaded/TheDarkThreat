@@ -4,6 +4,7 @@
 #include "HealthPotion.h"
 #include "ManaPotion.h"
 #include "Crypt.h"
+#include "Cemetery.h"
 
 class OverworldMap :
     public TileMap
