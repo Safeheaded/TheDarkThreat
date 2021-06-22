@@ -12,9 +12,8 @@
 #include <chrono>
 #include "Map.h"
 #include "PlotScene.h"
-#include "Level2.h"
 
-class Level1 :
+class Level2 :
     public Scene
 {
 private:
@@ -26,10 +25,11 @@ private:
     OverworldMap map;
     sf::View view;
     bool isPaused;
+
 public:
-    Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes);
+    Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes);
     void setupTextures();
-    ~Level1();
+    ~Level2();
 
     void update(const float& deltaTime);
     void handleView();

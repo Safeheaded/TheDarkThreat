@@ -16,11 +16,12 @@ void SceneManager::initScenes()
     //        scenes->push(new Level1(window, scenes));
     //        delete currentScene;
     //    }));
-    this->scenes.push(new MenuScene(this->window, &this->scenes));
+    //this->scenes.push(new MenuScene(this->window, &this->scenes));
     //this->scenes.push(new Level1(this->window, &this->scenes));
     //this->scenes.push(new GameOverScene(this->window, &this->scenes));
 
     //this->scenes.push(new PauseScene(this->window, &this->scenes));
+    this->scenes.push(new Level2(this->window, &this->scenes));
 }
 
 SceneManager::SceneManager(sf::RenderWindow* window): window(window)

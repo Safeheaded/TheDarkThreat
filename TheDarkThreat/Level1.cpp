@@ -18,7 +18,7 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 
 	this->map.load("assets\\textures\\tileset.png",
 		sf::Vector2u(32, 32), map, &this->textures,
-		&this->entities, &this->obstacles, this->player, this->window
+		&this->entities, &this->obstacles, this->player, this->window, {0, 0}
 	);
 }
 
@@ -112,7 +112,7 @@ void Level1::update(const float& deltaTime)
 			Crypt* crypt = dynamic_cast<Crypt*>(this->entities[i]);
 			if (crypt != nullptr) {
 				// crypt->getIsNextLevel()
-				if (true) {
+				if (crypt->getIsNextLevel()) {
 					auto* window = this->window;
 					auto* scenes = this->scenes;
 
@@ -122,7 +122,10 @@ void Level1::update(const float& deltaTime)
 					this->scenes->pop();
 					this->scenes->push(new PlotScene(this->window, this->scenes, plot, [window, scenes]() {
 							// TODO: Loads Level2
-							
+							auto* currentScene = scenes->top();
+							scenes->pop();
+							scenes->push(new Level2(window, scenes));
+							delete currentScene;
 						}));
 				}
 			}

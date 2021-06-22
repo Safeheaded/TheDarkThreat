@@ -157,6 +157,7 @@
     <ClCompile Include="HealthBar.cpp" />
     <ClCompile Include="HealthPotion.cpp" />
     <ClCompile Include="Level1.cpp" />
+    <ClCompile Include="Level2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ManaPotion.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -198,6 +199,7 @@
     <ClInclude Include="HealthBar.h" />
     <ClInclude Include="HealthPotion.h" />
     <ClInclude Include="Level1.h" />
+    <ClInclude Include="Level2.h" />
     <ClInclude Include="ManaPotion.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MenuScene.h" />

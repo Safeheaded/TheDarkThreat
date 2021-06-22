@@ -4,7 +4,8 @@ bool TileMap::load(
 	const std::string& tileset, sf::Vector2u tileSize, 
 	const std::vector<std::vector<int>>& tiles, std::map<std::string, 
 	sf::Texture*>* textures, std::vector<Entity*>* entities,
-	std::vector<Obstacle*>* obstacles, Player* player, sf::RenderWindow* window)
+	std::vector<Obstacle*>* obstacles, Player* player, sf::RenderWindow* window, 
+	const sf::Vector2i& textureOffset)
 {
 	const unsigned int height = tiles.size();
 	const unsigned int width = tiles[0].size();
@@ -20,8 +21,7 @@ bool TileMap::load(
 		{
 			int tileNumber = tiles[j][i];
 
-			int tu = tileNumber % (texture.getSize().x / tileSize.x);
-			int tv = tileNumber / (texture.getSize().x / tileSize.x);
+			sf::IntRect textureArea(textureOffset, (sf::Vector2i)tileSize);
 
 			this->loadEntities(tileNumber, entities, window, player, textures, tileSize, i, j);
 
@@ -32,10 +32,10 @@ bool TileMap::load(
 			quad[2].position = sf::Vector2f((i + 1) * tileSize.x, (j + 1) * tileSize.y);
 			quad[3].position = sf::Vector2f(i * tileSize.x, (j + 1) * tileSize.y);
 
-			quad[0].texCoords = sf::Vector2f(tu * tileSize.x, tv * tileSize.y);
-			quad[1].texCoords = sf::Vector2f((tu + 1) * tileSize.x, tv * tileSize.y);
-			quad[2].texCoords = sf::Vector2f((tu + 1) * tileSize.x, (tv + 1) * tileSize.y);
-			quad[3].texCoords = sf::Vector2f(tu * tileSize.x, (tv + 1) * tileSize.y);
+			quad[0].texCoords = sf::Vector2f(textureArea.left, textureArea.top);
+			quad[1].texCoords = sf::Vector2f(textureArea.width, textureArea.top);
+			quad[2].texCoords = sf::Vector2f(textureArea.width, textureArea.height);
+			quad[3].texCoords = sf::Vector2f(textureArea.left, textureArea.height);
 		}
 
 	return true;
