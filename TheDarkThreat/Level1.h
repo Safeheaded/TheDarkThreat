@@ -11,6 +11,7 @@
 #include <thread>
 #include <chrono>
 #include "Map.h"
+#include "PlotScene.h"
 
 class Level1 :
     public Scene

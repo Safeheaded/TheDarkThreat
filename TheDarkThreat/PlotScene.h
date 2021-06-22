@@ -16,7 +16,7 @@ private:
     void setupText(const std::string& text);
 public:
     PlotScene(sf::RenderWindow* window, std::stack<Scene*>* scenes, 
-        const std::string& text, std::function<void()> fun);
+        std::string text, std::function<void()> fun);
     ~PlotScene();
 
     void update(const float& deltaTime);

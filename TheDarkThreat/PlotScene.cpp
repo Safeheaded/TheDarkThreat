@@ -16,7 +16,7 @@ void PlotScene::setupText(const std::string& text)
 	);
 }
 
-PlotScene::PlotScene(sf::RenderWindow* window, std::stack<Scene*>* scenes, const std::string& text,
+PlotScene::PlotScene(sf::RenderWindow* window, std::stack<Scene*>* scenes, std::string text,
 	std::function<void()> fun):
 	Scene(window, scenes), fun(fun)
 {
@@ -31,6 +31,11 @@ PlotScene::~PlotScene()
 
 void PlotScene::update(const float& deltaTime)
 {
+	sf::View view;
+	view.setSize(this->window->getSize().x, this->window->getSize().y);
+	view.setCenter(this->window->getSize().x / 2, this->window->getSize().y / 2);
+	this->window->setView(view);
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
 		// TODO: Load 1 st game level
 		//auto* currentScene = this->scenes->top();

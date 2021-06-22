@@ -5,7 +5,7 @@ void Crypt::animationEnd(std::vector<Entity*>* entities)
 }
 
 Crypt::Crypt(std::map<std::string, sf::Texture*>* textures, Player* player):
-	Entity(textures, 1), player(player)
+	Entity(textures, 1), player(player), isNextLevel(false)
 {
 	this->setTexture(*this->textures->operator[]("CEMETERY"));
 	this->setTextureRect({134, 3, 55, 51});
@@ -26,9 +26,9 @@ void Crypt::update(const float& deltaTime, std::vector<Entity*>* entities, sf::V
 		return typeid(*entity) == typeid(Wraith);
 		});
 
-	// Finished level
+	// Finished level 
 	if (areEnemies == std::end(*entities) && bounds.intersects(playerBounds)) {
-		std::cout << "You Won 1st Level" << std::endl;
+		isNextLevel = true;
 	}
 	// if player enters crypt, all enemies attack
 	else if (areEnemies != std::end(*entities) && bounds.intersects(playerBounds)) {
@@ -39,4 +39,9 @@ void Crypt::update(const float& deltaTime, std::vector<Entity*>* entities, sf::V
 			}
 		}
 	}
+}
+
+const bool Crypt::getIsNextLevel()
+{
+	return this->isNextLevel;
 }

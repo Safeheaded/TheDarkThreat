@@ -7,6 +7,7 @@ class Crypt :
 {
 private:
     Player* player;
+    bool isNextLevel;
 
     void animationEnd(std::vector<Entity*>* entities);
 public:
@@ -15,5 +16,7 @@ public:
 
     void update(const float& deltaTime,
         std::vector<Entity*>* entities, sf::Vector2f mapSize);
+
+    const bool getIsNextLevel();
 };
 

@@ -108,6 +108,25 @@ void Level1::update(const float& deltaTime)
 				this->entities.erase(this->entities.begin() + i);
 			}
 		}
+		else {
+			Crypt* crypt = dynamic_cast<Crypt*>(this->entities[i]);
+			if (crypt != nullptr) {
+				// crypt->getIsNextLevel()
+				if (true) {
+					auto* window = this->window;
+					auto* scenes = this->scenes;
+
+					std::string plot = Utils::loadFullText("plot2.txt");
+
+					auto* currentScene = this->scenes->top();
+					this->scenes->pop();
+					this->scenes->push(new PlotScene(this->window, this->scenes, plot, [window, scenes]() {
+							// TODO: Loads Level2
+							
+						}));
+				}
+			}
+		}
 
 
 	}
@@ -151,12 +170,6 @@ void Level1::render(const float& deltaTime)
 	for (const auto& entity : this->entities) {
 		this->window->draw(*entity);
 	}
-
-	// Drawing for testing
-	/*for (const auto& obstacle : this->obstacles) {
-
-		this->window->draw(*obstacle);
-	}*/
 
 	this->playerGUI->setPosition(this->view.getCenter() - this->view.getSize() / 2.f);
 
