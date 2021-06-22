@@ -171,8 +171,11 @@
     <ClCompile Include="Level2.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="UnderworldMap.cpp">
+    <ClCompile Include="Skeleton.cpp">
       <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="UnderworldMap.cpp">
+      <Filter>Pliki źródłowe\Maps</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -294,6 +297,9 @@
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="UnderworldMap.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,7 +12,11 @@ void UnderworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* e
 		entities->insert(entities->begin(), health);
 	}
 	else if (tileValue == 2) {
-		// resp skeleton
+		Skeleton* skeleton = new Skeleton(player, window, textures, 10);
+		skeleton->setPosition(i * tileSize.x, j * tileSize.y); 
+		HealthBar* health = new HealthBar(textures, 1, skeleton);
+		entities->insert(entities->begin(), skeleton);
+		entities->insert(entities->begin(), health);
 	}
 	else if (tileValue == 3) {
 		// resp health potion

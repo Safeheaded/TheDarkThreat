@@ -235,7 +235,7 @@ void Player::handleMovement(sf::Vector2f& velocity, const float& deltaTime, sf::
 		velocity.y = this->speed * deltaTime;
 	}
 
-	// TODO (low priority): change scale / origin only after direction change
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		velocity.x = -this->speed * deltaTime;
 		this->setScale(-1, 1);

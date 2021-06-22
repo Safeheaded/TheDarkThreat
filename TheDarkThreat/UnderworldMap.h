@@ -1,6 +1,7 @@
 #pragma once
 #include "TileMap.h"
 #include "HealthBar.h"
+#include "Skeleton.h"
 
 class UnderworldMap :
     public TileMap
