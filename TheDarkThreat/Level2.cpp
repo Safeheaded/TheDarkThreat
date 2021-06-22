@@ -6,6 +6,7 @@ Level2::Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	this->setupTextures();
 
 	this->player = new Player(this->window, &this->textures, 10.0f);
+	this->player->setPosition(80, 500);
 
 	this->entities.emplace_back(this->player);
 
@@ -14,7 +15,7 @@ Level2::Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	this->playerGUI = new PlayerGUI(window, this->player); 
 	
 	this->map.load("assets\\textures\\dungeont.png", { 60, 44 }, Map::getUnderworldMap(), &this->textures, &this->entities,
-		& this->obstacles, this->player, this->window, {18, 18});
+		&this->obstacles, this->player, this->window, {18, 18});
 }
 
 void Level2::setupTextures()
@@ -42,13 +43,6 @@ void Level2::setupTextures()
 
 	this->textures["MANA_POTION"] = new sf::Texture();
 	Utils::loadTexture("assets\\textures\\manaPotion.png", this->textures["MANA_POTION"]); 
-
-	// To delete
-	this->textures["TREE"] = new sf::Texture();
-	Utils::loadTexture("assets\\textures\\plant.png", this->textures["TREE"]);
-
-	this->textures["CEMETERY"] = new sf::Texture();
-	Utils::loadTexture("assets\\textures\\cemetery.png", this->textures["CEMETERY"]);
 }
 
 Level2::~Level2()
@@ -66,8 +60,39 @@ Level2::~Level2()
 
 void Level2::update(const float& deltaTime)
 {
-	for (auto& entity : this->entities) {
-		entity->update(deltaTime, &this->entities, this->map.getSize());
+
+	// Waits after exiting pause screen
+	if (this->isPaused) {
+		std::this_thread::sleep_for(std::chrono::milliseconds(300));
+		this->isPaused = false;
+	}
+
+	// Handles pause screen
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+		this->scenes->push(new PauseScene(this->window, this->scenes));
+		this->isPaused = true;
+	}
+
+	for (size_t i = 0; i < this->entities.size(); i++) {
+		this->entities[i]->update(deltaTime, &this->entities, this->map.getSize());
+
+		if (this->entities[i]->getCanDie()) {
+			// Temporary workaround so I won't get flowed by erros
+			if (typeid(*this->entities[i]) == typeid(Player)) {
+				// Kills the scene and loads GameOverScreen
+				auto* currentScene = this->scenes->top();
+				this->scenes->pop();
+				this->scenes->push(new GameOverScene(this->window, this->scenes));
+
+				delete currentScene;
+				// Return needed to avoid updating nonexisting PlayerGUI
+				return;
+			}
+			else {
+				delete this->entities[i];
+				this->entities.erase(this->entities.begin() + i);
+			}
+		}
 	}
 
 	this->playerGUI->update(deltaTime);

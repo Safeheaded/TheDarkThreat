@@ -4,7 +4,7 @@
 #include "Missile.h"
 #include "Wraith.h"
 #include "PlayerGUI.h"
-#include "OverworldMap.h"
+#include "UnderworldMap.h"
 #include "Obstacle.h"
 #include "GameOverScene.h"
 #include "PauseScene.h"
@@ -22,7 +22,7 @@ private:
     std::vector<Entity*> entities;
     std::vector<Obstacle*> obstacles;
     PlayerGUI* playerGUI;
-    OverworldMap map;
+    UnderworldMap map;
     sf::View view;
     bool isPaused;
 

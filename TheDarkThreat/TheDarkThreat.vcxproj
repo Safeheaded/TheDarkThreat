@@ -178,6 +178,7 @@
     <ClCompile Include="UIClosePause.cpp" />
     <ClCompile Include="UIGotoMenu.cpp" />
     <ClCompile Include="UIRepeatLevel.cpp" />
+    <ClCompile Include="UnderworldMap.cpp" />
     <ClCompile Include="Wraith.cpp" />
     <ClCompile Include="Spell.cpp" />
     <ClCompile Include="TextButton.cpp" />
@@ -219,6 +220,7 @@
     <ClInclude Include="UIClosePause.h" />
     <ClInclude Include="UIGotoMenu.h" />
     <ClInclude Include="UIRepeatLevel.h" />
+    <ClInclude Include="UnderworldMap.h" />
     <ClInclude Include="Wraith.h" />
     <ClInclude Include="Spell.h" />
     <ClInclude Include="TextButton.h" />
