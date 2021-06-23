@@ -1,5 +1,7 @@
 #pragma once
 #include "Player.h"
+#include "EvilWizard.h"
+
 class Spikes :
     public Entity
 {

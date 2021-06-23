@@ -3,6 +3,8 @@
 #include "HealthBar.h"
 #include "Skeleton.h"
 #include "Spikes.h"
+#include "HealthPotion.h"
+#include "ManaPotion.h"
 
 class UnderworldMap :
     public TileMap

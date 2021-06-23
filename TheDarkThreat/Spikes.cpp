@@ -56,8 +56,10 @@ void Spikes::update(const float& deltaTime, std::vector<Entity*>* entities, sf::
 						}) == this->hurtEntities.end();
 
 						if (wasntHurt) {
-							entity->dealDamage(30);
-							this->hurtEntities.emplace_back(entity);
+							if (typeid(*entity) != typeid(EvilWizard)) {
+								entity->dealDamage(30);
+								this->hurtEntities.emplace_back(entity);
+							}
 						}
 
 				}
