@@ -2,7 +2,9 @@
 
 void EvilWizard::animationEnd(std::vector<Entity*>* entities)
 {
-
+	if (this->state == EntityState::Death) {
+		this->canDie = true;
+	}
 }
 
 EvilWizard::EvilWizard(Player* player, sf::RenderWindow* window,
@@ -27,6 +29,16 @@ EvilWizard::EvilWizard(Player* player, sf::RenderWindow* window,
 		{1858, 72, 57, 104},
 		});
 
+	this->addAnimation(EntityState::Death, {
+		{108, 562, 45, 122},
+		{360, 562, 52, 122},
+		{608, 562, 66, 122},
+		{858, 562, 66, 122},
+		{1108, 562, 105, 122},
+		{1358, 562, 96, 122},
+		{1608, 562, 105, 122},
+		});
+
 	this->setFirstFrame();
 
 	this->setScale(2, 2);
@@ -38,9 +50,17 @@ EvilWizard::~EvilWizard()
 
 void EvilWizard::update(const float& deltaTime, std::vector<Entity*>* entities, sf::Vector2f mapSize)
 {
+
+	if (this->prevState != this->state) {
+		this->counter = 0;
+		this->prevState = this->state;
+	}
 	sf::Vector2f velocity;
 
 	this->animate(deltaTime, entities);
+
+	if (this->state == EntityState::Death)
+		return;
 
 	auto bounds = this->getGlobalBounds();
 	//this->setOrigin(bounds.width / 2, bounds.height / 2);
@@ -112,6 +132,7 @@ void EvilWizard::dealDamage(const float& damage)
 {
 	this->health -= damage;
 	if (this->health <= 0) {
-		this->canDie = true;
+		this->state = EntityState::Death;
+		//this->timePerFrame = 1;
 	}
 }
