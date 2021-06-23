@@ -4,9 +4,12 @@ void PlotScene::setupText(const std::string& text)
 {
 	this->text.setString(text);
 	this->text.setFont(this->font);
-	this->text.setPosition(20, 20);
 	this->text.setCharacterSize(20);
 	this->text.setLineSpacing(2);
+	this->text.setPosition(
+		this->window->getSize().x / 2 - this->text.getGlobalBounds().width/2,
+		this->window->getSize().y / 2 - this->text.getGlobalBounds().height/2
+	);
 
 	this->instructionText.setString("Press \'Space\' to continue");
 	this->instructionText.setCharacterSize(15);
@@ -55,4 +58,15 @@ void PlotScene::render(const float& deltaTime)
 
 void PlotScene::handleEvents(const sf::Event& event)
 {
+	if (event.type == sf::Event::Resized) {
+		this->text.setPosition(
+			this->window->getSize().x / 2 - this->text.getGlobalBounds().width / 2,
+			this->window->getSize().y / 2 - this->text.getGlobalBounds().height / 2
+		);
+		this->instructionText.setPosition(
+			this->window->getSize().x / 2 - this->instructionText.getGlobalBounds().width / 2,
+			this->window->getSize().y - this->instructionText.getGlobalBounds().height - 10
+		);
+	}
+	
 }
