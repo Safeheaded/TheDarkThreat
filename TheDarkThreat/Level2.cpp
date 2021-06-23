@@ -10,8 +10,10 @@ Level2::Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	this->player->setPosition(80, 500);
 
 	this->boss = new EvilWizard(this->player, this->window, &this->textures, 5);
-	this->boss->setPosition(300, 300);
+	this->boss->setPosition(300, 300); 
+	HealthBar* health = new HealthBar(&this->textures, 1, this->boss);
 	this->entities.emplace_back(this->boss);
+	this->entities.emplace_back(health);
 
 	this->entities.emplace_back(this->player);
 
@@ -101,6 +103,9 @@ void Level2::update(const float& deltaTime)
 				delete currentScene;
 				// Return needed to avoid updating nonexisting PlayerGUI
 				return;
+			}
+			else if (typeid(*this->entities[i]) == typeid(EvilWizard)) {
+				//TODO: Load plot 3
 			}
 			else {
 				delete this->entities[i];

@@ -5,6 +5,9 @@
 #include "Wraith.h"
 #include "Skeleton.h"
 
+
+class EvilWizard {};
+
 void Missile::animationEnd(std::vector<Entity*>* entities)
 {
 }
@@ -55,7 +58,8 @@ void Missile::update(const float& deltaTime, std::vector<Entity*>* entities, sf:
 		if (missileBounds.intersects(entity->getGlobalBounds())) {
 			if (this->type == MissileType::Friendly && typeid(*entity) == typeid(Wraith) ||
 				this->type == MissileType::Hostile && typeid(*entity) == typeid(Player) ||
-				this->type == MissileType::Friendly && typeid(*entity) == typeid(Skeleton)) {
+				this->type == MissileType::Friendly && typeid(*entity) == typeid(Skeleton) ||
+				this->type == MissileType::Friendly && typeid(*entity) == typeid(EvilWizard)) {
 				this->customAttackBehaviour(deltaTime, entity);
 			}
 		}

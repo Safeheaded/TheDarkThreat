@@ -7,6 +7,7 @@ enum class MissileType {
     Hostile
 };
 
+
 class Missile :
     public Entity
 {

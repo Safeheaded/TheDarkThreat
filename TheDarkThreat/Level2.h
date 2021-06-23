@@ -13,6 +13,7 @@
 #include "Map.h"
 #include "PlotScene.h"
 #include "EvilWizard.h"
+#include "HealthBar.h"
 
 class Level2 :
     public Scene
