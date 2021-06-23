@@ -3,8 +3,12 @@
 void MenuScene::setupButtons()
 {
 	sf::Color color(122, 58, 18);
+	if (this->savedLevel != 0) {
+		this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["CONTINUE"], "Continue", this->font, color);
+	}
 	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["NEXT"], "New Game", this->font, color);
 	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["CLOSE"], "Exit", this->font, color);
+	
 }
 
 void MenuScene::setButtonsPosition()
@@ -19,7 +23,7 @@ void MenuScene::setButtonsPosition()
 		float x = this->window->getSize().x / 2 - this->buttons[i].getSize().x / 2;
 
 		if (i != 0) {
-			y += this->buttons[i].getSize().y + i * padding;
+			y += this->buttons[i].getSize().y + i + padding;
 		}
 
 		this->buttons[i].setPosition(x, y);
@@ -50,12 +54,33 @@ void MenuScene::setupCommands()
 				delete currentScene;
 			})
 	);
+	if (this->savedLevel != 0) {
+		auto savedLevel = this->savedLevel;
+		this->commands["CONTINUE"] = new UINextScene(
+			this->scenes, this, new PlotScene(this->window, this->scenes, text, [scenes, window, savedLevel]() {
+				auto* currentScene = scenes->top();
+				scenes->pop();
+				if (savedLevel == 1) {
+					scenes->push(new Level1(window, scenes));
+				}
+				else if (savedLevel == 2) {
+					scenes->push(new Level2(window, scenes));
+				}
+				else {
+					scenes->push(new Level1(window, scenes));
+				}
+				delete currentScene;
+				})
+		);
+	}
 }
 
 MenuScene::MenuScene(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	Scene(window, scenes)
 {
 	Utils::loadFont("PressStart2P-Regular.ttf", &this->font);
+	this->savedLevel = Utils::getSavedLevel();
+
 	this->setupCommands();
 	this->setupButtons();
 	this->setButtonsPosition();

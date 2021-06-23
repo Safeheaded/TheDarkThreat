@@ -14,6 +14,7 @@ private:
     std::vector<Button> buttons;
     std::map<std::string, UICommand*> commands;
     sf::Font font;
+    int savedLevel;
 
     // Methods
     void setupButtons();

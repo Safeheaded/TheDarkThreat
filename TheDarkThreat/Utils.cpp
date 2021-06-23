@@ -33,3 +33,31 @@ sf::Vector2f Utils::normalizeVector(sf::Vector2f v)
 	auto length = static_cast<float>(sqrt(pow(v.x, 2) + pow(v.y, 2)));
 	return v / length;
 }
+
+int Utils::getSavedLevel()
+{
+	try {
+		std::ifstream t("saves.txt");
+		std::string str((std::istreambuf_iterator<char>(t)),
+			std::istreambuf_iterator<char>());
+
+		return std::stoi(str);
+	}
+	catch (const std::exception& e) {
+		return 0;
+	}
+}
+
+bool Utils::saveLevel(const int& levelNumber)
+{
+	try {
+		std::ofstream myfile;
+		myfile.open("saves.txt", std::ios::trunc);
+		myfile << levelNumber;
+		myfile.close();
+	}
+	catch (const std::exception& e) {
+		return false;
+	}
+	return true;
+}

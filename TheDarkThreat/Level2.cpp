@@ -3,6 +3,7 @@
 Level2::Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	Scene(window, scenes), isPaused(false), isFinalBattle(false), isBossResped(false)
 {
+	Utils::saveLevel(2);
 	this->setupTextures();
 
 
