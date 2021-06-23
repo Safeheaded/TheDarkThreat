@@ -45,12 +45,12 @@ void EvilWizard::update(const float& deltaTime, std::vector<Entity*>* entities, 
 	auto bounds = this->getGlobalBounds();
 	//this->setOrigin(bounds.width / 2, bounds.height / 2);
 
-	auto wraithPosition = this->getPosition();
+	auto wizardPosition = this->getPosition();
 
 	auto playerBounds = this->player->getGlobalBounds();
 	auto playerPosition = this->player->getPosition();
 
-	auto direction = playerPosition - wraithPosition;
+	auto direction = playerPosition - wizardPosition;
 
 	float distance = Utils::getVectorLength(direction);
 
@@ -78,7 +78,7 @@ void EvilWizard::update(const float& deltaTime, std::vector<Entity*>* entities, 
 					this->textures,
 					20.0f,
 					playerPosition,
-					wraithPosition
+					wizardPosition + sf::Vector2f(60, 35)
 				)
 			);
 

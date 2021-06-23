@@ -1,19 +1,13 @@
 #include "Level2.h"
 
 Level2::Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
-	Scene(window, scenes), isPaused(false)
+	Scene(window, scenes), isPaused(false), isFinalBattle(false), isBossResped(false)
 {
 	this->setupTextures();
 
 
 	this->player = new Player(this->window, &this->textures, 10.0f);
 	this->player->setPosition(80, 500);
-
-	this->boss = new EvilWizard(this->player, this->window, &this->textures, 5);
-	this->boss->setPosition(300, 300); 
-	HealthBar* health = new HealthBar(&this->textures, 1, this->boss);
-	this->entities.emplace_back(this->boss);
-	this->entities.emplace_back(health);
 
 	this->entities.emplace_back(this->player);
 
@@ -59,6 +53,9 @@ void Level2::setupTextures()
 
 	this->textures["WIZARD"] = new sf::Texture();
 	Utils::loadTexture("assets\\textures\\evilWizard.png", this->textures["WIZARD"]);
+
+	this->textures["PORTAL"] = new sf::Texture();
+	Utils::loadTexture("assets\\textures\\portal.png", this->textures["PORTAL"]);
 }
 
 Level2::~Level2()
@@ -114,7 +111,27 @@ void Level2::update(const float& deltaTime)
 		}
 	}
 
-	this->boss->update(deltaTime, &this->entities, this->map.getSize());
+	// Checking if there are any enemies
+	auto areEnemies = std::find_if(entities.begin(), entities.end(), [](Entity* entity) {
+		return typeid(*entity) == typeid(Wraith) || 
+			typeid(*entity) == typeid(Skeleton);
+		});
+
+	if (areEnemies == std::end(entities) && !this->isBossResped)
+		this->isFinalBattle = true;
+
+	// Resps boss if no enemies
+	if (this->isFinalBattle) {
+		Portal* portal = new Portal(this->player, this->window, &this->textures, 7);
+		portal->setPosition(
+			this->map.getSize().x / 2 - portal->getGlobalBounds().width / 2,
+			this->map.getSize().y / 2 - portal->getGlobalBounds().height / 2
+		);
+
+		this->entities.emplace_back(portal);
+		this->isFinalBattle = false;
+		this->isBossResped = true;
+	}
 
 	this->playerGUI->update(deltaTime);
 

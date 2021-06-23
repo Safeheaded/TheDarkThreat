@@ -167,6 +167,7 @@
     <ClCompile Include="Obstacle.cpp" />
     <ClCompile Include="OverworldMap.cpp" />
     <ClCompile Include="PauseScene.cpp" />
+    <ClCompile Include="Portal.cpp" />
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="Spikes.cpp" />
     <ClCompile Include="Tree.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="Obstacle.h" />
     <ClInclude Include="OverworldMap.h" />
     <ClInclude Include="PauseScene.h" />
+    <ClInclude Include="Portal.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="Spikes.h" />
     <ClInclude Include="Tree.h" />
