@@ -2,6 +2,7 @@
 #include "TileMap.h"
 #include "HealthBar.h"
 #include "Skeleton.h"
+#include "Spikes.h"
 
 class UnderworldMap :
     public TileMap

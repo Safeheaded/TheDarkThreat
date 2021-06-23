@@ -167,6 +167,7 @@
     <ClCompile Include="OverworldMap.cpp" />
     <ClCompile Include="PauseScene.cpp" />
     <ClCompile Include="Skeleton.cpp" />
+    <ClCompile Include="Spikes.cpp" />
     <ClCompile Include="Tree.cpp" />
     <ClCompile Include="ParticleMissile.cpp" />
     <ClCompile Include="ParticleSpell.cpp" />
@@ -210,6 +211,7 @@
     <ClInclude Include="OverworldMap.h" />
     <ClInclude Include="PauseScene.h" />
     <ClInclude Include="Skeleton.h" />
+    <ClInclude Include="Spikes.h" />
     <ClInclude Include="Tree.h" />
     <ClInclude Include="ParticleMissile.h" />
     <ClInclude Include="ParticleSpell.h" />

@@ -46,6 +46,9 @@ void Level2::setupTextures()
 
 	this->textures["SKELETON"] = new sf::Texture();
 	Utils::loadTexture("assets\\textures\\skeleton.png", this->textures["SKELETON"]);
+
+	this->textures["SPIKES"] = new sf::Texture();
+	Utils::loadTexture("assets\\textures\\spikes.png", this->textures["SPIKES"]);
 }
 
 Level2::~Level2()

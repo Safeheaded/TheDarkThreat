@@ -19,9 +19,14 @@ void UnderworldMap::loadEntities(unsigned int tileValue, std::vector<Entity*>* e
 		entities->insert(entities->begin(), health);
 	}
 	else if (tileValue == 3) {
-		// resp health potion
+		Spikes* spikes = new Spikes(player, window, textures, 5);
+		spikes->setPosition(i * tileSize.x, j * tileSize.y);
+		entities->insert(entities->begin(), spikes);
 	}
 	else if (tileValue == 4) {
+		// resp health potion
+	}
+	else if (tileValue == 5) {
 		// resp mana potion
 	}
 }
