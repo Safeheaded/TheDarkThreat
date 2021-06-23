@@ -3,6 +3,7 @@
 Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	Scene(window, scenes), isPaused(false)
 {
+	Utils::saveLevel(1);
 	setupTextures();
 
 	// Setups player
@@ -16,7 +17,7 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	this->view.setSize(800, 800);
 	std::vector<std::vector<int>> map = Map::getOverworldMap();
 
-	this->map.load("assets\\textures\\tileset.png",
+	this->map.build("assets\\textures\\tileset.png",
 		sf::Vector2u(32, 32), map, &this->textures,
 		&this->entities, &this->obstacles, this->player, this->window, {0, 0}
 	);

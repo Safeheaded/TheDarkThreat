@@ -1,7 +1,7 @@
 #include "TileMap.h"
 
-bool TileMap::load(
-	const std::string& tileset, sf::Vector2u tileSize, 
+void TileMap::build(
+	const std::string& tilesetPath, sf::Vector2u tileSize, 
 	const std::vector<std::vector<int>>& tiles, std::map<std::string, 
 	sf::Texture*>* textures, std::vector<Entity*>* entities,
 	std::vector<Obstacle*>* obstacles, Player* player, sf::RenderWindow* window, 
@@ -10,8 +10,8 @@ bool TileMap::load(
 	const unsigned int height = tiles.size();
 	const unsigned int width = tiles[0].size();
 	this->size = { (float)(tileSize.x * tiles[0].size()), (float)(tileSize.y * tiles.size()) };
-	if (!texture.loadFromFile(tileset))
-		return false;
+	texture.loadFromFile(tilesetPath);
+	Utils::loadTexture(tilesetPath, &texture);
 
 	vertices.setPrimitiveType(sf::Quads);
 	vertices.resize(width * height * 4);
@@ -38,7 +38,6 @@ bool TileMap::load(
 			quad[3].texCoords = sf::Vector2f(textureArea.left, textureArea.height);
 		}
 
-	return true;
 }
 
 void TileMap::draw(sf::RenderTarget& target, sf::RenderStates states) const {

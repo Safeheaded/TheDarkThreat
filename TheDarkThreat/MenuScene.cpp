@@ -3,7 +3,7 @@
 void MenuScene::setupButtons()
 {
 	sf::Color color(122, 58, 18);
-	if (this->savedLevel != 0) {
+	if (this->savedLevel != 0 || this->savedLevel == 1) {
 		this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["CONTINUE"], "Continue", this->font, color);
 	}
 	this->buttons.emplace_back(sf::Vector2f(0, 0), sf::Vector2f(230, 80), this->commands["NEXT"], "New Game", this->font, color);

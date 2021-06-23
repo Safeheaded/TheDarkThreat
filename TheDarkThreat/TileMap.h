@@ -22,7 +22,7 @@ private:
 public:
     const sf::Vector2f getSize() const;
 
-    bool load(
+    void build(
         const std::string& path, sf::Vector2u tileSize,
         const std::vector<std::vector<int>>& tiles,
         std::map<std::string, sf::Texture*>* textures, std::vector<Entity*>* entities,
