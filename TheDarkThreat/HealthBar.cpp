@@ -5,9 +5,9 @@ void HealthBar::animationEnd(std::vector<Entity*>* entities)
 }
 
 HealthBar::HealthBar(std::map<std::string, sf::Texture*>* textures,
-	const float& fps, Entity* entity): Entity(textures, 1), entity(entity), maxWidth(40)
+	const float& fps, Entity* entity): Entity(textures, 1), entity(entity)
 {
-
+	this->maxWidth = this->entity->getGlobalBounds().width;
 	this->setTexture(*textures->operator[]("ENEMY_HEALTH"));
 	this->setTextureRect(sf::IntRect(0, 0, this->maxWidth, 5));
 }
