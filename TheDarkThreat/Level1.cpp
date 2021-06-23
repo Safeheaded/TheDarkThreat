@@ -185,8 +185,7 @@ void Level1::handleEvents(const sf::Event& event)
 		if (event.key.code == sf::Keyboard::K) {
 			for (size_t i = 0; i < this->entities.size(); i++) {
 				if (typeid(*entities[i]) == typeid(Wraith)) {
-					delete this->entities[i];
-					this->entities.erase(this->entities.begin() + i);
+					this->entities[i]->dealDamage(this->entities[i]->getMaxHealth());
 				}
 			}
 		}

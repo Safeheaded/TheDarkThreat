@@ -12,5 +12,12 @@ void UIRepeatLevel::execute(sf::RenderWindow* window)
 {
 	auto* currentScene = this->scenes->top();
 	this->scenes->pop();
-	this->scenes->push(new Level1(window, this->scenes));
+
+	int savedLevel = Utils::getSavedLevel();
+	if (savedLevel == 1) {
+		this->scenes->push(new Level1(window, this->scenes));
+	}
+	else if (savedLevel == 2) {
+		this->scenes->push(new Level2(window, this->scenes));
+	}
 }

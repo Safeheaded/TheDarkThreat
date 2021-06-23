@@ -12,7 +12,7 @@ Skeleton::Skeleton(Player* player, sf::RenderWindow* window,
 	std::map<std::string, sf::Texture*>* textures, const float& fps):
 	Entity(textures, fps), player(player),
 	sightDistance(300), attackDistance(10),
-	speed(200), attackCooldown(4), timer(0),
+	speed(250), attackCooldown(4), timer(0),
 	window(window), isAttacked(false), prevState(EntityState::Idle)
 {
 	this->maxHealth = 80;
@@ -117,6 +117,7 @@ void Skeleton::update(const float& deltaTime, std::vector<Entity*>* entities, sf
 void Skeleton::dealDamage(const float& damage)
 {
 	this->health -= damage;
+	this->isAttacked = true;
 	if (this->health <= 0) {
 		this->canDie = true;
 	}
