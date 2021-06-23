@@ -41,7 +41,7 @@ void MenuScene::setupCommands()
 
 	auto* scenes = this->scenes;
 	auto* window = this->window;
-	std::string text = Utils::loadFullText("plot1.txt");
+	std::string text = Utils::loadFullText("assets\\plots\\plot1.txt");
 	this->commands["NEXT"] = new UINextScene(
 		this->scenes, this, new PlotScene(this->window, this->scenes, text, [scenes, window]() {
 				auto* currentScene = scenes->top();

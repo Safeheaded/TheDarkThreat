@@ -6,6 +6,7 @@ void PlotScene::setupText(const std::string& text)
 	this->text.setFont(this->font);
 	this->text.setPosition(20, 20);
 	this->text.setCharacterSize(20);
+	this->text.setLineSpacing(2);
 
 	this->instructionText.setString("Press \'Space\' to continue");
 	this->instructionText.setCharacterSize(15);

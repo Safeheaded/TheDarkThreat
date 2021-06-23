@@ -102,7 +102,20 @@ void Level2::update(const float& deltaTime)
 				return;
 			}
 			else if (typeid(*this->entities[i]) == typeid(EvilWizard)) {
-				//TODO: Load plot 3
+				auto* window = this->window;
+				auto* scenes = this->scenes;
+
+				std::string plot = Utils::loadFullText("assets\\plots\\plot3.txt");
+
+				auto* currentScene = this->scenes->top();
+				this->scenes->pop();
+				this->scenes->push(new PlotScene(this->window, this->scenes, plot, [window, scenes]() {
+					// TODO: Loads Level2
+					auto* currentScene = scenes->top();
+					scenes->pop();
+					scenes->push(new MenuScene(window, scenes));
+					delete currentScene;
+					}));
 			}
 			else {
 				delete this->entities[i];
@@ -178,4 +191,15 @@ void Level2::render(const float& deltaTime)
 
 void Level2::handleEvents(const sf::Event& event)
 {
+	if (event.type == sf::Event::KeyPressed) {
+		if (event.key.code == sf::Keyboard::K) {
+			for (size_t i = 0; i < this->entities.size(); i++) {
+				if (typeid(*entities[i]) == typeid(Wraith) ||
+					typeid(*entities[i]) == typeid(Skeleton)) {
+					delete this->entities[i];
+					this->entities.erase(this->entities.begin() + i);
+				}
+			}
+		}
+	}
 }

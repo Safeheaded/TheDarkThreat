@@ -116,7 +116,7 @@ void Level1::update(const float& deltaTime)
 					auto* window = this->window;
 					auto* scenes = this->scenes;
 
-					std::string plot = Utils::loadFullText("plot2.txt");
+					std::string plot = Utils::loadFullText("assets\\plots\\plot2.txt");
 
 					auto* currentScene = this->scenes->top();
 					this->scenes->pop();
@@ -181,4 +181,14 @@ void Level1::render(const float& deltaTime)
 
 void Level1::handleEvents(const sf::Event& event)
 {
+	if (event.type == sf::Event::KeyPressed) {
+		if (event.key.code == sf::Keyboard::K) {
+			for (size_t i = 0; i < this->entities.size(); i++) {
+				if (typeid(*entities[i]) == typeid(Wraith)) {
+					delete this->entities[i];
+					this->entities.erase(this->entities.begin() + i);
+				}
+			}
+		}
+	}
 }
