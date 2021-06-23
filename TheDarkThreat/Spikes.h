@@ -7,6 +7,7 @@ private:
     float timer;
     float timeToAttack;
     EntityState prevState;
+    std::vector<Entity*> hurtEntities;
 
     void animationEnd(std::vector<Entity*>* entities);
 public:
