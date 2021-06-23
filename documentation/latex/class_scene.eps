@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 68.376068
+%%BoundingBox: 0 0 500 56.980057
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 7.312500 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 8.775000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
 /rows 2 def
-/cols 5 def
+/cols 6 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -176,6 +176,7 @@ boxfont setfont
 (Scene) cw
 (GameOverScene) cw
 (Level1) cw
+(Level2) cw
 (MenuScene) cw
 (PauseScene) cw
 (PlotScene) cw
@@ -190,19 +191,20 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (Scene) 2.000000 1.000000 box
+ (Scene) 2.500000 1.000000 box
  (GameOverScene) 0.000000 0.000000 box
  (Level1) 1.000000 0.000000 box
- (MenuScene) 2.000000 0.000000 box
- (PauseScene) 3.000000 0.000000 box
- (PlotScene) 4.000000 0.000000 box
+ (Level2) 2.000000 0.000000 box
+ (MenuScene) 3.000000 0.000000 box
+ (PauseScene) 4.000000 0.000000 box
+ (PlotScene) 5.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-1 2.000000 0.250000 out
+1 2.500000 0.250000 out
 solid
-0.000000 4.000000 1.000000 conn
+0.000000 5.000000 1.000000 conn
 solid
 0 0.000000 0.750000 in
 solid
@@ -213,3 +215,5 @@ solid
 0 3.000000 0.750000 in
 solid
 0 4.000000 0.750000 in
+solid
+0 5.000000 0.750000 in

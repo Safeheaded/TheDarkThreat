@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Utils.h Source File</title>
+<title>My Project: C:/Users/MPatr/source/repos/TheDarkThreat/TheDarkThreat/Utils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,19 +90,24 @@ $(document).ready(function(){initNavTree('_utils_8h_source.html',''); initResiza
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_utils.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_utils.html">Utils</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_utils.html#a3ebb2f683a95340d3e9b3dccd66ab3fa">loadFont</a>(std::string path, sf::Font* font);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_utils.html#aed73a53ae087aa03cfc54c4d3bc3260a">loadTexture</a>(std::string path, sf::Texture* texture);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="class_utils.html#a485764e8775f5b620dfdf4d076389877">loadFullText</a>(std::string path);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="class_utils.html#a85144f644962e72e27a82a1f1150a03b">getVectorLength</a>(<span class="keyword">const</span> sf::Vector2f&amp; v);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">static</span> sf::Vector2f <a class="code" href="class_utils.html#a4284a5c3d441aabca55be7cf5e2e8d46">normalizeVector</a>(sf::Vector2f v);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_utils.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_utils.html">Utils</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_utils.html#a3ebb2f683a95340d3e9b3dccd66ab3fa">loadFont</a>(std::string path, sf::Font* font);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="class_utils.html#aed73a53ae087aa03cfc54c4d3bc3260a">loadTexture</a>(std::string path, sf::Texture* texture);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="class_utils.html#a485764e8775f5b620dfdf4d076389877">loadFullText</a>(std::string path);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code" href="class_utils.html#a85144f644962e72e27a82a1f1150a03b">getVectorLength</a>(<span class="keyword">const</span> sf::Vector2f&amp; v);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">static</span> sf::Vector2f <a class="code" href="class_utils.html#a4284a5c3d441aabca55be7cf5e2e8d46">normalizeVector</a>(sf::Vector2f v);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="class_utils.html#a07740ca22e80d50f17392c5eb1176ad7">getSavedLevel</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="class_utils.html#a1506f3fcef4158d9f045dc21deaf425f">saveLevel</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; levelNumber);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="ttc" id="a_scene_8h_html"><div class="ttname"><a href="_scene_8h.html">Scene.h</a></div></div>
-<div class="ttc" id="aclass_utils_html"><div class="ttname"><a href="class_utils.html">Utils</a></div><div class="ttdef"><b>Definition:</b> Utils.h:8</div></div>
+<div class="ttc" id="aclass_utils_html"><div class="ttname"><a href="class_utils.html">Utils</a></div><div class="ttdef"><b>Definition:</b> Utils.h:9</div></div>
+<div class="ttc" id="aclass_utils_html_a07740ca22e80d50f17392c5eb1176ad7"><div class="ttname"><a href="class_utils.html#a07740ca22e80d50f17392c5eb1176ad7">Utils::getSavedLevel</a></div><div class="ttdeci">static int getSavedLevel()</div><div class="ttdef"><b>Definition:</b> Utils.cpp:37</div></div>
+<div class="ttc" id="aclass_utils_html_a1506f3fcef4158d9f045dc21deaf425f"><div class="ttname"><a href="class_utils.html#a1506f3fcef4158d9f045dc21deaf425f">Utils::saveLevel</a></div><div class="ttdeci">static bool saveLevel(const int &amp;levelNumber)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:51</div></div>
 <div class="ttc" id="aclass_utils_html_a3ebb2f683a95340d3e9b3dccd66ab3fa"><div class="ttname"><a href="class_utils.html#a3ebb2f683a95340d3e9b3dccd66ab3fa">Utils::loadFont</a></div><div class="ttdeci">static void loadFont(std::string path, sf::Font *font)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:3</div></div>
 <div class="ttc" id="aclass_utils_html_a4284a5c3d441aabca55be7cf5e2e8d46"><div class="ttname"><a href="class_utils.html#a4284a5c3d441aabca55be7cf5e2e8d46">Utils::normalizeVector</a></div><div class="ttdeci">static sf::Vector2f normalizeVector(sf::Vector2f v)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:31</div></div>
 <div class="ttc" id="aclass_utils_html_a485764e8775f5b620dfdf4d076389877"><div class="ttname"><a href="class_utils.html#a485764e8775f5b620dfdf4d076389877">Utils::loadFullText</a></div><div class="ttdeci">static std::string loadFullText(std::string path)</div><div class="ttdef"><b>Definition:</b> Utils.cpp:17</div></div>
@@ -113,7 +118,7 @@ $(document).ready(function(){initNavTree('_utils_8h_source.html',''); initResiza
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="_utils_8h.html">Utils.h</a></li>
+    <li class="navelem"><a class="el" href="dir_6cd4f78e2a59d4dc5b75194f699b608f.html">TheDarkThreat</a></li><li class="navelem"><a class="el" href="_utils_8h.html">Utils.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

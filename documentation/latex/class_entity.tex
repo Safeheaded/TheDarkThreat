@@ -7,7 +7,7 @@
 Inheritance diagram for Entity\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=4.000000cm]{class_entity}
+\includegraphics[height=12.000000cm]{class_entity}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -20,6 +20,10 @@ virtual \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{$\sim$\
 const bool \mbox{\hyperlink{class_entity_ad47e03c54d4c282155e471197fd32924}{get\+Is\+Blocking}} () const
 \item 
 const \mbox{\hyperlink{_entity_8h_a884b333dc836c3eabfe7a675c0c72022}{Entity\+State}} \mbox{\hyperlink{class_entity_a48197348d23b462c1e23e2d1025fab65}{get\+State}} () const
+\item 
+const float \mbox{\hyperlink{class_entity_a60385ef32958489a4f5453e3697a3b56}{get\+Health}} () const
+\item 
+const float \mbox{\hyperlink{class_entity_a61f8ea74e109526c4044bede08ecea2c}{get\+Max\+Health}} () const
 \item 
 virtual void \mbox{\hyperlink{class_entity_adf844c991dbb08eb79609223c6acc978}{update}} (const float \&delta\+Time, std\+::vector$<$ \mbox{\hyperlink{class_entity}{Entity}} $\ast$ $>$ $\ast$entities, sf\+::\+Vector2f map\+Size)=0
 \item 
@@ -56,6 +60,10 @@ float \mbox{\hyperlink{class_entity_a69f951f794008db5c46529840c781784}{time\+Cou
 float \mbox{\hyperlink{class_entity_a43f52d20ac434916d77ec25dfff976ef}{counter}}
 \item 
 bool \mbox{\hyperlink{class_entity_accc2f5dfb05ee72da2aca8dba58d9899}{can\+Die}}
+\item 
+float \mbox{\hyperlink{class_entity_a59499f3d9d7def4f5a5cab1c9c30f570}{max\+Health}}
+\item 
+float \mbox{\hyperlink{class_entity_a854c9b7a8ed49aae4538734df4915727}{health}}
 \end{DoxyCompactItemize}
 
 
@@ -105,7 +113,7 @@ Implemented in \mbox{\hyperlink{class_enemy_a9a6692f8ed4c3ba2985d6210217d300d}{E
 
 
 
-Reimplemented in \mbox{\hyperlink{class_wraith_ae87ac0483c15369f37ccfbf1c3ba2c92}{Wraith}}, and \mbox{\hyperlink{class_player_a58f7d958a9e9cea4385c55ac3c6e47a8}{Player}}.
+Reimplemented in \mbox{\hyperlink{class_wraith_ae87ac0483c15369f37ccfbf1c3ba2c92}{Wraith}}, \mbox{\hyperlink{class_skeleton_ae3a3fefc9da5e32a26d4f1cc94ed4ba2}{Skeleton}}, \mbox{\hyperlink{class_player_a58f7d958a9e9cea4385c55ac3c6e47a8}{Player}}, and \mbox{\hyperlink{class_evil_wizard_afe7631afc9a2bc27ebb917f6527dd151}{Evil\+Wizard}}.
 
 \mbox{\Hypertarget{class_entity_a6f5407ec843ff04eda498115fe9954b3}\label{class_entity_a6f5407ec843ff04eda498115fe9954b3}} 
 \index{Entity@{Entity}!getCanDie@{getCanDie}}
@@ -113,11 +121,23 @@ Reimplemented in \mbox{\hyperlink{class_wraith_ae87ac0483c15369f37ccfbf1c3ba2c92
 \doxysubsubsection{\texorpdfstring{getCanDie()}{getCanDie()}}
 {\footnotesize\ttfamily const bool Entity\+::get\+Can\+Die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+\mbox{\Hypertarget{class_entity_a60385ef32958489a4f5453e3697a3b56}\label{class_entity_a60385ef32958489a4f5453e3697a3b56}} 
+\index{Entity@{Entity}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily const float Entity\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
 \mbox{\Hypertarget{class_entity_ad47e03c54d4c282155e471197fd32924}\label{class_entity_ad47e03c54d4c282155e471197fd32924}} 
 \index{Entity@{Entity}!getIsBlocking@{getIsBlocking}}
 \index{getIsBlocking@{getIsBlocking}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{getIsBlocking()}{getIsBlocking()}}
 {\footnotesize\ttfamily const bool Entity\+::get\+Is\+Blocking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_entity_a61f8ea74e109526c4044bede08ecea2c}\label{class_entity_a61f8ea74e109526c4044bede08ecea2c}} 
+\index{Entity@{Entity}!getMaxHealth@{getMaxHealth}}
+\index{getMaxHealth@{getMaxHealth}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{getMaxHealth()}{getMaxHealth()}}
+{\footnotesize\ttfamily const float Entity\+::get\+Max\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 \mbox{\Hypertarget{class_entity_a48197348d23b462c1e23e2d1025fab65}\label{class_entity_a48197348d23b462c1e23e2d1025fab65}} 
 \index{Entity@{Entity}!getState@{getState}}
@@ -139,7 +159,7 @@ Reimplemented in \mbox{\hyperlink{class_wraith_ae87ac0483c15369f37ccfbf1c3ba2c92
 
 
 
-Implemented in \mbox{\hyperlink{class_wraith_aad68a2d9a9dbe636e01a89c52b5d7cf3}{Wraith}}, \mbox{\hyperlink{class_tree_a17608913a7ed23a05dce1c2f4814761f}{Tree}}, \mbox{\hyperlink{class_player_ac976c892a9dbd0f3dc7b44384ca86385}{Player}}, and \mbox{\hyperlink{class_missile_a56f11db6ae168926864e41954df4805c}{Missile}}.
+Implemented in \mbox{\hyperlink{class_wraith_aad68a2d9a9dbe636e01a89c52b5d7cf3}{Wraith}}, \mbox{\hyperlink{class_tree_a17608913a7ed23a05dce1c2f4814761f}{Tree}}, \mbox{\hyperlink{class_spikes_a24bdfa1a01de48a8ac905bb54d0aeb1e}{Spikes}}, \mbox{\hyperlink{class_skeleton_a27463e761e33dfc3f659e37c28f66c47}{Skeleton}}, \mbox{\hyperlink{class_portal_adc2b443d58aca8134945a6505b328dca}{Portal}}, \mbox{\hyperlink{class_player_ac976c892a9dbd0f3dc7b44384ca86385}{Player}}, \mbox{\hyperlink{class_missile_a56f11db6ae168926864e41954df4805c}{Missile}}, \mbox{\hyperlink{class_mana_potion_a6ed19c944ad643c1b3ecf8b47eafdf85}{Mana\+Potion}}, \mbox{\hyperlink{class_health_potion_a13b8fb810dd9573bd87539c67435ab74}{Health\+Potion}}, \mbox{\hyperlink{class_health_bar_ad1695c162f78229e547259a242fc77aa}{Health\+Bar}}, \mbox{\hyperlink{class_evil_wizard_a53bf76aba4f5eb3a2492a13dda683102}{Evil\+Wizard}}, \mbox{\hyperlink{class_crypt_a706eb0b990b2fa9eaa52d5ca4531ac52}{Crypt}}, and \mbox{\hyperlink{class_cemetery_a6c2d1b6a3c383881f5cd940df990ccc6}{Cemetery}}.
 
 
 
@@ -162,11 +182,23 @@ Implemented in \mbox{\hyperlink{class_wraith_aad68a2d9a9dbe636e01a89c52b5d7cf3}{
 \doxysubsubsection{\texorpdfstring{counter}{counter}}
 {\footnotesize\ttfamily float Entity\+::counter\hspace{0.3cm}{\ttfamily [protected]}}
 
+\mbox{\Hypertarget{class_entity_a854c9b7a8ed49aae4538734df4915727}\label{class_entity_a854c9b7a8ed49aae4538734df4915727}} 
+\index{Entity@{Entity}!health@{health}}
+\index{health@{health}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{health}{health}}
+{\footnotesize\ttfamily float Entity\+::health\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_entity_a13d62242227f82f27fae78f08a32e414}\label{class_entity_a13d62242227f82f27fae78f08a32e414}} 
 \index{Entity@{Entity}!isBlocking@{isBlocking}}
 \index{isBlocking@{isBlocking}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{isBlocking}{isBlocking}}
 {\footnotesize\ttfamily bool Entity\+::is\+Blocking\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_entity_a59499f3d9d7def4f5a5cab1c9c30f570}\label{class_entity_a59499f3d9d7def4f5a5cab1c9c30f570}} 
+\index{Entity@{Entity}!maxHealth@{maxHealth}}
+\index{maxHealth@{maxHealth}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{maxHealth}{maxHealth}}
+{\footnotesize\ttfamily float Entity\+::max\+Health\hspace{0.3cm}{\ttfamily [protected]}}
 
 \mbox{\Hypertarget{class_entity_a5a61b24410d1e9e7560ab142cf439dc8}\label{class_entity_a5a61b24410d1e9e7560ab142cf439dc8}} 
 \index{Entity@{Entity}!state@{state}}
@@ -196,5 +228,5 @@ Implemented in \mbox{\hyperlink{class_wraith_aad68a2d9a9dbe636e01a89c52b5d7cf3}{
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
-\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/\+MPatr/source/repos/\+The\+Dark\+Threat/\+The\+Dark\+Threat/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+C\+:/\+Users/\+MPatr/source/repos/\+The\+Dark\+Threat/\+The\+Dark\+Threat/\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

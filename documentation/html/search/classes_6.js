@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['obstacle_202',['Obstacle',['../class_obstacle.html',1,'']]],
-  ['overworldmap_203',['OverworldMap',['../class_overworld_map.html',1,'']]]
+  ['level1_254',['Level1',['../class_level1.html',1,'']]],
+  ['level2_255',['Level2',['../class_level2.html',1,'']]]
 ];

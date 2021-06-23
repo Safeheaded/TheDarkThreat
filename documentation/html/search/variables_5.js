@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['scenes_393',['scenes',['../class_scene.html#ac87d34d8d9076a025cca7240431350b7',1,'Scene']]],
-  ['speed_394',['speed',['../class_missile.html#a6d40d98f169464ca3b6f56a348eea4ac',1,'Missile']]],
-  ['state_395',['state',['../class_entity.html#a5a61b24410d1e9e7560ab142cf439dc8',1,'Entity']]]
+  ['manacost_500',['manaCost',['../class_spell.html#aee2b34273f5d087dfade4a116e2eaca5',1,'Spell']]],
+  ['maxhealth_501',['maxHealth',['../class_entity.html#a59499f3d9d7def4f5a5cab1c9c30f570',1,'Entity']]]
 ];

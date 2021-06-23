@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['particlemissile_204',['ParticleMissile',['../class_particle_missile.html',1,'']]],
-  ['particlespell_205',['ParticleSpell',['../class_particle_spell.html',1,'']]],
-  ['pausescene_206',['PauseScene',['../class_pause_scene.html',1,'']]],
-  ['player_207',['Player',['../class_player.html',1,'']]],
-  ['playergui_208',['PlayerGUI',['../class_player_g_u_i.html',1,'']]],
-  ['plotscene_209',['PlotScene',['../class_plot_scene.html',1,'']]]
+  ['manapotion_256',['ManaPotion',['../class_mana_potion.html',1,'']]],
+  ['map_257',['Map',['../class_map.html',1,'']]],
+  ['menuscene_258',['MenuScene',['../class_menu_scene.html',1,'']]],
+  ['missile_259',['Missile',['../class_missile.html',1,'']]]
 ];

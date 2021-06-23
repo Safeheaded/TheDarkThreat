@@ -98,14 +98,20 @@ Inheritance diagram for Entity:</div>
  <div class="center">
   <img src="class_entity.png" usemap="#Entity_map" alt=""/>
   <map id="Entity_map" name="Entity_map">
-<area href="class_enemy.html" alt="Enemy" shape="rect" coords="0,112,94,136"/>
-<area href="class_missile.html" alt="Missile" shape="rect" coords="104,112,198,136"/>
-<area href="class_player.html" alt="Player" shape="rect" coords="208,112,302,136"/>
-<area href="class_tree.html" alt="Tree" shape="rect" coords="312,112,406,136"/>
-<area href="class_wraith.html" alt="Wraith" shape="rect" coords="416,112,510,136"/>
-<area href="class_enemy_missile.html" alt="EnemyMissile" shape="rect" coords="0,168,94,192"/>
-<area href="class_fireball_missile.html" alt="FireballMissile" shape="rect" coords="104,168,198,192"/>
-<area href="class_particle_missile.html" alt="ParticleMissile" shape="rect" coords="208,168,302,192"/>
+<area href="class_cemetery.html" alt="Cemetery" shape="rect" coords="93,112,176,136"/>
+<area href="class_crypt.html" alt="Crypt" shape="rect" coords="93,168,176,192"/>
+<area href="class_enemy.html" alt="Enemy" shape="rect" coords="93,224,176,248"/>
+<area href="class_evil_wizard.html" alt="EvilWizard" shape="rect" coords="93,280,176,304"/>
+<area href="class_health_bar.html" alt="HealthBar" shape="rect" coords="93,336,176,360"/>
+<area href="class_health_potion.html" alt="HealthPotion" shape="rect" coords="93,392,176,416"/>
+<area href="class_mana_potion.html" alt="ManaPotion" shape="rect" coords="93,448,176,472"/>
+<area href="class_missile.html" alt="Missile" shape="rect" coords="93,504,176,528"/>
+<area href="class_player.html" alt="Player" shape="rect" coords="93,560,176,584"/>
+<area href="class_portal.html" alt="Portal" shape="rect" coords="93,616,176,640"/>
+<area href="class_skeleton.html" alt="Skeleton" shape="rect" coords="93,672,176,696"/>
+<area href="class_spikes.html" alt="Spikes" shape="rect" coords="93,728,176,752"/>
+<area href="class_tree.html" alt="Tree" shape="rect" coords="93,784,176,808"/>
+<area href="class_wraith.html" alt="Wraith" shape="rect" coords="93,840,176,864"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -119,6 +125,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad47e03c54d4c282155e471197fd32924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48197348d23b462c1e23e2d1025fab65"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="_entity_8h.html#a884b333dc836c3eabfe7a675c0c72022">EntityState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a48197348d23b462c1e23e2d1025fab65">getState</a> () const</td></tr>
 <tr class="separator:a48197348d23b462c1e23e2d1025fab65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60385ef32958489a4f5453e3697a3b56"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a60385ef32958489a4f5453e3697a3b56">getHealth</a> () const</td></tr>
+<tr class="separator:a60385ef32958489a4f5453e3697a3b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61f8ea74e109526c4044bede08ecea2c"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a61f8ea74e109526c4044bede08ecea2c">getMaxHealth</a> () const</td></tr>
+<tr class="separator:a61f8ea74e109526c4044bede08ecea2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf844c991dbb08eb79609223c6acc978"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#adf844c991dbb08eb79609223c6acc978">update</a> (const float &amp;deltaTime, std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *entities, sf::Vector2f mapSize)=0</td></tr>
 <tr class="separator:adf844c991dbb08eb79609223c6acc978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0d2d2d983d3bbdd5d34aa93d2c00b0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a9d0d2d2d983d3bbdd5d34aa93d2c00b0">dealDamage</a> (const float &amp;damage)</td></tr>
@@ -155,6 +165,10 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a43f52d20ac434916d77ec25dfff976ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accc2f5dfb05ee72da2aca8dba58d9899"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#accc2f5dfb05ee72da2aca8dba58d9899">canDie</a></td></tr>
 <tr class="separator:accc2f5dfb05ee72da2aca8dba58d9899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59499f3d9d7def4f5a5cab1c9c30f570"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a59499f3d9d7def4f5a5cab1c9c30f570">maxHealth</a></td></tr>
+<tr class="separator:a59499f3d9d7def4f5a5cab1c9c30f570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a854c9b7a8ed49aae4538734df4915727"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a854c9b7a8ed49aae4538734df4915727">health</a></td></tr>
+<tr class="separator:a854c9b7a8ed49aae4538734df4915727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa4e1cf94033b81809c0420162eee5582"></a>
@@ -347,7 +361,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_wraith.html#ae87ac0483c15369f37ccfbf1c3ba2c92">Wraith</a>, and <a class="el" href="class_player.html#a58f7d958a9e9cea4385c55ac3c6e47a8">Player</a>.</p>
+<p>Reimplemented in <a class="el" href="class_wraith.html#ae87ac0483c15369f37ccfbf1c3ba2c92">Wraith</a>, <a class="el" href="class_skeleton.html#ae3a3fefc9da5e32a26d4f1cc94ed4ba2">Skeleton</a>, <a class="el" href="class_player.html#a58f7d958a9e9cea4385c55ac3c6e47a8">Player</a>, and <a class="el" href="class_evil_wizard.html#afe7631afc9a2bc27ebb917f6527dd151">EvilWizard</a>.</p>
 
 </div>
 </div>
@@ -368,6 +382,23 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a60385ef32958489a4f5453e3697a3b56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60385ef32958489a4f5453e3697a3b56">&#9670;&nbsp;</a></span>getHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Entity::getHealth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad47e03c54d4c282155e471197fd32924"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad47e03c54d4c282155e471197fd32924">&#9670;&nbsp;</a></span>getIsBlocking()</h2>
 
@@ -376,6 +407,23 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">const bool Entity::getIsBlocking </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61f8ea74e109526c4044bede08ecea2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61f8ea74e109526c4044bede08ecea2c">&#9670;&nbsp;</a></span>getMaxHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float Entity::getMaxHealth </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -467,7 +515,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_wraith.html#aad68a2d9a9dbe636e01a89c52b5d7cf3">Wraith</a>, <a class="el" href="class_tree.html#a17608913a7ed23a05dce1c2f4814761f">Tree</a>, <a class="el" href="class_player.html#ac976c892a9dbd0f3dc7b44384ca86385">Player</a>, and <a class="el" href="class_missile.html#a56f11db6ae168926864e41954df4805c">Missile</a>.</p>
+<p>Implemented in <a class="el" href="class_wraith.html#aad68a2d9a9dbe636e01a89c52b5d7cf3">Wraith</a>, <a class="el" href="class_tree.html#a17608913a7ed23a05dce1c2f4814761f">Tree</a>, <a class="el" href="class_spikes.html#a24bdfa1a01de48a8ac905bb54d0aeb1e">Spikes</a>, <a class="el" href="class_skeleton.html#a27463e761e33dfc3f659e37c28f66c47">Skeleton</a>, <a class="el" href="class_portal.html#adc2b443d58aca8134945a6505b328dca">Portal</a>, <a class="el" href="class_player.html#ac976c892a9dbd0f3dc7b44384ca86385">Player</a>, <a class="el" href="class_missile.html#a56f11db6ae168926864e41954df4805c">Missile</a>, <a class="el" href="class_mana_potion.html#a6ed19c944ad643c1b3ecf8b47eafdf85">ManaPotion</a>, <a class="el" href="class_health_potion.html#a13b8fb810dd9573bd87539c67435ab74">HealthPotion</a>, <a class="el" href="class_health_bar.html#ad1695c162f78229e547259a242fc77aa">HealthBar</a>, <a class="el" href="class_evil_wizard.html#a53bf76aba4f5eb3a2492a13dda683102">EvilWizard</a>, <a class="el" href="class_crypt.html#a706eb0b990b2fa9eaa52d5ca4531ac52">Crypt</a>, and <a class="el" href="class_cemetery.html#a6c2d1b6a3c383881f5cd940df990ccc6">Cemetery</a>.</p>
 
 </div>
 </div>
@@ -538,6 +586,28 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a854c9b7a8ed49aae4538734df4915727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a854c9b7a8ed49aae4538734df4915727">&#9670;&nbsp;</a></span>health</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Entity::health</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a13d62242227f82f27fae78f08a32e414"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13d62242227f82f27fae78f08a32e414">&#9670;&nbsp;</a></span>isBlocking</h2>
 
@@ -549,6 +619,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">bool Entity::isBlocking</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a59499f3d9d7def4f5a5cab1c9c30f570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59499f3d9d7def4f5a5cab1c9c30f570">&#9670;&nbsp;</a></span>maxHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Entity::maxHealth</td>
         </tr>
       </table>
   </td>
@@ -649,8 +741,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_entity_8h_source.html">Entity.h</a></li>
-<li><a class="el" href="_entity_8cpp.html">Entity.cpp</a></li>
+<li>C:/Users/MPatr/source/repos/TheDarkThreat/TheDarkThreat/<a class="el" href="_entity_8h_source.html">Entity.h</a></li>
+<li>C:/Users/MPatr/source/repos/TheDarkThreat/TheDarkThreat/<a class="el" href="_entity_8cpp.html">Entity.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['game_197',['Game',['../class_game.html',1,'']]],
-  ['gameoverscene_198',['GameOverScene',['../class_game_over_scene.html',1,'']]]
+  ['fireballmissile_248',['FireballMissile',['../class_fireball_missile.html',1,'']]],
+  ['fireballspell_249',['FireballSpell',['../class_fireball_spell.html',1,'']]]
 ];

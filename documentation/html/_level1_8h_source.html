@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Level1.h Source File</title>
+<title>My Project: C:/Users/MPatr/source/repos/TheDarkThreat/TheDarkThreat/Level1.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,61 +92,67 @@ $(document).ready(function(){initNavTree('_level1_8h_source.html',''); initResiz
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_wraith_8h.html">Wraith.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_player_g_u_i_8h.html">PlayerGUI.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_overworld_map_8h.html">OverworldMap.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_obstacle_8h.html">Obstacle.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_over_scene_8h.html">GameOverScene.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pause_scene_8h.html">PauseScene.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_level1.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_level1.html">Level1</a> :</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_scene.html">Scene</a></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::map&lt;std::string, sf::Texture*&gt; textures;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_player.html">Player</a>* player;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt;Entity*&gt; entities;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::vector&lt;Obstacle*&gt; obstacles;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_player_g_u_i.html">PlayerGUI</a>* playerGUI;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_overworld_map.html">OverworldMap</a> map;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    sf::View view;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_level1.html#aacc9c6d224fa45d372e58fc91891d56c">Level1</a>(sf::RenderWindow* <a class="code" href="class_scene.html#a0154fc93c1653154461a19a3209914a3">window</a>, std::stack&lt;Scene*&gt;* <a class="code" href="class_scene.html#ac87d34d8d9076a025cca7240431350b7">scenes</a>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#a5e9c8fa6558e2a7d1435d0b4f06adaf4">setupTextures</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_level1.html#adfbd315a62b31d3ca07da24fc9c69d82">~Level1</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#a3eed2109db76dbac21f404667e314b6b">update</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#aee42cc4a9d8ed69034405fc7b7ad47ad">handleView</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#a4abb56ea505972be228f0ddd1dbec626">render</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#a157c6360072f08f812840eec1594bdb9">handleEvents</a>(<span class="keyword">const</span> sf::Event&amp; event);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_over_scene_8h.html">GameOverScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_pause_scene_8h.html">PauseScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">Map.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_plot_scene_8h.html">PlotScene.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_level2_8h.html">Level2.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_level1.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_level1.html">Level1</a> :</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_scene.html">Scene</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::map&lt;std::string, sf::Texture*&gt; textures;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_player.html">Player</a>* player;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::vector&lt;Entity*&gt; entities;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_player_g_u_i.html">PlayerGUI</a>* playerGUI;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_overworld_map.html">OverworldMap</a> map;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    sf::View view;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> isPaused;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_level1.html#aacc9c6d224fa45d372e58fc91891d56c">Level1</a>(sf::RenderWindow* <a class="code" href="class_scene.html#a0154fc93c1653154461a19a3209914a3">window</a>, std::stack&lt;Scene*&gt;* <a class="code" href="class_scene.html#ac87d34d8d9076a025cca7240431350b7">scenes</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#a5e9c8fa6558e2a7d1435d0b4f06adaf4">setupTextures</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_level1.html#adfbd315a62b31d3ca07da24fc9c69d82">~Level1</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#a3eed2109db76dbac21f404667e314b6b">update</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#aee42cc4a9d8ed69034405fc7b7ad47ad">handleView</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#a4abb56ea505972be228f0ddd1dbec626">render</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_level1.html#a157c6360072f08f812840eec1594bdb9">handleEvents</a>(<span class="keyword">const</span> sf::Event&amp; event);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="ttc" id="a_game_over_scene_8h_html"><div class="ttname"><a href="_game_over_scene_8h.html">GameOverScene.h</a></div></div>
+<div class="ttc" id="a_level2_8h_html"><div class="ttname"><a href="_level2_8h.html">Level2.h</a></div></div>
+<div class="ttc" id="a_map_8h_html"><div class="ttname"><a href="_map_8h.html">Map.h</a></div></div>
 <div class="ttc" id="a_missile_8h_html"><div class="ttname"><a href="_missile_8h.html">Missile.h</a></div></div>
-<div class="ttc" id="a_obstacle_8h_html"><div class="ttname"><a href="_obstacle_8h.html">Obstacle.h</a></div></div>
 <div class="ttc" id="a_overworld_map_8h_html"><div class="ttname"><a href="_overworld_map_8h.html">OverworldMap.h</a></div></div>
 <div class="ttc" id="a_pause_scene_8h_html"><div class="ttname"><a href="_pause_scene_8h.html">PauseScene.h</a></div></div>
 <div class="ttc" id="a_player_8h_html"><div class="ttname"><a href="_player_8h.html">Player.h</a></div></div>
 <div class="ttc" id="a_player_g_u_i_8h_html"><div class="ttname"><a href="_player_g_u_i_8h.html">PlayerGUI.h</a></div></div>
+<div class="ttc" id="a_plot_scene_8h_html"><div class="ttname"><a href="_plot_scene_8h.html">PlotScene.h</a></div></div>
 <div class="ttc" id="a_scene_8h_html"><div class="ttname"><a href="_scene_8h.html">Scene.h</a></div></div>
 <div class="ttc" id="a_wraith_8h_html"><div class="ttname"><a href="_wraith_8h.html">Wraith.h</a></div></div>
-<div class="ttc" id="aclass_level1_html"><div class="ttname"><a href="class_level1.html">Level1</a></div><div class="ttdef"><b>Definition:</b> Level1.h:14</div></div>
-<div class="ttc" id="aclass_level1_html_a157c6360072f08f812840eec1594bdb9"><div class="ttname"><a href="class_level1.html#a157c6360072f08f812840eec1594bdb9">Level1::handleEvents</a></div><div class="ttdeci">void handleEvents(const sf::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> Level1.cpp:223</div></div>
-<div class="ttc" id="aclass_level1_html_a3eed2109db76dbac21f404667e314b6b"><div class="ttname"><a href="class_level1.html#a3eed2109db76dbac21f404667e314b6b">Level1::update</a></div><div class="ttdeci">void update(const float &amp;deltaTime)</div><div class="ttdef"><b>Definition:</b> Level1.cpp:129</div></div>
-<div class="ttc" id="aclass_level1_html_a4abb56ea505972be228f0ddd1dbec626"><div class="ttname"><a href="class_level1.html#a4abb56ea505972be228f0ddd1dbec626">Level1::render</a></div><div class="ttdeci">void render(const float &amp;deltaTime)</div><div class="ttdef"><b>Definition:</b> Level1.cpp:205</div></div>
-<div class="ttc" id="aclass_level1_html_a5e9c8fa6558e2a7d1435d0b4f06adaf4"><div class="ttname"><a href="class_level1.html#a5e9c8fa6558e2a7d1435d0b4f06adaf4">Level1::setupTextures</a></div><div class="ttdeci">void setupTextures()</div><div class="ttdef"><b>Definition:</b> Level1.cpp:91</div></div>
+<div class="ttc" id="aclass_level1_html"><div class="ttname"><a href="class_level1.html">Level1</a></div><div class="ttdef"><b>Definition:</b> Level1.h:18</div></div>
+<div class="ttc" id="aclass_level1_html_a157c6360072f08f812840eec1594bdb9"><div class="ttname"><a href="class_level1.html#a157c6360072f08f812840eec1594bdb9">Level1::handleEvents</a></div><div class="ttdeci">void handleEvents(const sf::Event &amp;event)</div><div class="ttdef"><b>Definition:</b> Level1.cpp:179</div></div>
+<div class="ttc" id="aclass_level1_html_a3eed2109db76dbac21f404667e314b6b"><div class="ttname"><a href="class_level1.html#a3eed2109db76dbac21f404667e314b6b">Level1::update</a></div><div class="ttdeci">void update(const float &amp;deltaTime)</div><div class="ttdef"><b>Definition:</b> Level1.cpp:73</div></div>
+<div class="ttc" id="aclass_level1_html_a4abb56ea505972be228f0ddd1dbec626"><div class="ttname"><a href="class_level1.html#a4abb56ea505972be228f0ddd1dbec626">Level1::render</a></div><div class="ttdeci">void render(const float &amp;deltaTime)</div><div class="ttdef"><b>Definition:</b> Level1.cpp:167</div></div>
+<div class="ttc" id="aclass_level1_html_a5e9c8fa6558e2a7d1435d0b4f06adaf4"><div class="ttname"><a href="class_level1.html#a5e9c8fa6558e2a7d1435d0b4f06adaf4">Level1::setupTextures</a></div><div class="ttdeci">void setupTextures()</div><div class="ttdef"><b>Definition:</b> Level1.cpp:26</div></div>
 <div class="ttc" id="aclass_level1_html_aacc9c6d224fa45d372e58fc91891d56c"><div class="ttname"><a href="class_level1.html#aacc9c6d224fa45d372e58fc91891d56c">Level1::Level1</a></div><div class="ttdeci">Level1(sf::RenderWindow *window, std::stack&lt; Scene * &gt; *scenes)</div><div class="ttdef"><b>Definition:</b> Level1.cpp:3</div></div>
-<div class="ttc" id="aclass_level1_html_adfbd315a62b31d3ca07da24fc9c69d82"><div class="ttname"><a href="class_level1.html#adfbd315a62b31d3ca07da24fc9c69d82">Level1::~Level1</a></div><div class="ttdeci">~Level1()</div><div class="ttdef"><b>Definition:</b> Level1.cpp:112</div></div>
-<div class="ttc" id="aclass_level1_html_aee42cc4a9d8ed69034405fc7b7ad47ad"><div class="ttname"><a href="class_level1.html#aee42cc4a9d8ed69034405fc7b7ad47ad">Level1::handleView</a></div><div class="ttdeci">void handleView()</div><div class="ttdef"><b>Definition:</b> Level1.cpp:180</div></div>
-<div class="ttc" id="aclass_overworld_map_html"><div class="ttname"><a href="class_overworld_map.html">OverworldMap</a></div><div class="ttdef"><b>Definition:</b> OverworldMap.h:5</div></div>
+<div class="ttc" id="aclass_level1_html_adfbd315a62b31d3ca07da24fc9c69d82"><div class="ttname"><a href="class_level1.html#adfbd315a62b31d3ca07da24fc9c69d82">Level1::~Level1</a></div><div class="ttdeci">~Level1()</div><div class="ttdef"><b>Definition:</b> Level1.cpp:60</div></div>
+<div class="ttc" id="aclass_level1_html_aee42cc4a9d8ed69034405fc7b7ad47ad"><div class="ttname"><a href="class_level1.html#aee42cc4a9d8ed69034405fc7b7ad47ad">Level1::handleView</a></div><div class="ttdeci">void handleView()</div><div class="ttdef"><b>Definition:</b> Level1.cpp:142</div></div>
+<div class="ttc" id="aclass_overworld_map_html"><div class="ttname"><a href="class_overworld_map.html">OverworldMap</a></div><div class="ttdef"><b>Definition:</b> OverworldMap.h:11</div></div>
 <div class="ttc" id="aclass_player_g_u_i_html"><div class="ttname"><a href="class_player_g_u_i.html">PlayerGUI</a></div><div class="ttdef"><b>Definition:</b> PlayerGUI.h:5</div></div>
-<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:12</div></div>
-<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.h:13</div></div>
-<div class="ttc" id="aclass_scene_html_a0154fc93c1653154461a19a3209914a3"><div class="ttname"><a href="class_scene.html#a0154fc93c1653154461a19a3209914a3">Scene::window</a></div><div class="ttdeci">sf::RenderWindow * window</div><div class="ttdef"><b>Definition:</b> Scene.h:15</div></div>
-<div class="ttc" id="aclass_scene_html_ac87d34d8d9076a025cca7240431350b7"><div class="ttname"><a href="class_scene.html#ac87d34d8d9076a025cca7240431350b7">Scene::scenes</a></div><div class="ttdeci">std::stack&lt; Scene * &gt; * scenes</div><div class="ttdef"><b>Definition:</b> Scene.h:16</div></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:16</div></div>
+<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.h:14</div></div>
+<div class="ttc" id="aclass_scene_html_a0154fc93c1653154461a19a3209914a3"><div class="ttname"><a href="class_scene.html#a0154fc93c1653154461a19a3209914a3">Scene::window</a></div><div class="ttdeci">sf::RenderWindow * window</div><div class="ttdef"><b>Definition:</b> Scene.h:16</div></div>
+<div class="ttc" id="aclass_scene_html_ac87d34d8d9076a025cca7240431350b7"><div class="ttname"><a href="class_scene.html#ac87d34d8d9076a025cca7240431350b7">Scene::scenes</a></div><div class="ttdeci">std::stack&lt; Scene * &gt; * scenes</div><div class="ttdef"><b>Definition:</b> Scene.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="_level1_8h.html">Level1.h</a></li>
+    <li class="navelem"><a class="el" href="dir_6cd4f78e2a59d4dc5b75194f699b608f.html">TheDarkThreat</a></li><li class="navelem"><a class="el" href="_level1_8h.html">Level1.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

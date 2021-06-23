@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Player.h Source File</title>
+<title>My Project: C:/Users/MPatr/source/repos/TheDarkThreat/TheDarkThreat/Player.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,50 +94,57 @@ $(document).ready(function(){initNavTree('_player_8h_source.html',''); initResiz
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_particle_missile_8h.html">ParticleMissile.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_particle_spell_8h.html">ParticleSpell.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_player.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_player.html">Player</a> :</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_entity.html">Entity</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">float</span> speed;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    sf::RenderWindow* window;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">bool</span> isRunning;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="_entity_8h.html#a884b333dc836c3eabfe7a675c0c72022">EntityState</a> prevState;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">float</span> health;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">float</span> maxHealth;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">float</span> mana;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">float</span> maxMana;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> canChangeState;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::vector&lt;Spell*&gt; spells;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::vector&lt;Entity*&gt;* entities;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> selectedSpell;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    sf::Vector2f target;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> handleMovement(</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        sf::Vector2f&amp; velocity, <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime, sf::FloatRect&amp; playerBounds</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> handleVoidCollision(sf::FloatRect&amp; playerBounds, <span class="keyword">const</span> sf::Vector2f&amp; mapSize);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> setupAnimations();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> animationEnd(std::vector&lt;Entity*&gt;* entities);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> attack(std::vector&lt;Entity*&gt;* entities);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_player.html#a4e3bda1c5b317600b15dc58b931ba486">Player</a>(sf::RenderWindow* window, std::map&lt;std::string, sf::Texture*&gt;* <a class="code" href="class_entity.html#a13390551b7845805ff1be29f487a632b">textures</a>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; fps);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Methods</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#ac976c892a9dbd0f3dc7b44384ca86385">update</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime, std::vector&lt;Entity*&gt;* entities, sf::Vector2f mapSize);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#a4113a6e4167574e42a3c1bcdfc9f2dbc">EvaluateState</a>(std::vector&lt;Entity*&gt;* entities);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#a58f7d958a9e9cea4385c55ac3c6e47a8">dealDamage</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; damage);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_player.html#afdec2f7be31cdf5453ec5e591dae5db5">getHealth</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_player.html#ad97ccdaee7c2bee6f87e8639b3a2091f">getMaxHealth</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_player.html#a29d2432d3abe68bf11307ded45f0bf01">getMana</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_player.html#ac2afe264765ade09239a776ceb1c9a23">getMaxMana</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="class_player.html#a572795cd02fe02bfa586b38e0366bc58">getSpellName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// This is to avoid circular dependencies (I spent like half an hour trying to figure out the errors :) )</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span><a class="code" href="class_health_potion.html">HealthPotion</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_mana_potion.html">ManaPotion</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_player.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_player.html">Player</a> :</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span> <a class="code" href="class_entity.html">Entity</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">float</span> speed;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    sf::RenderWindow* window;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">bool</span> isRunning;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="_entity_8h.html#a884b333dc836c3eabfe7a675c0c72022">EntityState</a> prevState;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">float</span> mana;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">float</span> maxMana;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> canChangeState;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt;Spell*&gt; spells;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::vector&lt;Entity*&gt;* entities;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> selectedSpell;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    sf::Vector2f target;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_player.html#a84b7d806687a7d071f96c34d8a1fdd6d">   29</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_health_potion.html">HealthPotion</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_player.html#aaaf8d8764bb25ce5e53f68f704f510f7">   30</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_mana_potion.html">ManaPotion</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">float</span> manaCounter;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">float</span> manaRegenerationSpeed;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span> manaRenegerationAmount;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Methods</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> handleMovement(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        sf::Vector2f&amp; velocity, <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime, sf::FloatRect&amp; playerBounds</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    );</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> handleVoidCollision(sf::FloatRect&amp; playerBounds, <span class="keyword">const</span> sf::Vector2f&amp; mapSize);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> setupAnimations();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> animationEnd(std::vector&lt;Entity*&gt;* entities);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> attack(std::vector&lt;Entity*&gt;* entities);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> renegerateMana(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_player.html#a4e3bda1c5b317600b15dc58b931ba486">Player</a>(sf::RenderWindow* window, std::map&lt;std::string, sf::Texture*&gt;* <a class="code" href="class_entity.html#a13390551b7845805ff1be29f487a632b">textures</a>,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">float</span>&amp; fps);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">~Player</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Methods</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#ac976c892a9dbd0f3dc7b44384ca86385">update</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; deltaTime, std::vector&lt;Entity*&gt;* entities, sf::Vector2f mapSize);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#a4113a6e4167574e42a3c1bcdfc9f2dbc">EvaluateState</a>(std::vector&lt;Entity*&gt;* entities);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_player.html#a58f7d958a9e9cea4385c55ac3c6e47a8">dealDamage</a>(<span class="keyword">const</span> <span class="keywordtype">float</span>&amp; damage);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_player.html#a29d2432d3abe68bf11307ded45f0bf01">getMana</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">float</span> <a class="code" href="class_player.html#ac2afe264765ade09239a776ceb1c9a23">getMaxMana</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="class_player.html#a572795cd02fe02bfa586b38e0366bc58">getSpellName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="ttc" id="a_entity_8h_html"><div class="ttname"><a href="_entity_8h.html">Entity.h</a></div></div>
 <div class="ttc" id="a_entity_8h_html_a884b333dc836c3eabfe7a675c0c72022"><div class="ttname"><a href="_entity_8h.html#a884b333dc836c3eabfe7a675c0c72022">EntityState</a></div><div class="ttdeci">EntityState</div><div class="ttdef"><b>Definition:</b> Entity.h:6</div></div>
 <div class="ttc" id="a_fireball_spell_8h_html"><div class="ttname"><a href="_fireball_spell_8h.html">FireballSpell.h</a></div></div>
@@ -147,23 +154,23 @@ $(document).ready(function(){initNavTree('_player_8h_source.html',''); initResiz
 <div class="ttc" id="a_utils_8h_html"><div class="ttname"><a href="_utils_8h.html">Utils.h</a></div></div>
 <div class="ttc" id="aclass_entity_html"><div class="ttname"><a href="class_entity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:15</div></div>
 <div class="ttc" id="aclass_entity_html_a13390551b7845805ff1be29f487a632b"><div class="ttname"><a href="class_entity.html#a13390551b7845805ff1be29f487a632b">Entity::textures</a></div><div class="ttdeci">std::map&lt; std::string, sf::Texture * &gt; * textures</div><div class="ttdef"><b>Definition:</b> Entity.h:20</div></div>
-<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:12</div></div>
-<div class="ttc" id="aclass_player_html_a29d2432d3abe68bf11307ded45f0bf01"><div class="ttname"><a href="class_player.html#a29d2432d3abe68bf11307ded45f0bf01">Player::getMana</a></div><div class="ttdeci">const float getMana() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:118</div></div>
-<div class="ttc" id="aclass_player_html_a4113a6e4167574e42a3c1bcdfc9f2dbc"><div class="ttname"><a href="class_player.html#a4113a6e4167574e42a3c1bcdfc9f2dbc">Player::EvaluateState</a></div><div class="ttdeci">void EvaluateState(std::vector&lt; Entity * &gt; *entities)</div><div class="ttdef"><b>Definition:</b> Player.cpp:64</div></div>
+<div class="ttc" id="aclass_health_potion_html"><div class="ttname"><a href="class_health_potion.html">HealthPotion</a></div><div class="ttdef"><b>Definition:</b> HealthPotion.h:5</div></div>
+<div class="ttc" id="aclass_mana_potion_html"><div class="ttname"><a href="class_mana_potion.html">ManaPotion</a></div><div class="ttdef"><b>Definition:</b> ManaPotion.h:5</div></div>
+<div class="ttc" id="aclass_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:16</div></div>
+<div class="ttc" id="aclass_player_html_a29d2432d3abe68bf11307ded45f0bf01"><div class="ttname"><a href="class_player.html#a29d2432d3abe68bf11307ded45f0bf01">Player::getMana</a></div><div class="ttdeci">const float getMana() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:115</div></div>
+<div class="ttc" id="aclass_player_html_a4113a6e4167574e42a3c1bcdfc9f2dbc"><div class="ttname"><a href="class_player.html#a4113a6e4167574e42a3c1bcdfc9f2dbc">Player::EvaluateState</a></div><div class="ttdeci">void EvaluateState(std::vector&lt; Entity * &gt; *entities)</div><div class="ttdef"><b>Definition:</b> Player.cpp:71</div></div>
 <div class="ttc" id="aclass_player_html_a4e3bda1c5b317600b15dc58b931ba486"><div class="ttname"><a href="class_player.html#a4e3bda1c5b317600b15dc58b931ba486">Player::Player</a></div><div class="ttdeci">Player(sf::RenderWindow *window, std::map&lt; std::string, sf::Texture * &gt; *textures, const float &amp;fps)</div><div class="ttdef"><b>Definition:</b> Player.cpp:4</div></div>
-<div class="ttc" id="aclass_player_html_a572795cd02fe02bfa586b38e0366bc58"><div class="ttname"><a href="class_player.html#a572795cd02fe02bfa586b38e0366bc58">Player::getSpellName</a></div><div class="ttdeci">const std::string getSpellName() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:128</div></div>
-<div class="ttc" id="aclass_player_html_a58f7d958a9e9cea4385c55ac3c6e47a8"><div class="ttname"><a href="class_player.html#a58f7d958a9e9cea4385c55ac3c6e47a8">Player::dealDamage</a></div><div class="ttdeci">void dealDamage(const float &amp;damage)</div><div class="ttdef"><b>Definition:</b> Player.cpp:100</div></div>
-<div class="ttc" id="aclass_player_html_a749d2c00e1fe0f5c2746f7505a58c062"><div class="ttname"><a href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">Player::~Player</a></div><div class="ttdeci">~Player()</div><div class="ttdef"><b>Definition:</b> Player.cpp:27</div></div>
-<div class="ttc" id="aclass_player_html_ac2afe264765ade09239a776ceb1c9a23"><div class="ttname"><a href="class_player.html#ac2afe264765ade09239a776ceb1c9a23">Player::getMaxMana</a></div><div class="ttdeci">const float getMaxMana() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:123</div></div>
-<div class="ttc" id="aclass_player_html_ac976c892a9dbd0f3dc7b44384ca86385"><div class="ttname"><a href="class_player.html#ac976c892a9dbd0f3dc7b44384ca86385">Player::update</a></div><div class="ttdeci">void update(const float &amp;deltaTime, std::vector&lt; Entity * &gt; *entities, sf::Vector2f mapSize)</div><div class="ttdef"><b>Definition:</b> Player.cpp:35</div></div>
-<div class="ttc" id="aclass_player_html_ad97ccdaee7c2bee6f87e8639b3a2091f"><div class="ttname"><a href="class_player.html#ad97ccdaee7c2bee6f87e8639b3a2091f">Player::getMaxHealth</a></div><div class="ttdeci">const float getMaxHealth() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:113</div></div>
-<div class="ttc" id="aclass_player_html_afdec2f7be31cdf5453ec5e591dae5db5"><div class="ttname"><a href="class_player.html#afdec2f7be31cdf5453ec5e591dae5db5">Player::getHealth</a></div><div class="ttdeci">const float getHealth() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:108</div></div>
+<div class="ttc" id="aclass_player_html_a572795cd02fe02bfa586b38e0366bc58"><div class="ttname"><a href="class_player.html#a572795cd02fe02bfa586b38e0366bc58">Player::getSpellName</a></div><div class="ttdeci">const std::string getSpellName() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:125</div></div>
+<div class="ttc" id="aclass_player_html_a58f7d958a9e9cea4385c55ac3c6e47a8"><div class="ttname"><a href="class_player.html#a58f7d958a9e9cea4385c55ac3c6e47a8">Player::dealDamage</a></div><div class="ttdeci">void dealDamage(const float &amp;damage)</div><div class="ttdef"><b>Definition:</b> Player.cpp:107</div></div>
+<div class="ttc" id="aclass_player_html_a749d2c00e1fe0f5c2746f7505a58c062"><div class="ttname"><a href="class_player.html#a749d2c00e1fe0f5c2746f7505a58c062">Player::~Player</a></div><div class="ttdeci">~Player()</div><div class="ttdef"><b>Definition:</b> Player.cpp:30</div></div>
+<div class="ttc" id="aclass_player_html_ac2afe264765ade09239a776ceb1c9a23"><div class="ttname"><a href="class_player.html#ac2afe264765ade09239a776ceb1c9a23">Player::getMaxMana</a></div><div class="ttdeci">const float getMaxMana() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:120</div></div>
+<div class="ttc" id="aclass_player_html_ac976c892a9dbd0f3dc7b44384ca86385"><div class="ttname"><a href="class_player.html#ac976c892a9dbd0f3dc7b44384ca86385">Player::update</a></div><div class="ttdeci">void update(const float &amp;deltaTime, std::vector&lt; Entity * &gt; *entities, sf::Vector2f mapSize)</div><div class="ttdef"><b>Definition:</b> Player.cpp:38</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="_player_8h.html">Player.h</a></li>
+    <li class="navelem"><a class="el" href="dir_6cd4f78e2a59d4dc5b75194f699b608f.html">TheDarkThreat</a></li><li class="navelem"><a class="el" href="_player_8h.html">Player.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

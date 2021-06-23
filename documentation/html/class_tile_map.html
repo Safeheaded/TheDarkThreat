@@ -96,7 +96,8 @@ Inheritance diagram for TileMap:</div>
  <div class="center">
   <img src="class_tile_map.png" usemap="#TileMap_map" alt=""/>
   <map id="TileMap_map" name="TileMap_map">
-<area href="class_overworld_map.html" alt="OverworldMap" shape="rect" coords="59,112,168,136"/>
+<area href="class_overworld_map.html" alt="OverworldMap" shape="rect" coords="0,112,109,136"/>
+<area href="class_underworld_map.html" alt="UnderworldMap" shape="rect" coords="119,112,228,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -104,35 +105,18 @@ Inheritance diagram for TileMap:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abd772465f5964869966a070b16a569df"><td class="memItemLeft" align="right" valign="top">const sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_map.html#abd772465f5964869966a070b16a569df">getSize</a> () const</td></tr>
 <tr class="separator:abd772465f5964869966a070b16a569df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44f71bb428e5e732a45e8992ea416ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_map.html#ae44f71bb428e5e732a45e8992ea416ff">load</a> (const std::string &amp;path, sf::Vector2u tileSize, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;tiles, std::map&lt; std::string, sf::Texture * &gt; *textures, std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *entities, std::vector&lt; <a class="el" href="class_obstacle.html">Obstacle</a> * &gt; *obstacles, <a class="el" href="class_player.html">Player</a> *player, sf::RenderWindow *window)</td></tr>
-<tr class="separator:ae44f71bb428e5e732a45e8992ea416ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d7b48471f7eb229114830b509fc22b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tile_map.html#a30d7b48471f7eb229114830b509fc22b">build</a> (const std::string &amp;path, sf::Vector2u tileSize, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;tiles, std::map&lt; std::string, sf::Texture * &gt; *textures, std::vector&lt; <a class="el" href="class_entity.html">Entity</a> * &gt; *entities, <a class="el" href="class_player.html">Player</a> *player, sf::RenderWindow *window, const sf::Vector2i &amp;textureOffset)</td></tr>
+<tr class="separator:a30d7b48471f7eb229114830b509fc22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abd772465f5964869966a070b16a569df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd772465f5964869966a070b16a569df">&#9670;&nbsp;</a></span>getSize()</h2>
+<a id="a30d7b48471f7eb229114830b509fc22b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d7b48471f7eb229114830b509fc22b">&#9670;&nbsp;</a></span>build()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const sf::Vector2f TileMap::getSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae44f71bb428e5e732a45e8992ea416ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae44f71bb428e5e732a45e8992ea416ff">&#9670;&nbsp;</a></span>load()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TileMap::load </td>
+          <td class="memname">void TileMap::build </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>path</em>, </td>
@@ -164,12 +148,6 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="class_obstacle.html">Obstacle</a> * &gt; *&#160;</td>
-          <td class="paramname"><em>obstacles</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="class_player.html">Player</a> *&#160;</td>
           <td class="paramname"><em>player</em>, </td>
         </tr>
@@ -177,7 +155,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">sf::RenderWindow *&#160;</td>
-          <td class="paramname"><em>window</em>&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const sf::Vector2i &amp;&#160;</td>
+          <td class="paramname"><em>textureOffset</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -189,9 +173,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abd772465f5964869966a070b16a569df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd772465f5964869966a070b16a569df">&#9670;&nbsp;</a></span>getSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const sf::Vector2f TileMap::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_tile_map_8h_source.html">TileMap.h</a></li>
-<li><a class="el" href="_tile_map_8cpp.html">TileMap.cpp</a></li>
+<li>C:/Users/MPatr/source/repos/TheDarkThreat/TheDarkThreat/<a class="el" href="_tile_map_8h_source.html">TileMap.h</a></li>
+<li>C:/Users/MPatr/source/repos/TheDarkThreat/TheDarkThreat/<a class="el" href="_tile_map_8cpp.html">TileMap.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

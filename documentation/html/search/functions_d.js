@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['render_340',['render',['../class_game_over_scene.html#a08ed4148a63d02f61aa2835fbc012b8a',1,'GameOverScene::render()'],['../class_level1.html#a4abb56ea505972be228f0ddd1dbec626',1,'Level1::render()'],['../class_menu_scene.html#adfe393fe5bd1e412a0d96d38396f05b2',1,'MenuScene::render()'],['../class_pause_scene.html#afd6cd8d843d6ab2ecdebc38ec4f23028',1,'PauseScene::render()'],['../class_plot_scene.html#af2153712d615ef3e2b4f84cd09183db4',1,'PlotScene::render()'],['../class_scene.html#a36784c445a7dfd998eaa1a9ea74e6b32',1,'Scene::render()'],['../class_scene_manager.html#afb5a402b39143c1ab66ace908670e85d',1,'SceneManager::render()']]],
-  ['run_341',['run',['../class_game.html#a1ab78f5ed0d5ea879157357cf2fb2afa',1,'Game']]]
+  ['savelevel_436',['saveLevel',['../class_utils.html#a1506f3fcef4158d9f045dc21deaf425f',1,'Utils']]],
+  ['scene_437',['Scene',['../class_scene.html#a80713e569835a9b3209beedaf9ee9bf9',1,'Scene']]],
+  ['scenemanager_438',['SceneManager',['../class_scene_manager.html#ad06fa561e1f1573869ceb0598a2ed2b7',1,'SceneManager']]],
+  ['setfirstframe_439',['setFirstFrame',['../class_entity.html#a600e37c9a5f52415b595441f453eb837',1,'Entity']]],
+  ['setupmusic_440',['setupMusic',['../class_game.html#a08aef1d998c3a15364945172714dfcb7',1,'Game']]],
+  ['setuptextures_441',['setupTextures',['../class_level1.html#a5e9c8fa6558e2a7d1435d0b4f06adaf4',1,'Level1::setupTextures()'],['../class_level2.html#a7d12b1df64c6a5430eabe247410692f3',1,'Level2::setupTextures()']]],
+  ['skeleton_442',['Skeleton',['../class_skeleton.html#a8c37fd0c9ef75d0dc339a005477401ed',1,'Skeleton']]],
+  ['spell_443',['Spell',['../class_spell.html#a3fd8d2e63ddb04070b39bc04673afb88',1,'Spell']]],
+  ['spikes_444',['Spikes',['../class_spikes.html#aeb6fbff7abdcdf3efe3e14ff88373f9a',1,'Spikes']]]
 ];
