@@ -5,8 +5,13 @@ Level2::Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 {
 	this->setupTextures();
 
+
 	this->player = new Player(this->window, &this->textures, 10.0f);
 	this->player->setPosition(80, 500);
+
+	this->boss = new EvilWizard(this->player, this->window, &this->textures, 5);
+	this->boss->setPosition(300, 300);
+	this->entities.emplace_back(this->boss);
 
 	this->entities.emplace_back(this->player);
 
@@ -49,6 +54,9 @@ void Level2::setupTextures()
 
 	this->textures["SPIKES"] = new sf::Texture();
 	Utils::loadTexture("assets\\textures\\spikes.png", this->textures["SPIKES"]);
+
+	this->textures["WIZARD"] = new sf::Texture();
+	Utils::loadTexture("assets\\textures\\evilWizard.png", this->textures["WIZARD"]);
 }
 
 Level2::~Level2()
@@ -100,6 +108,8 @@ void Level2::update(const float& deltaTime)
 			}
 		}
 	}
+
+	this->boss->update(deltaTime, &this->entities, this->map.getSize());
 
 	this->playerGUI->update(deltaTime);
 

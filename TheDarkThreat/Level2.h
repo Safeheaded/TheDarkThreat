@@ -12,6 +12,7 @@
 #include <chrono>
 #include "Map.h"
 #include "PlotScene.h"
+#include "EvilWizard.h"
 
 class Level2 :
     public Scene
@@ -25,6 +26,7 @@ private:
     UnderworldMap map;
     sf::View view;
     bool isPaused;
+    EvilWizard* boss;
 
 public:
     Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes);

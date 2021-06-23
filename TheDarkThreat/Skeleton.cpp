@@ -15,7 +15,7 @@ Skeleton::Skeleton(Player* player, sf::RenderWindow* window,
 	speed(200), attackCooldown(4), timer(0),
 	window(window), isAttacked(false), prevState(EntityState::Idle)
 {
-	this->maxHealth = 200;
+	this->maxHealth = 80;
 	this->health = this->maxHealth;
 
 	this->addAnimation(EntityState::Idle, {
