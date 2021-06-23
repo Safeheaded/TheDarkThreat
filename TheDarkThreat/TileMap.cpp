@@ -3,8 +3,7 @@
 void TileMap::build(
 	const std::string& tilesetPath, sf::Vector2u tileSize, 
 	const std::vector<std::vector<int>>& tiles, std::map<std::string, 
-	sf::Texture*>* textures, std::vector<Entity*>* entities,
-	std::vector<Obstacle*>* obstacles, Player* player, sf::RenderWindow* window, 
+	sf::Texture*>* textures, std::vector<Entity*>* entities, Player* player, sf::RenderWindow* window, 
 	const sf::Vector2i& textureOffset)
 {
 	const unsigned int height = tiles.size();

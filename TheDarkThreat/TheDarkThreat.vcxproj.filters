@@ -126,9 +126,6 @@
     <ClCompile Include="Tree.cpp">
       <Filter>Pliki źródłowe\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Obstacle.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="GameOverScene.cpp">
       <Filter>Pliki źródłowe\Scenes</Filter>
     </ClCompile>
@@ -168,23 +165,23 @@
     <ClCompile Include="Cemetery.cpp">
       <Filter>Pliki źródłowe\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Level2.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="Skeleton.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="UnderworldMap.cpp">
       <Filter>Pliki źródłowe\Maps</Filter>
     </ClCompile>
-    <ClCompile Include="Spikes.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="EvilWizard.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Level2.cpp">
+      <Filter>Pliki źródłowe\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Spikes.cpp">
+      <Filter>Pliki źródłowe\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Skeleton.cpp">
+      <Filter>Pliki źródłowe\Entities</Filter>
     </ClCompile>
     <ClCompile Include="Portal.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -257,9 +254,6 @@
     <ClInclude Include="Tree.h">
       <Filter>Pliki nagłówkowe\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Obstacle.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="GameOverScene.h">
       <Filter>Pliki nagłówkowe\Scenes</Filter>
     </ClInclude>
@@ -302,23 +296,23 @@
     <ClInclude Include="Cemetery.h">
       <Filter>Pliki nagłówkowe\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Level2.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="UnderworldMap.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Skeleton.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Spikes.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="EvilWizard.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Pliki nagłówkowe\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Level2.h">
+      <Filter>Pliki nagłówkowe\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="Portal.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Pliki nagłówkowe\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Skeleton.h">
+      <Filter>Pliki nagłówkowe\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Spikes.h">
+      <Filter>Pliki nagłówkowe\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="UnderworldMap.h">
+      <Filter>Pliki nagłówkowe\Maps</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

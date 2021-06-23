@@ -17,7 +17,7 @@ Level2::Level2(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 	this->playerGUI = new PlayerGUI(window, this->player); 
 	
 	this->map.build("assets\\textures\\dungeont.png", { 60, 44 }, Map::getUnderworldMap(), &this->textures, &this->entities,
-		&this->obstacles, this->player, this->window, {18, 18});
+		this->player, this->window, {18, 18});
 }
 
 void Level2::setupTextures()

@@ -19,7 +19,7 @@ Level1::Level1(sf::RenderWindow* window, std::stack<Scene*>* scenes) :
 
 	this->map.build("assets\\textures\\tileset.png",
 		sf::Vector2u(32, 32), map, &this->textures,
-		&this->entities, &this->obstacles, this->player, this->window, {0, 0}
+		&this->entities, this->player, this->window, {0, 0}
 	);
 }
 
@@ -67,10 +67,6 @@ Level1::~Level1()
 
 	for (const auto& entity : this->entities) {
 		delete entity;
-	}
-
-	for (const auto& obstacle : this->obstacles) {
-		delete obstacle;
 	}
 }
 

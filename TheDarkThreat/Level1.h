@@ -5,7 +5,6 @@
 #include "Wraith.h"
 #include "PlayerGUI.h"
 #include "OverworldMap.h"
-#include "Obstacle.h"
 #include "GameOverScene.h"
 #include "PauseScene.h"
 #include <thread>
@@ -21,7 +20,6 @@ private:
     std::map<std::string, sf::Texture*> textures;
     Player* player;
     std::vector<Entity*> entities;
-    std::vector<Obstacle*> obstacles;
     PlayerGUI* playerGUI;
     OverworldMap map;
     sf::View view;

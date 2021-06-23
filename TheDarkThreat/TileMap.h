@@ -1,6 +1,5 @@
 #pragma once
 #include "Tree.h"
-#include "Obstacle.h"
 #include "Player.h"
 #include "Wraith.h"
 
@@ -25,8 +24,7 @@ public:
     void build(
         const std::string& path, sf::Vector2u tileSize,
         const std::vector<std::vector<int>>& tiles,
-        std::map<std::string, sf::Texture*>* textures, std::vector<Entity*>* entities,
-        std::vector<Obstacle*>* obstacles, Player* player, sf::RenderWindow* window,
+        std::map<std::string, sf::Texture*>* textures, std::vector<Entity*>* entities, Player* player, sf::RenderWindow* window,
         const sf::Vector2i& textureOffset
     );
 
