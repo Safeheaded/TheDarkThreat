@@ -3,7 +3,7 @@
 PauseScene::PauseScene(sf::RenderWindow* window, std::stack<Scene*>* scenes): 
 	Scene(window, scenes)
 {
-	this->font.loadFromFile("8bitOperatorPlus8-Regular.ttf");
+	this->font.loadFromFile("assets\\fonts\\PressStart2P-Regular.ttf");
 
 	this->text.setFillColor(sf::Color::White);
 	this->text.setCharacterSize(50);

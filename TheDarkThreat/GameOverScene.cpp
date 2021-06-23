@@ -4,11 +4,11 @@ GameOverScene::GameOverScene(sf::RenderWindow* window, std::stack<Scene*>* scene
 	Scene(window, scenes)
 {
 	sf::View view = this->window->getDefaultView();
-	view.setSize(this->window->getSize().x, this->window->getSize().y);
-	view.setCenter(this->window->getSize().x/2, this->window->getSize().y/2);
+	view.setSize((float)this->window->getSize().x, (float)this->window->getSize().y);
+	view.setCenter((float)this->window->getSize().x/2, (float)this->window->getSize().y/2);
 	this->window->setView(view);
 
-	this->font.loadFromFile("8bitOperatorPlus8-Regular.ttf");
+	this->font.loadFromFile("assets\\fonts\\PressStart2P-Regular.ttf");
 
 	// Setting up text
 	this->gameOverText.setFont(this->font);

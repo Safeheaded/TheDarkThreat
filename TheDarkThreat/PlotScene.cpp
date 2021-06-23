@@ -24,7 +24,7 @@ PlotScene::PlotScene(sf::RenderWindow* window, std::stack<Scene*>* scenes, std::
 	std::function<void()> fun):
 	Scene(window, scenes), fun(fun)
 {
-	Utils::loadFont("PressStart2P-Regular.ttf", &this->font);
+	Utils::loadFont("assets\\fonts\\PressStart2P-Regular.ttf", &this->font);
 
 	this->setupText(text);
 }

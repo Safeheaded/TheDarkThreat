@@ -4,7 +4,7 @@ PlayerGUI::PlayerGUI(sf::RenderWindow* window, Player* player): player(player), 
 {
 	this->barsLength = 200;
 
-	Utils::loadFont("PressStart2P-Regular.ttf", &this->font);
+	Utils::loadFont("assets\\fonts\\PressStart2P-Regular.ttf", &this->font);
 	this->spellName.setString(this->player->getSpellName());
 	this->spellName.setFont(this->font);
 
