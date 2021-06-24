@@ -26,7 +26,7 @@ Game::~Game()
 
 void Game::initWindow()
 {
-    this->window = new sf::RenderWindow(sf::VideoMode(1920, 1080), "The Dark Threat", sf::Style::Fullscreen);
+    this->window = new sf::RenderWindow(sf::VideoMode(1920, 1000), "The Dark Threat");
     this->window->setFramerateLimit(60);
     this->window->setVerticalSyncEnabled(false);
 }

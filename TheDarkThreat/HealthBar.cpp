@@ -26,10 +26,17 @@ void HealthBar::update(const float& deltaTime, std::vector<Entity*>* entities, s
 			entityBounds.top - 15
 		);
 
-
-		this->setTextureRect(sf::IntRect(
-			0, 0, this->maxWidth * entity->getHealth() / entity->getMaxHealth(), 5)
-		);
+		if (entity->getHealth() >= 0) {
+			this->setTextureRect(sf::IntRect(
+				0, 0, this->maxWidth * entity->getHealth() / entity->getMaxHealth(), 5)
+			);
+		}
+		else {
+			this->setTextureRect(sf::IntRect(
+				0, 0, 0, 5)
+			);
+		}
+		
 	}
 	else {
 		this->canDie = true;
